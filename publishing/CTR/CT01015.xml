@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/commoon.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="템플릿">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            			<w2:column id="col7" name="name7" dataType="text"></w2:column>
+            			<w2:column id="col8" name="name8" dataType="text"></w2:column>
+            			<w2:column id="col9" name="name9" dataType="text"></w2:column>
+            			<w2:column id="col10" name="name10" dataType="text"></w2:column>
+            			<w2:column id="col11" name="name11" dataType="text"></w2:column>
+            			<w2:column id="col12" name="name12" dataType="text"></w2:column>
+            			<w2:column id="col13" name="name13" dataType="text"></w2:column>
+            			<w2:column id="col14" name="name14" dataType="text"></w2:column>
+            			<w2:column id="col15" name="name15" dataType="text"></w2:column>
+            			<w2:column id="col16" name="name16" dataType="text"></w2:column>
+            			<w2:column id="col17" name="name17" dataType="text"></w2:column>
+            			<w2:column id="col18" name="name18" dataType="text"></w2:column>
+            			<w2:column id="col19" name="name19" dataType="text"></w2:column>
+            			<w2:column id="col20" name="name20" dataType="text"></w2:column>
+            			<w2:column id="col21" name="name21" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	/* active 클래스 추가 */
+    $('.btn-arrowdown').click(function(){
+        $('.inquiry-down')[$('.inquiry-down').hasClass('active') ? 'removeClass' : 'addClass']('active');
+        $('.btn-arrowdown')[$('.btn-arrowdown').hasClass('active') ? 'removeClass' : 'addClass']('active');
+    })
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group id="" class="nhbank">
+    		<xf:group id="" class="content">
+    			<xf:group style="" id="" class="acco-wrap">
+    				<xf:group id="" class="box-div">
+    					<xf:group id="" class="inquiry-wrap">
+    						<xf:group style="" id="" class="inquiry-box auto">
+    							<xf:group id="" class="title-txt-wrap">
+    								<w2:textbox style="" id="" label="기준일자" class="inquiry-title"></w2:textbox>
+    								<w2:span style="" id="" label="필수" class="important-span"></w2:span>
+    							</xf:group>
+    							<xf:group id="" class="input-cal-wrap">
+
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="width: 188px;"
+    									id="" placeholder="yyyy.mm.dd" renderType="" class="input-cal left" renderDiv="true" calendarValueType="">
+    								</w2:inputCalendar>
+    								<w2:span style="" id="" label="-" class="cal-dash-span"></w2:span>
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="width: 188px;"
+    									id="" placeholder="yyyy.mm.dd" renderType="" class="input-cal right" renderDiv="true" calendarValueType="yearMonthDate">
+    								</w2:inputCalendar>
+    							</xf:group>
+
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="">
+    							<w2:textbox class="inquiry-title" id="" label="보고사무소" style=""></w2:textbox>
+    							<xf:input class="text-fields" id="" placeholder=""></xf:input>
+    							<xf:input class="search-input" disabled="" id="" placeholder="" style="width: 340px;"></xf:input>
+    							<xf:trigger class="btn_cm search icon" id="" meta_snippetCategory="10_입력폼"
+    								meta_snippetName="10_10 InputBox_조회버튼" style="" type="button">
+    								<xf:label><![CDATA[Search]]></xf:label>
+    							</xf:trigger>
+    						</xf:group>
+    						<xf:group style="" id="" class="inquiry-box auto">
+    							<w2:textbox style="" id="" label="출장소 포함" class="inquiry-title"></w2:textbox>
+    							<xf:select ref="" appearance="full" disabled="" style="width: 28px;height: 30px;" id=""
+    								renderType="checkboxgroup" rows="" selectedindex="1" class="check-icon" cols="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select>
+    						</xf:group>
+    						<xf:group style="" id="" class="inquiry-box auto">
+    							<w2:textbox style="" id="" label="중복제거" class="inquiry-title"></w2:textbox>
+    							<xf:select ref="" appearance="full" disabled="" style="width: 28px;height: 30px;" id=""
+    								renderType="checkboxgroup" rows="" selectedindex="1" class="check-icon" cols="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group id="" class="box-button">
+    					<xf:group style="di" id="" class="button-wrap">
+    						<xf:trigger style="" id="" type="button" class="btn-refresh">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger style="" id="" type="button" class="btn-inq right-none">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group style="" id="" class="tx-wrap">
+    				<xf:group id="">
+    					<w2:textbox style="" id="" label="정확한 우편번호 확인이 안되는 경우, 999999(확인할 수 없음)로 입력하시면 됩니다."></w2:textbox>
+    				</xf:group>
+    			</xf:group>
+
+
+    			<xf:group class="row gap-12">
+    				<w2:accordion id="" class="acco-box">
+    					<w2:panels id="panels11">
+    						<w2:panelTitle id="panelTitle11" label="거래자 정보"></w2:panelTitle>
+    						<w2:panelContent style="" id="panelContent11">
+    							<xf:group class="info-form-group">
+    								<xf:group tagname="dl">
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="12"></w2:span>
+    	                                    <w2:span label="거래자 (사업자)명" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="13"></w2:span>
+    	                                    <w2:span label="거래자 실명번호" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="13"></w2:span>
+    	                                    <w2:span label="거래자(사업자) 실명번호" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    								</xf:group>
+    								<xf:group tagname="dl">
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="15"></w2:span>
+    	                                    <w2:span label="거래자 국적코드" class="required"></w2:span>    										
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="16"></w2:span>
+    	                                    <w2:span label="거래자 국적명"></w2:span>    
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+                                <w2:textbox id="" label="개인" class="title-box"></w2:textbox>
+    							<xf:group class="info-form-group">
+    								<xf:group tagname="dl">
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="17"></w2:span>
+    	                                    <w2:span label="거래자 우편번호"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="18"></w2:span>
+    	                                    <w2:span label="거래자 주소"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="19"></w2:span>
+    	                                    <w2:span label="거래자 생년월일" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="20"></w2:span>
+    	                                    <w2:span label="성별" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="21"></w2:span>
+    	                                    <w2:span label="거래자 전화번호" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="22"></w2:span>
+    	                                    <w2:span label="실명조합번호" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    								</xf:group>
+    								<xf:group tagname="dl">
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="23"></w2:span>
+    	                                    <w2:span label="여권번호"></w2:span>    										
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="24"></w2:span>
+    	                                    <w2:span label="거래자 직업구분"></w2:span>    
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="25"></w2:span>
+    	                                    <w2:span label="거래자 직장(회사)명"></w2:span>    
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="26"></w2:span>
+    	                                    <w2:span label="거래자 직장 업종코드"></w2:span>    
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="27"></w2:span>
+    	                                    <w2:span label="거래자 직장(회사)사업자 등록번호"></w2:span>    
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+                                <w2:textbox id="" label="법인/단체" class="title-box"></w2:textbox>
+    							<xf:group class="info-form-group">
+    								<xf:group tagname="dl">
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="12"></w2:span>
+    	                                    <w2:span label="거래자 (사업자)명" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="13"></w2:span>
+    	                                    <w2:span label="거래자 실명번호" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="13"></w2:span>
+    	                                    <w2:span label="거래자(사업자) 실명번호" class="required"></w2:span>  
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    								</xf:group>
+    								<xf:group tagname="dl">
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="15"></w2:span>
+    	                                    <w2:span label="거래자 국적코드" class="required"></w2:span>    										
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    									<xf:group tagname="dt">
+    										<w2:span id="" label="16"></w2:span>
+    	                                    <w2:span label="거래자 국적명"></w2:span>    
+    									</xf:group>
+    									<xf:group tagname="dd">
+    										<xf:input id="" class="text-fields"></xf:input>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+    						</w2:panelContent>
+    					</w2:panels>
+    					<w2:panels id="panels12">
+    						<w2:panelTitle style="" id="panelTitle12" label="ㅇㅇㅇㅇㅇ"></w2:panelTitle>
+    						<w2:panelContent style="" id="panelContent12">
+    							<w2:textbox id="" label="정확한 우편번호 확인이 안되는 경우, 999999(확인할 수 없음)로 입력하시면 됩니다." style=""></w2:textbox>
+    						</w2:panelContent>
+    					</w2:panels>
+    				</w2:accordion>
+
+    				<xf:group class="col" style="flex: 0 300px;">
+    					<xf:group class="card list-card">
+    						<w2:textbox id="" tagname="h4" label="충실도" style=""></w2:textbox>
+    						<xf:group tagname="ul">
+    							<xf:group tagname="li">[28] 대표자명</xf:group>
+    							<xf:group tagname="li">[33] 법인설립자일자</xf:group>
+    							<xf:group tagname="li">표준산업분류코드</xf:group>
+    							<xf:group tagname="li">사업자 본점 우편번호</xf:group>
+    							<xf:group tagname="li">사업자 우편번호</xf:group>
+    							<xf:group tagname="li">사업자 본점주소</xf:group>
+    							<xf:group tagname="li">사업자 주소</xf:group>
+    							<xf:group tagname="li">사업자 본점 전화번호</xf:group>
+    							<xf:group tagname="li">사업장 전화번호</xf:group>
+    						</xf:group>
+    					</xf:group>
+
+    					<xf:group class="card list-card">
+    						<w2:textbox id="" tagname="h4" label="부적합" style=""></w2:textbox>
+    						<xf:group tagname="ul">
+    							<xf:group tagname="li">[12.거래자명] 필수항목입니다.</xf:group>
+    							<xf:group tagname="li">[31. 대표자 국적] 코드는 필수항목입니다.</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

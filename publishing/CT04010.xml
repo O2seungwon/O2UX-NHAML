@@ -85,7 +85,7 @@ scwin.onpageload = function() {
 
     const toggleBtn = document.querySelector(".toggle-btn");
     const layerWrap = document.querySelector(".layer-wrap");
-    const dim = document.querySelector(".dim");
+    const dim = document.querySelector(".dim-box");
     const tableRow = document.querySelectorAll(".table-row");
 
     toggleBtn.addEventListener("click", ()=> {
@@ -115,8 +115,8 @@ scwin.onpageload = function() {
     </head>
     <body ev:onpageload="scwin.onpageload">
     	<xf:group style="position: relative;" id="" class="nhbank">
-    		<xf:group id="" style="height: 100%;padding-bottom: 84px;" class="content">
-    			<xf:group style="" id="" class="page-wrapper">
+    		<xf:group id="" style="height:100%; padding-bottom:84px;" class="content">
+    			<xf:group style="" id="" class="page-wrapper ct-page">
     				<xf:group class="dim-box" id="" style=""></xf:group>
     				<xf:group class="content-wrap" id="" style="">
     					<xf:group class="content" id="" style="">
@@ -124,18 +124,77 @@ scwin.onpageload = function() {
     							<xf:group class="btn-wrap" id="" style="">
     								<xf:group class="txt" id="" style="">
 
+    									<w2:span label="미점검" style="" id=""></w2:span>
+    									<w2:span label="40" style="" id=""></w2:span>
     								</xf:group>
-    								<xf:trigger type="button" id="" style="width: 80px;height: 23px;" class="toggle-btn">
+    								<xf:trigger type="button" id="" style="" class="toggle-btn">
     									<xf:label><![CDATA[토글버튼]]></xf:label>
     								</xf:trigger>
     							</xf:group>
 
-    							<xf:group class="table" id="" style=""></xf:group>
+    							<xf:group class="table" id="" style="">
+    								<xf:group tagname="table" style="" id="" class="w2tb">
+    									<w2:attributes>
+    										<w2:summary></w2:summary>
+    									</w2:attributes>
+    									<xf:group tagname="caption"></xf:group>
+    									<xf:group tagname="colgroup">
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    										<xf:group tagname="col" style="width:7.69%;"></xf:group>
+    									</xf:group>
+    									<xf:group tagname="tr" style="">
+    										<xf:group tagname="th" style="" class="w2tb_th">거래일시<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											<w2:colspan>1</w2:colspan><w2:rowspan>2</w2:rowspan></w2:attributes></xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">입지구분<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											<w2:colspan>1</w2:colspan><w2:rowspan>2</w2:rowspan></w2:attributes></xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">거래종류<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											<w2:colspan>1</w2:colspan><w2:rowspan>2</w2:rowspan></w2:attributes></xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">고액현금거래&amp;nbsp;보고대상자<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											<w2:colspan>3</w2:colspan><w2:rowspan>1</w2:rowspan></w2:attributes></xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">보고대상금액<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											<w2:colspan>1</w2:colspan><w2:rowspan>2</w2:rowspan></w2:attributes></xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">취급자<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											<w2:colspan>5</w2:colspan><w2:rowspan>1</w2:rowspan></w2:attributes></xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">책임자&amp;nbsp;보고대상<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											<w2:colspan>1</w2:colspan><w2:rowspan>2</w2:rowspan></w2:attributes></xf:group>
+    									</xf:group>
+    									<xf:group tagname="tr" style=""><xf:group tagname="th" class="w2tb_th">구분<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group><xf:group tagname="th" class="w2tb_th">성명<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group><xf:group tagname="th" class="w2tb_th">실명번호<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group><xf:group tagname="th" class="w2tb_th">단말<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group><xf:group tagname="th" class="w2tb_th">개인번호<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group><xf:group tagname="th" class="w2tb_th">성명<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group><xf:group tagname="th" class="w2tb_th">보고제외<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group><xf:group tagname="th" class="w2tb_th">점검여부<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group></xf:group><xf:group tagname="tr">
+    										<xf:group tagname="td" style="" class="w2tb_td bt-left"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td"></xf:group>
+    										<xf:group tagname="td" style="" class="w2tb_td bt-right"></xf:group>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
     							<xf:group class="layer-wrap" id="" style="">
     								<xf:group class="btn-wrap" id="" style="">
-    									<xf:trigger id="" style="width: 80px;height: 23px;" type="button">
-    										<xf:label><![CDATA[토글버튼]]></xf:label>
-    									</xf:trigger>
     								</xf:group>
     								<xf:group class="content" id="" style="">
     									<xf:group class="table-row" id="" style="">
@@ -153,8 +212,6 @@ scwin.onpageload = function() {
 
     						<xf:group class="other-content" id="" style=""></xf:group>
     					</xf:group>
-
-    					<xf:group class="footer" id="" style=""></xf:group>
     				</xf:group>
     				
     			</xf:group>

@@ -60,12 +60,9 @@ scwin.onpageload = function() {
     			<xf:group class="acco-wrap" id="" style="">
     				<xf:group class="box-div" id="">
     					<xf:group class="inquiry-wrap" id="">
-    						<xf:group class="inquiry-box auto" id="" style="">
+    						<xf:group class="inquiry-box mg-4 auto" id="" style="">
     							<w2:textbox class="inquiry-title" id="" label="거래일자" style=""></w2:textbox>
-    							<xf:group class="input-cal-wrap" id="" style="">
-    								<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
-    									disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 116px;margin-right: 4px;"
-    									submenuSize="auto">
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto" disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width:116px;" submenuSize="auto">
     									<xf:choices>
     										<xf:item>
     											<xf:label><![CDATA[텍스트]]></xf:label>
@@ -77,6 +74,10 @@ scwin.onpageload = function() {
     										</xf:item>
     									</xf:choices>
     								</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="" style=""></w2:textbox>
+    							<xf:group class="input-cal-wrap" id="" style="">
     								<w2:inputCalendar calendarValueType="" class="input-cal left" focusOnDateSelect="false" footerDiv="true"
     									id="" placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="width: 188px;">
     								</w2:inputCalendar>
