@@ -1,3 +1,8 @@
+@charset "utf-8";
+
+@import "style_jsm.css";      /* 지성만스타일 주가 */
+
+
 /* 폰트 */
 @font-face {
     font-family: "Pretendard";
@@ -497,9 +502,6 @@ input:not[type="button"]:focus{
 	text-align: left;
 	cursor: pointer;
 }
-.lnb-side.search .side-down .side-list .title-txt{
-	font-size: 16px;
-}
 .lnb-side .side-down .side-list .title-txt:after{
 	display: inline-block;
 	width: 12px;
@@ -592,6 +594,8 @@ input:not[type="button"]:focus{
 .w2selectbox,
 .w2input,
 .w2selectbox.w2selectbox_open,
+.w2input_focus,
+.w2input:focus,
 .w2selectbox_body_focus,
 .w2selectbox:focus,
 .w2inputCalendar_divInput:focus,
@@ -2156,11 +2160,11 @@ input:not[type="button"]:focus{
 	margin-right: 32px;
 	position: relative;
 }
-.inquiry-box.last{
+.inquiry-wrap .inquiry-box.last{
 	width: auto;
 	margin-right: 0;
 }
-.inquiry-box.auto{
+.inquiry-wrap .inquiry-box.auto{
 	width: auto;
 }
 .inquiry-box.mg-4{
@@ -2215,11 +2219,11 @@ input:not[type="button"]:focus{
 .input-cal-wrap:hover .input-cal.right{
 	border-left: none;
 }
-.input-cal .w2inputCalendar_div_input{
+.inquiry-wrap .input-cal .w2inputCalendar_div_input{
 	height: 30px!important;
 	bottom: -1px;
 }
-.input-cal input::placeholder{
+.inquiry-wrap .input-cal input::placeholder{
 	text-align: left;
 }
 .inquiry-wrap .input-cal.left .w2inputCalendar_div_input input,
