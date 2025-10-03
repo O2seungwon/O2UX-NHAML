@@ -62,7 +62,7 @@ scwin.onpageload = function() {
     					<xf:group class="inquiry-wrap" id="">
     						<xf:group class="inquiry-box mg-4 auto" id="" style="">
     							<w2:textbox class="inquiry-title" id="" label="거래일자" style=""></w2:textbox>
-    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto" disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 116px;margin-right: 4px;" submenuSize="auto">
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto" disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width:116px;" submenuSize="auto">
     									<xf:choices>
     										<xf:item>
     											<xf:label><![CDATA[텍스트]]></xf:label>

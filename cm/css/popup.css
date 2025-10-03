@@ -13,6 +13,7 @@
 .popup-content.report-box{
 	width: 1600px;
 	height: 900px;
+	position: relative;
 	overflow-y: scroll;
 }
 .popup-content.myboard-popup{
@@ -659,6 +660,23 @@
 	font-size: 18px;
 	font-weight: 500;
 }
+.report-box .back-gray{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--w01);
+}
+.report-box .back-gray .back-white{
+	width: 1080px;
+	height: calc(100% - 56px);
+	padding: 0 28px;
+	background: #fff url('/cm/images/background/ct04051img.png') no-repeat center center / contain;
+}
+
 .duplicate-popup .footer-box{
 	display: flex;
 	align-items: center;
@@ -722,6 +740,22 @@
 	color: var(--w07);
 }
 .report-box .footer-box .w2trigger.btn-report-add:hover{
+	border-color: var(--c10);
+	color: var(--c10);
+}
+.report-box .footer-box .w2trigger.btn-save,
+.report-box .footer-box .w2trigger.btn-ok{
+	width: 76px;
+	height: 40px;
+	margin-left: 8px;
+	padding: 0;
+}
+.report-box .footer-box .w2trigger.btn-save{
+	border: 1px solid var(--w07);
+	background: #fff;
+	color: var(--w07);
+}
+.report-box .footer-box .w2trigger.btn-save:hover{
 	border-color: var(--c10);
 	color: var(--c10);
 }

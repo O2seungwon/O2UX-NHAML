@@ -1672,7 +1672,7 @@ div.exup_wrap {width:100%;padding:19px;padding-top:10px;border:0;box-sizing:bord
 	margin-right: 0;
 }
 .w2grid_main{
-	inset: 0 8px 8px 0!important;
+	inset: 0 8px 6px 0!important;
 }
 .tblbox.basic-table .w2group.w2tb td .w2selectbox_col_label{
 	padding: 0;
