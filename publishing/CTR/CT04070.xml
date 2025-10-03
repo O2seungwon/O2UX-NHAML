@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="고액현금거래 거래자별 합계명세">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            			<w2:column id="col7" name="name7" dataType="text"></w2:column>
+            			<w2:column id="col8" name="name8" dataType="text"></w2:column>
+            			<w2:column id="col9" name="name9" dataType="text"></w2:column>
+            			<w2:column id="col10" name="name10" dataType="text"></w2:column>
+            			<w2:column id="col11" name="name11" dataType="text"></w2:column>
+            			<w2:column id="col12" name="name12" dataType="text"></w2:column>
+            			<w2:column id="col13" name="name13" dataType="text"></w2:column>
+            			<w2:column id="col14" name="name14" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<col2><![CDATA[2025-08-06]]></col2>
+            				<col4><![CDATA[㈜휴먼하우징천안백석 LH 천년나무 1단지]]></col4>
+            				<col5><![CDATA[1]]></col5>
+            				<col6><![CDATA[0]]></col6>
+            				<col7><![CDATA[여]]></col7>
+            				<col8><![CDATA[210,000,000]]></col8>
+            				<col9><![CDATA[0]]></col9>
+            				<col10><![CDATA[0]]></col10>
+            				<col11><![CDATA[부]]></col11>
+            				<col12><![CDATA[210,000,000]]></col12>
+            				<col13><![CDATA[012795]]></col13>
+            				<col14><![CDATA[울진군지부]]></col14>
+            			</w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="거래일자" style=""></w2:textbox>
+    							<xf:group class="input-cal-wrap" id="">
+    								<w2:inputCalendar calendarValueType="" class="input-cal left" focusOnDateSelect="false" footerDiv="true"
+    									id="" placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="width: 188px;">
+    								</w2:inputCalendar>
+    								<w2:span id="" label="-" style="" class="cal-dash-span"></w2:span>
+    								<w2:inputCalendar calendarValueType="yearMonthDate" class="input-cal right" focusOnDateSelect="false"
+    									footerDiv="true" id="" placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="width: 188px;">
+    								</w2:inputCalendar>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="실명(사업자)번호" style=""></w2:textbox>
+    							<xf:input class="" id="" placeholder="" style=""></xf:input>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="고객구분" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto last" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="보고사무소" style=""></w2:textbox>
+    							<xf:input class="" id="" placeholder="" style="width: 116px;margin-right: 4px;"></xf:input>
+    							<xf:input class="search-input" disabled="true" id="" placeholder="" style="width: 264px;"></xf:input>
+    							<xf:trigger class="btn_cm search icon" id="" meta_snippetCategory="10_입력폼"
+    								meta_snippetName="10_10 InputBox_조회버튼" style="" type="button">
+    								<xf:label><![CDATA[Search]]></xf:label>
+    							</xf:trigger>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="고액현금거래 거래자별 합계명세" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row" id=""
+    					keepDefaultColumnWidth="true" rowNumHeaderValue="순번" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    					rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;"
+    					visibleRowNum="10">
+    					<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    					<w2:header style="" id="header1">
+    						<w2:row style="" id="row1">
+    							<w2:column width="70" inputType="image" style="" id="column14" value="" displayMode="label" colSpan=""
+    								rowSpan="2" imageSrc="/cm/images/icons/file-icon20.svg" viewType="icon">
+    							</w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column13" value="거래일자" displayMode="label" colSpan=""
+    								rowSpan="2">
+    							</w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column12" value="거래자 실명번호" displayMode="label"
+    								colSpan="" rowSpan="2">
+    							</w2:column>
+    							<w2:column width="300" inputType="text" style="" id="column11" value="거래자명" displayMode="label" colSpan=""
+    								rowSpan="2">
+    							</w2:column>
+    							<w2:column width="360" inputType="text" style="" id="column10" value="입금" displayMode="label" colSpan="4"
+    								rowSpan="">
+    							</w2:column>
+    							<w2:column width="360" inputType="text" style="" id="column6" value="지급" displayMode="label" colSpan="4"
+    								rowSpan="">
+    							</w2:column>
+    							<w2:column width="140" inputType="text" style="" id="column2" value="보고사무소" displayMode="label" colSpan="2"
+    								rowSpan="">
+    							</w2:column>
+    						</w2:row>
+    						<w2:row style="" id="row3">
+    							<w2:column width="70" inputType="text" style="" id="column38" value="거래건수" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column37" value="제외건수" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column36" value="검출여부" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column35" value="거래금액합계" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column34" value="거래건수" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column33" value="제외건수" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column32" value="검출여부" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" style="" id="column31" value="거래금액합계" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column30" value="코드" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column29" value="사무소명" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody style="" id="gBody1">
+    						<w2:row style="" id="row2">
+    							<w2:column width="70" inputType="image" style="" id="col1" value="" displayMode="label"
+    								imageSrc="/cm/images/icons/file-icon20.svg" viewType="icon">
+    							</w2:column>
+    							<w2:column width="150" inputType="text" style="" id="col2" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="col3" value="" displayMode="label"></w2:column>
+    							<w2:column width="300" inputType="text" style="" id="col4" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col5" value="" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col6" value="" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col7" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="col8" value="" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col9" value="" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col10" value="" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col11" value="" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" style="" id="col12" value="" displayMode="label"
+    								textAlign="right">
+    							</w2:column>
+    							<w2:column width="100" inputType="text" style="" id="col13" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="col14" value="" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

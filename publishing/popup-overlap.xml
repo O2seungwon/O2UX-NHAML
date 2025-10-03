@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/popup.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="팝업-STR중복값선택확인">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" class="">
+    	<xf:group style="" id="" class="popup-content duplicate-popup">
+    		<xf:group style="" id="" class="txt-box">
+    			<w2:span style="" label="중복값 선택은 한 건씩 가능합니다." id="" class="txt-span"></w2:span>
+    		</xf:group>
+    		<xf:group style="" id="" class="footer-box">
+    			<xf:trigger style="" id="" type="button" class="btn-white">
+    				<xf:label><![CDATA[취소]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger id="" style="" type="button">
+    				<xf:label><![CDATA[확인]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

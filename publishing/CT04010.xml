@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/commoon.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="영업점고액현금거래점검대상명세">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList2" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    /* active 클래스 추가 */
+    $('.example-btn').click(function(){
+        $('.table-border-none.bottom')[$('.table-border-none.bottom').hasClass('active') ? 'removeClass' : 'addClass']('active');
+        $('.border-down-box')[$('.border-down-box').hasClass('active') ? 'removeClass' : 'addClass']('active');
+    })
+
+    const toggleBtn = document.querySelector(".toggle-btn");
+    const layerWrap = document.querySelector(".layer-wrap");
+    const dim = document.querySelector(".dim");
+    const tableRow = document.querySelectorAll(".table-row");
+
+    toggleBtn.addEventListener("click", ()=> {
+        if(layerWrap.classList.contains("open")){
+            layerWrap.style.height = "0px";
+            layerWrap.classList.remove("open");
+            dim.classList.remove("open");
+        }
+        else{
+            layerWrap.classList.add("open");
+            const height = layerWrap.scrollHeight;
+            layerWrap.style.height = height + "px";
+            dim.classList.add("open");
+        }
+    })
+    tableRow.forEach(( row ) =>{
+        row.addEventListener("click", ()=>{
+            if(layerWrap.classList.contains("open")){
+                layerWrap.style.height = "0px";
+                layerWrap.classList.remove("open");
+                dim.classList.remove("open");
+            }
+        });
+    });
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group style="position: relative;" id="" class="nhbank">
+    		<xf:group id="" style="height: 100%;padding-bottom: 84px;" class="content">
+    			<xf:group style="" id="" class="page-wrapper">
+    				<xf:group class="dim-box" id="" style=""></xf:group>
+    				<xf:group class="content-wrap" id="" style="">
+    					<xf:group class="content" id="" style="">
+    						<xf:group class="table-box" id="" style="">
+    							<xf:group class="btn-wrap" id="" style="">
+    								<xf:group class="txt" id="" style="">
+
+    								</xf:group>
+    								<xf:trigger type="button" id="" style="width: 80px;height: 23px;" class="toggle-btn">
+    									<xf:label><![CDATA[토글버튼]]></xf:label>
+    								</xf:trigger>
+    							</xf:group>
+
+    							<xf:group class="table" id="" style=""></xf:group>
+    							<xf:group class="layer-wrap" id="" style="">
+    								<xf:group class="btn-wrap" id="" style="">
+    									<xf:trigger id="" style="width: 80px;height: 23px;" type="button">
+    										<xf:label><![CDATA[토글버튼]]></xf:label>
+    									</xf:trigger>
+    								</xf:group>
+    								<xf:group class="content" id="" style="">
+    									<xf:group class="table-row" id="" style="">
+    										<w2:textbox id="" label="행" style="width: 150px;height: 23px;"></w2:textbox>
+    									</xf:group>
+    									<xf:group class="table-row" id="" style="">
+    										<w2:textbox id="" label="행" style="width: 150px;height: 23px;"></w2:textbox>
+    									</xf:group>
+    									<xf:group class="table-row" id="" style="">
+    										<w2:textbox id="" label="행" style="width: 150px;height: 23px;"></w2:textbox>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+
+    						<xf:group class="other-content" id="" style=""></xf:group>
+    					</xf:group>
+
+    					<xf:group class="footer" id="" style=""></xf:group>
+    				</xf:group>
+    				
+    			</xf:group>
+
+    			
+    		</xf:group>
+    	</xf:group>
+    	
+    </body>
+</html>

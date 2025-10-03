@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/commoon.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="조회-보고대상자등록">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    /* 테이블 가로세로 스크롤 연동 */
+	const theadWarp = document.querySelector('.table-wrap.thead');
+    const tbodyWarp = document.querySelector('.table-wrap.tbody');
+
+    tbodyWarp.addEventListener('scroll', () => {
+        theadWarp.scrollLeft =
+        tbodyWarp.scrollLeft;
+    })
+
+    $('#mf_inq-button').click(function(){
+        if($('.inquiry-down').hasClass('active')){
+            $('.inquiry-down').removeClass('active')
+        }
+        else{
+            $('.inquiry-down').addClass('active')
+        }
+    })
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    <xf:group style="" id="" class="order-wrap">
+    				<xf:group style="" id="" class="order-box active">
+    					<xf:group id="" class="order-item">
+    						<xf:group id="">
+    							<w2:span style="" id="" label="" class="check-icon"></w2:span>
+    							<w2:textbox style="width: 150px;" id="" label="Alert 모니터링"></w2:textbox>
+    						</xf:group>
+    						<w2:span style="" id="" label="40" class="num"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    				<w2:span style="" id="" label=""></w2:span>
+    				<xf:group style="" id="" class="order-box">
+    					<xf:group id="" class="order-item">
+    						<xf:group id="">
+    							<w2:span style="" id="" label="" class="check-icon"></w2:span>
+    							<w2:textbox style="width: 150px;" id="" label="Case 모니터링"></w2:textbox>
+    						</xf:group>
+    						<w2:span style="" id="" label="40" class="num"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    				<w2:span style="" id="" label=""></w2:span>
+    				<xf:group style="" id="" class="order-box">
+    					<xf:group style="" id="" class="order-item">
+    						<xf:group id="">
+    							<w2:span style="" id="" label="" class="check-icon"></w2:span>
+    							<w2:textbox style="width: 150px;" id="" label="의심거래 임의보고"></w2:textbox>
+    						</xf:group>
+    						<w2:span style="" id="" label="40" class="num"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    				<w2:span style="" id="" label=""></w2:span>
+    				<xf:group style="" id="" class="order-box">
+    					<xf:group id="" class="order-item">
+    						<w2:span style="" id="" label="" class="check-icon"></w2:span>
+    						<xf:group style="display: flex;flex-wrap: wrap;" id="">
+    							<w2:textbox style="width: 100%;height: 20px;" id="" label="테마모니터링"></w2:textbox>
+    							<w2:textbox style="width: 100%;height: 20px;" id="" label="(비혐의 모니터링)"></w2:textbox>
+    						</xf:group>
+    						<w2:span style="" id="" label="40" class="num"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    				<w2:span style="" id="" label=""></w2:span>
+    				<xf:group style="" id="" class="order-box">
+    					<xf:group id="" class="order-item">
+    						<xf:group id="">
+    							<w2:span style="" id="" label="" class="check-icon"></w2:span>
+    							<w2:textbox style="width: 150px;" id="" label="Case 결재 목록"></w2:textbox>
+    						</xf:group>
+    						<w2:span style="" id="" label="40" class="num"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    				<w2:span style="" id="" label=""></w2:span>
+    				<xf:group class="order-box" id="" style="">
+    					<xf:group class="order-item" id="">
+    						<w2:span class="check-icon" id="" label="" style=""></w2:span>
+    						<w2:textbox id="" label="KoFIU 보고 현황" style="width: 150px"></w2:textbox>
+    						<w2:span class="num" id="" label="40" style=""></w2:span>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group><xf:group style="" id="" class="acco-wrap">
+    				<xf:group id="" class="box-div">
+    					<xf:group style="" id="" class="inquiry-wrap">
+    						<xf:group style="width: auto;" id="" class="inquiry-box">
+    							<w2:textbox style="height: 23px;" id="" label="기준일자" class="inquiry-title"></w2:textbox>
+    							<xf:group id="" class="input-cal-wrap">
+    								<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="width: 118px;margin-right: 4px;" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="width: 188px;" id="" renderType="" class="input-cal left" renderDiv="true" calendarValueType="">
+    								</w2:inputCalendar>
+    								<w2:span style="" id="" label="-"></w2:span>
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="width: 188px;" id="" renderType="" class="input-cal right" renderDiv="true" calendarValueType="yearMonthDate">
+    								</w2:inputCalendar>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group style="" id="" class="inquiry-box">
+    							<w2:textbox style="height: 23px;" id="" label="실명번호" class="inquiry-title"></w2:textbox>
+    							<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group style="" id="" class="inquiry-box">
+    							<w2:textbox style="height: 23px;" id="" label="계좌번호" class="inquiry-title"></w2:textbox>
+    							<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group style="" id="" class="inquiry-box">
+    							<w2:textbox style="height: 23px;" id="" label="반송일자" class="inquiry-title"></w2:textbox>
+    							<xf:group style="" id="" class="input-cal-wrap">
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="" id="" renderType="" class="input-cal left" renderDiv="true" calendarValueType="">
+    								</w2:inputCalendar>
+    								<w2:span style="" id="" label="-"></w2:span>
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="" id="" renderType="" class="input-cal right" renderDiv="true" calendarValueType="yearMonthDate">
+    								</w2:inputCalendar>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group style="" id="" class="inquiry-box last">
+    							<w2:textbox style="height: 23px;" id="" label="관리번호" class="inquiry-title"></w2:textbox>
+    							<xf:input class="" id="" placeholder="" style=""></xf:input>
+    						</xf:group>
+    					</xf:group>
+    					<xf:group style="" id="" class="inquiry-down">
+    						<xf:group style="" id="" class="inquiry-wrap">
+    							<xf:group style="" id="" class="inquiry-box">
+    								<w2:textbox style="height: 23px;" id="" label="점검상태" class="inquiry-title"></w2:textbox>
+    								<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group>
+    							<xf:group style="" id="" class="inquiry-box">
+    								<w2:textbox style="height: 23px;" id="" label="고위험군" class="inquiry-title"></w2:textbox>
+    								<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group>
+    							<xf:group style="" id="" class="inquiry-box">
+    								<w2:textbox style="height: 23px;" id="" label="KoFIU 문서번호" class="inquiry-title"></w2:textbox>
+    								<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group>
+    							<xf:group style="width: auto" id="" class="inquiry-box">
+    								<w2:textbox style="height: 23px;" id="" label="사무소" class="inquiry-title"></w2:textbox>
+    								<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="width: 116px;margin-right: 4px;" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    								<xf:input style="width: 116px;margin-right: 4px;" id="" placeholder="" class=""></xf:input>
+    								<xf:input class="" id="" placeholder="" style="width: 264px;"></xf:input>
+    							</xf:group>
+    							<xf:group style="" id="" class="inquiry-box last">
+    								<w2:textbox style="height: 23px;" id="" label="출장소 포함" class="inquiry-title"></w2:textbox>
+    								<xf:select ref="" appearance="full" disabled="" style="width: 28px;height: 30px;" id="" renderType="checkboxgroup" rows="" selectedindex="1" class="check-icon" cols="">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group style="" id="" class="inquiry-wrap">
+    							<xf:group style="" id="" class="inquiry-box">
+    								<w2:textbox style="height: 23px;" id="" label="본부반송 조회" class="inquiry-title"></w2:textbox>
+    								<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[new row]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[new row]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group>
+    							<xf:group style="" id="" class="inquiry-box">
+    								<w2:textbox style="height: 23px;" id="" label="검출률" class="inquiry-title"></w2:textbox>
+    								<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="" allOption="true" id="" renderType="" class="sel-box" direction="auto">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[new row]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[new row]]></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group>
+    							<xf:group style="" id="" class="inquiry-box last">
+    								<w2:textbox style="height: 23px;" id="" label="특별조회" class="inquiry-title"></w2:textbox>
+    								<xf:select ref="" appearance="full" disabled="" style="width: 28px;height: 30px;" id="" renderType="checkboxgroup" rows="" selectedindex="1" class="check-icon" cols="">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label></xf:label>
+    											<xf:value></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group id="" class="box-button">
+    					<xf:group style="di" id="" class="button-wrap">
+    						<xf:trigger style="width: 21px;height: 21px;background: lightgray" id="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger style="" id="" type="button" class="btn-inq">
+    							<xf:label><![CDATA[버튼명]]></xf:label>
+    						</xf:trigger>
+    						<xf:trigger style="width: 26px;height: 26px;background: gray;" id="inq-button" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group><xf:group style="" id="" class="transaction-group str">
+    				<xf:group style="margin-bottom: 0;" id="" class="t-title-wrap">
+    					<xf:group style="" id="" class="lybox transaction-title">
+    						<xf:group adaptiveThreshold="" style="" id="" class="ly_column col_5">
+    							<xf:group style="margin-left: 28px;" id="">
+    								<w2:span style="font-size:16px;font-weight:700;line-height:150%;" id="" label="총"></w2:span>
+    								<w2:span style="margin-left: 2px;color:#0A90F0;font-size:16px;font-weight:700;line-height:150%;" id="" label="147">
+    								</w2:span>
+    								<w2:span style="font-size:16px;font-weight:700;line-height:150%;" id="" label="건"></w2:span>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group style="" id="" class="ly_column col_5">
+    							<xf:group style="" id="" class="right-item">
+    								<w2:span style="margin-right: 8px;font-size: 12px;font-weight: 300;" id="" label="고객명과 실명번호 색상범례 : ">
+    								</w2:span>
+    								<w2:span style="margin-right: 10px;font-weight:500;" id="" label="AI판단 중점점검대상" class="span-icon">
+    								</w2:span>
+    								<w2:span style="margin-right: 21px;font-weight:500;" id="" label="AI판단 비혐의 고려대상" class="span-icon right">
+    								</w2:span>
+    								<xf:group style="" id="" tagname="a" class="download">
+    									<w2:textbox id="" label="엑셀다운로드" style="display: flex;align-items: center;"></w2:textbox>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="" id="" class="transaction-wrap">
+    					<xf:group id="" class="tb-wrap">
+    						<xf:group id="" class="table-wrap thead">
+    							<xf:group tagname="table" style="" id="" class="w2tb transaction-tb">
+    								<w2:attributes>
+    									<w2:summary></w2:summary>
+    								</w2:attributes>
+    								<xf:group tagname="caption"></xf:group>
+    								<xf:group tagname="colgroup">
+    									<xf:group tagname="col" style="width:40px;"></xf:group>
+    									<xf:group tagname="col" style="width:78px;"></xf:group>
+    									<xf:group tagname="col" style="width:152px;"></xf:group>
+    									<xf:group tagname="col" style="width:300px;"></xf:group>
+    									<xf:group tagname="col" style="width:82px;"></xf:group>
+    									<xf:group tagname="col" style="width:74px;"></xf:group>
+    									<xf:group tagname="col" style="width:74px;"></xf:group>
+    									<xf:group tagname="col" style="width:74px;"></xf:group>
+    									<xf:group tagname="col" style="width:74px;"></xf:group>
+    									<xf:group tagname="col" style="width:114px;"></xf:group>
+    									<xf:group tagname="col" style="width:158px;"></xf:group>
+    									<xf:group tagname="col" style="width:104px;"></xf:group>
+    									<xf:group tagname="col" style="width:90px;"></xf:group>
+    									<xf:group tagname="col" style="width:74px;"></xf:group>
+    									<xf:group tagname="col" style="width:106px;"></xf:group>
+    									<xf:group tagname="col" style="width:106px;"></xf:group>
+    									<xf:group tagname="col" style="width:166px;"></xf:group>
+    								</xf:group>
+    								<xf:group tagname="thead">
+    									<xf:group tagname="tr" style="">
+    										<xf:group tagname="th" style="border-top-left-radius: 30px;" class="w2tb_th check">
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">
+    											보고사무소
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>2</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_tda cli-name">
+    											고객명
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td num">
+    											실명번호
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">
+    											고위험군
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>4</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    											<w2:span label="" style="display: inline-block;width: 20px;height: 20px;background: lightgray;margin-left: 10px;" id="">
+    											</w2:span>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td state">
+    											점검상태
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_th">
+    											보고서&amp;nbsp;상태
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>2</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td ko-num">
+    											KoFIU&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+    											<br></br>
+    											문서번호
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td rate-num">
+    											검출률수
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td rate-date">
+    											검출일
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td limit">
+    											점검기한
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="border-top-right-radius: 30px;" class="w2tb_td return" id="last-th">
+    											본부반송
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>2</w2:rowspan>
+    											</w2:attributes>
+    										</xf:group>
+    									</xf:group>
+    									<xf:group tagname="tr" style="">
+    										<xf:group tagname="th" style="" class="w2tb_th check">
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td code">
+    											코드
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td name">
+    											명
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="color: rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f">
+    											고위험
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="color: rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e">
+    											고유위험
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="color: rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e">
+    											AML
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="color: rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e">
+    											고위험
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td mana-num">
+    											관리번호
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    										<xf:group tagname="th" style="" class="w2tb_td sign">
+    											결재
+    											<w2:attributes>
+    												<w2:scope>col</w2:scope>
+    											</w2:attributes>
+    										</xf:group>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group id="" class="tbody-wrap">
+    							<xf:group id="" class="table-wrap tbody">
+    								<xf:group tagname="table" style="" id="" class="w2tb transaction-tb tbody">
+    									<w2:attributes>
+    										<w2:summary></w2:summary>
+    									</w2:attributes>
+    									<xf:group tagname="caption"></xf:group>
+    									<xf:group tagname="colgroup">
+    										<xf:group tagname="col" style="width:40px;"></xf:group>
+    										<xf:group tagname="col" style="width:78px;"></xf:group>
+    										<xf:group tagname="col" style="width:152px;"></xf:group>
+    										<xf:group tagname="col" style="width:300px;"></xf:group>
+    										<xf:group tagname="col" style="width:82px;"></xf:group>
+    										<xf:group tagname="col" style="width:74px;"></xf:group>
+    										<xf:group tagname="col" style="width:74px;"></xf:group>
+    										<xf:group tagname="col" style="width:74px;"></xf:group>
+    										<xf:group tagname="col" style="width:74px;"></xf:group>
+    										<xf:group tagname="col" style="width:114px;"></xf:group>
+    										<xf:group tagname="col" style="width:158px;"></xf:group>
+    										<xf:group tagname="col" style="width:104px;"></xf:group>
+    										<xf:group tagname="col" style="width:90px;"></xf:group>
+    										<xf:group tagname="col" style="width:74px;"></xf:group>
+    										<xf:group tagname="col" style="width:106px;"></xf:group>
+    										<xf:group tagname="col" style="width:106px;"></xf:group>
+    										<xf:group tagname="col" style="width:166px;"></xf:group>
+    									</xf:group>
+    									<xf:group tagname="tbody" style="">
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name">
+    												<xf:group class="file-item" id="" style="" tagname="a">
+    													<w2:textbox id="" label="정부서울청사지점" style="display: flex;align-items: center;"></w2:textbox>
+    												</xf:group>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    												업
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    												종
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    												C,&amp;nbsp;매
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    												비
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state">
+    												<xf:group class="file-item" id="" style="" tagname="a">
+    													<w2:textbox id="" label="비혐의처리" style="display: flex;align-items: center;"></w2:textbox>
+    												</xf:group>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num">
+    												비혐의처리
+    												<xf:group class="file-item" id="" style="" tagname="a"></xf:group>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign">
+    												<xf:group style="" id="" class="file-item" tagname="a">
+    													<w2:textbox id="" label="점검완료" style="display: flex;align-items: center;"></w2:textbox>
+    												</xf:group>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num">B015T014</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num">
+    												<xf:group class="file-item" id="" style="" tagname="a">
+    													<w2:textbox id="" label="10" style="display: flex;align-items: center;"></w2:textbox>
+    												</xf:group>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09&amp;nbsp;</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td return">
+    												<xf:trigger style="width: 80px;" id="" type="button">
+    													<xf:label></xf:label>
+    												</xf:trigger>
+    											</xf:group>
+    										</xf:group>
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td return"></xf:group>
+    										</xf:group>
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td return"></xf:group>
+    										</xf:group>
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td return"></xf:group>
+    										</xf:group>
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td return"></xf:group>
+    										</xf:group>
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td return"></xf:group>
+    										</xf:group>
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td return"></xf:group>
+    										</xf:group>
+    										<xf:group tagname="tr" style="">
+    											<xf:group tagname="td" style="border-bottom-left-radius: 30px" class="w2tb_th check">
+    												<xf:select ref="" appearance="full" disabled="" style="" id="" renderType="checkboxgroup" rows="" selectedindex="1" cols="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td code">00006</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td name"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_tda cli-name">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td num"></xf:group>
+    											<xf:group tagname="td" style="color:rgba(149, 119, 217, 1);" class="w2tb_td highrisk-f highrisk-a">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 170, 67, 1);" class="w2tb_td highrisk-e highrisk-b">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(3, 191, 165, 1);" class="w2tb_td highrisk-e highrisk-c">
+    											</xf:group>
+    											<xf:group tagname="td" style="color:rgba(255, 93, 93, 1);" class="w2tb_td highrisk-e highrisk-d">
+    											</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td state"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td mana-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td sign"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td ko-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-num"></xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td rate-date">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="" class="w2tb_td limit">2025-04-09</xf:group>
+    											<xf:group tagname="td" style="border-bottom-right-radius: 30px;" class="w2tb_td return"></xf:group>
+    										</xf:group>
+    										<xf:group style="" tagname="tr">
+    											<xf:group class="w2tb_th check" style="" tagname="td">
+    												<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows="" selectedindex="1" style="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group class="w2tb_td code" style="" tagname="td">00006</xf:group>
+    											<xf:group class="w2tb_td name" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_tda cli-name" style="" tagname="td">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group class="w2tb_td num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td highrisk-f highrisk-a" style="color:rgba(149, 119, 217, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-b" style="color:rgba(255, 170, 67, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-c" style="color:rgba(3, 191, 165, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-d" style="color:rgba(255, 93, 93, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td state" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td mana-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td sign" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td ko-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-date" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td limit" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td return" style="" tagname="td"></xf:group>
+    										</xf:group>
+    										<xf:group style="" tagname="tr">
+    											<xf:group class="w2tb_th check" style="" tagname="td">
+    												<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows="" selectedindex="1" style="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group class="w2tb_td code" style="" tagname="td">00006</xf:group>
+    											<xf:group class="w2tb_td name" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_tda cli-name" style="" tagname="td">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group class="w2tb_td num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td highrisk-f highrisk-a" style="color:rgba(149, 119, 217, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-b" style="color:rgba(255, 170, 67, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-c" style="color:rgba(3, 191, 165, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-d" style="color:rgba(255, 93, 93, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td state" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td mana-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td sign" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td ko-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-date" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td limit" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td return" style="" tagname="td"></xf:group>
+    										</xf:group>
+    										<xf:group style="" tagname="tr">
+    											<xf:group class="w2tb_th check" style="" tagname="td">
+    												<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows="" selectedindex="1" style="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group class="w2tb_td code" style="" tagname="td">00006</xf:group>
+    											<xf:group class="w2tb_td name" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_tda cli-name" style="" tagname="td">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group class="w2tb_td num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td highrisk-f highrisk-a" style="color:rgba(149, 119, 217, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-b" style="color:rgba(255, 170, 67, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-c" style="color:rgba(3, 191, 165, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-d" style="color:rgba(255, 93, 93, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td state" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td mana-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td sign" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td ko-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-date" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td limit" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td return" style="" tagname="td"></xf:group>
+    										</xf:group>
+    										<xf:group style="" tagname="tr">
+    											<xf:group class="w2tb_th check" style="" tagname="td">
+    												<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows="" selectedindex="1" style="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group class="w2tb_td code" style="" tagname="td">00006</xf:group>
+    											<xf:group class="w2tb_td name" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_tda cli-name" style="" tagname="td">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group class="w2tb_td num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td highrisk-f highrisk-a" style="color:rgba(149, 119, 217, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-b" style="color:rgba(255, 170, 67, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-c" style="color:rgba(3, 191, 165, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-d" style="color:rgba(255, 93, 93, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td state" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td mana-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td sign" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td ko-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-date" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td limit" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td return" style="" tagname="td"></xf:group>
+    										</xf:group>
+    										<xf:group style="" tagname="tr">
+    											<xf:group class="w2tb_th check" style="" tagname="td">
+    												<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows="" selectedindex="1" style="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group class="w2tb_td code" style="" tagname="td">00006</xf:group>
+    											<xf:group class="w2tb_td name" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_tda cli-name" style="" tagname="td">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group class="w2tb_td num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td highrisk-f highrisk-a" style="color:rgba(149, 119, 217, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-b" style="color:rgba(255, 170, 67, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-c" style="color:rgba(3, 191, 165, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-d" style="color:rgba(255, 93, 93, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td state" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td mana-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td sign" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td ko-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-date" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td limit" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td return" style="" tagname="td"></xf:group>
+    										</xf:group>
+    										<xf:group style="" tagname="tr">
+    											<xf:group class="w2tb_th check" style="" tagname="td">
+    												<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows="" selectedindex="1" style="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group class="w2tb_td code" style="" tagname="td">00006</xf:group>
+    											<xf:group class="w2tb_td name" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_tda cli-name" style="" tagname="td">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group class="w2tb_td num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td highrisk-f highrisk-a" style="color:rgba(149, 119, 217, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-b" style="color:rgba(255, 170, 67, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-c" style="color:rgba(3, 191, 165, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-d" style="color:rgba(255, 93, 93, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td state" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td mana-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td sign" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td ko-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-date" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td limit" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td return" style="" tagname="td"></xf:group>
+    										</xf:group>
+    										<xf:group style="" tagname="tr">
+    											<xf:group class="w2tb_th check" style="" tagname="td">
+    												<xf:select appearance="full" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows="" selectedindex="1" style="">
+    													<xf:choices>
+    														<xf:item>
+    															<xf:label></xf:label>
+    															<xf:value></xf:value>
+    														</xf:item>
+    													</xf:choices>
+    												</xf:select>
+    											</xf:group>
+    											<xf:group class="w2tb_td code" style="" tagname="td">00006</xf:group>
+    											<xf:group class="w2tb_td name" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_tda cli-name" style="" tagname="td">
+    												주식회사&amp;nbsp;하나로&amp;nbsp;세종지점
+    											</xf:group>
+    											<xf:group class="w2tb_td num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td highrisk-f highrisk-a" style="color:rgba(149, 119, 217, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-b" style="color:rgba(255, 170, 67, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-c" style="color:rgba(3, 191, 165, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td highrisk-e highrisk-d" style="color:rgba(255, 93, 93, 1);" tagname="td">
+    											</xf:group>
+    											<xf:group class="w2tb_td state" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td mana-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td sign" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td ko-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-num" style="" tagname="td"></xf:group>
+    											<xf:group class="w2tb_td rate-date" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td limit" style="" tagname="td">2025-04-09</xf:group>
+    											<xf:group class="w2tb_td return" style="" tagname="td"></xf:group>
+    										</xf:group>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group><xf:group style="" id="" class="right-content-footer">
+    				<xf:group style="height: 64px;margin-bottom: 0;background: #fff;border-radius: 20px 20px 0 0;gap: 0;" id="" class="lybox">
+    					<xf:group adaptiveThreshold="" style="display: flex;align-items: center;width: 100%;height: 100%;padding: 16px 40px;" id="" class="ly_column col_5 f-left">
+    						<w2:textbox tagname="span" style="margin: 0 20px 0 0;color:#333;font-weight:700;" id="" label="고위험군"></w2:textbox>
+    						<w2:textbox tagname="span" style="" id="" label="고위험군" class="highrisk-a"></w2:textbox>
+    						<w2:textbox tagname="span" style="margin: 0 16px 0 0;color:#333;font-weight:500;" id="" label="업"></w2:textbox>
+    						<w2:textbox tagname="span" style="" id="" label="고유위험" class="highrisk-b"></w2:textbox>
+    						<w2:textbox tagname="span" style="" id="" label="AML" class="highrisk-c"></w2:textbox>
+    						<w2:textbox tagname="span" style="margin: 0 16px 0 0;color:#333;font-weight:500;" id="" label="C, 매"></w2:textbox>
+    						<w2:textbox tagname="span" style="" id="" label="고위험" class="highrisk-d"></w2:textbox>
+    						<w2:textbox id="" label="비" style="margin: 0 16px 0 0;color:#333;font-weight:500;" tagname="span"></w2:textbox>
+    					</xf:group>
+
+    					<xf:group style="padding: 20px 40px;text-align: right;" id="" class="ly_column col_5">
+    						<w2:textbox tagname="span" style="color:#000;font-weight:700;margin-right:12px;" id="" label="고위험군"></w2:textbox>
+    						<w2:textbox tagname="span" style="color:#000;font-weight:500;margin-right:40px;" id="" label="라은림"></w2:textbox>
+    						<w2:textbox tagname="span" style="color:#000;font-weight:700;margin-right:12px;" id="" label="반송일시"></w2:textbox>
+    						<w2:textbox tagname="span" style="color:#000;font-weight:500;margin-right:40px;" id="" label="2025-04-24 19:50:50">
+    						</w2:textbox>
+    						<w2:textbox tagname="span" style="color:#000;font-weight:700;margin-right:12px;" id="" label="반송코드명"></w2:textbox>
+    						<w2:textbox tagname="span" style="color:#000;font-weight:500;" id="" label="[2] 비혐의처리(본부종결)"></w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="height: 72px;margin-bottom: 0;border-top: 1px solid #e5f0ff;background: #fff;box-shadow: 0 -3px 12px 0 #e6f4fd;gap: 0;" id="" class="lybox">
+    					<xf:group adaptiveThreshold="" style="padding: 15px 40px;" id="" class="ly_column col_5">
+    						<xf:trigger style="margin: 0 6px 0 0;" id="" type="button" class="button-left">
+    							<xf:label><![CDATA[종합현황판]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group style="padding: 15px 40px;text-align: right" id="" class="ly_column col_5">
+    						<xf:trigger style="" id="" type="button" class="button-right">
+    							<xf:label><![CDATA[보고서 초기화]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group></body>
+</html>

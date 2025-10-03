@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/dashboard.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="대시보드-영업점">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    /* 마이페이지 탭 안 알림숫자 추가 */
+	var tabControl = document.getElementById("mf_mypage-tab");
+    if(tabControl){
+        var tabALink = tabControl.querySelector("#mf_mypage-tab_tab_tabs5 .w2tabcontrol_tab_center a");
+        if(tabALink){
+            var textSpan = document.createElement("span");
+            textSpan.textContent = "3";
+            textSpan.className = "tab-a-span"
+            tabALink.parentNode.insertBefore(textSpan, tabALink.nextSibling);
+        }
+    }
+
+    /* active 클래스 추가 */
+    $('#mf_title-txt').click(function(){
+        $('.list-item')[$('.list-item').hasClass('active') ? 'removeClass' : 'addClass']('active');
+    })
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" style="display: flex">
+    <xf:group style="" id="" class="dashboard-header">
+    			<xf:group class="name-item" id="" style="" tagname="a">
+    				<w2:span class="icon" id="" label="" style=""></w2:span>
+    				<w2:span class="name" id="" label="자금세탁방지부" style=""></w2:span>
+    				<w2:span class="name" id="" label="김올리님" style=""></w2:span>
+    			</xf:group>
+    			<xf:group class="data-item" id="" style="">
+    				<w2:span class="date" id="" label="2025.07.01" style=""></w2:span>
+    				<w2:span class="date" id="" label="15:30" style=""></w2:span>
+    				<xf:trigger id="" style="" type="button">
+    					<xf:label></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group><xf:group style="" id="" class="mypage mypage-con">
+    			<xf:group style="" id="" class="notice-wrap">
+    				<w2:textbox style="" id="" label="New" class="new-icon"></w2:textbox>
+    				<w2:textbox style="" id="" label="긴급공지가 등록되었습니다." class="title"></w2:textbox>
+    			</xf:group>
+    			<xf:group style="" id="" class="role-wrap">
+    				<xf:group style="" id="" class="role-icon">
+    					<xf:group style="display: flex;flex-wrap: wrap;color: #065690;font-size: 28px;font-weight: 700" id="">
+    						<w2:textbox style="width: 100%;height: 40px;" id="" label="나는 매일 발전하는"></w2:textbox>
+    						<w2:textbox style="width: 100%;height: 40px;" id="" label="AML 요원!"></w2:textbox>
+    					</xf:group>
+    					<w2:span style="" label="" id=""></w2:span>
+    				</xf:group>
+    				<xf:group style="" id="" class="list-item">
+    					<xf:group style="" id="" class="list-item-half">
+    						<xf:group style="" id="" class="list-title">
+    							<w2:textbox style="" id="" label="교육 이수"></w2:textbox>
+    						</xf:group>
+    						<xf:group style="" id="" class="list-num">
+    							<w2:span style="font-size: 20px;" label="1" id=""></w2:span>
+    							<w2:span style="font-size: 12px;" label="/2" id=""></w2:span>
+    						</xf:group>
+    					</xf:group>
+    					<xf:group style="" id="" class="list-item-half right">
+    						<xf:group style="" id="" class="list-title">
+    							<w2:textbox style="" id="" label="교육 이수"></w2:textbox>
+    						</xf:group>
+    						<xf:group style="" id="" class="list-num">
+    							<w2:span style="font-size: 20px;" id="" label="2"></w2:span>
+    							<w2:span style="font-size: 12px;" id="" label="개"></w2:span>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<w2:tabControl alwaysDraw="false" style="" id="mypage-tab" class="mypage-tab">
+    				<w2:tabs disabled="false" style="" id="tabs4" label="나의 업무"></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs5" label="알림" class="noti-num"></w2:tabs>
+    				<w2:tabs disabled="false" style="" id="tabs6" label="자료실"></w2:tabs>
+    				<w2:content alwaysDraw="false" style="" id="content4">
+    					<xf:group style="" id="" class="list-wrap">
+    						<xf:group style="" id="" class="list-item active">
+    							<w2:span style="" label="STR 점검" id=""></w2:span>
+    							<w2:span style="" label="06" id=""></w2:span>
+    						</xf:group>
+    						<xf:group style="" id="" class="list-item">
+    							<w2:span style="" id="" label="STR 테마 점검"></w2:span>
+    							<w2:span style="" id="" label="25"></w2:span>
+    						</xf:group>
+    						<xf:group style="" id="" class="list-item">
+    							<w2:span style="" id="" label="CTR 점검"></w2:span>
+    							<w2:span style="" id="" label="06"></w2:span>
+    						</xf:group>
+    						<xf:group style="" id="" class="list-item">
+    							<w2:span style="" id="" label="KYC 적정성 점검"></w2:span>
+    							<w2:span style="" id="" label="06"></w2:span>
+    						</xf:group>
+    						<xf:group class="list-item" id="" style="">
+    							<w2:span id="" label="KYC 본점 보완요청" style=""></w2:span>
+    							<w2:span id="" label="25" style=""></w2:span>
+    						</xf:group>
+    					</xf:group>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content5">
+    					<w2:span style="" label="tab2" id=""></w2:span>
+    				</w2:content>
+    				<w2:content alwaysDraw="false" style="" id="content6">
+    					<w2:span style="" label="tab3" id=""></w2:span>
+    				</w2:content>
+    			</w2:tabControl>
+    			<xf:group style="" id="" class="mypage-foot">
+    				<xf:trigger style="" id="" type="button" class="quick">
+    					<xf:label><![CDATA[QUICK]]></xf:label>
+    				</xf:trigger>
+    				<w2:span style="" label="" id=""></w2:span>
+    				<xf:trigger style="" id="" type="button" class="txt-item">
+    					<xf:label><![CDATA[운영평가]]></xf:label>
+    				</xf:trigger>
+    				<w2:span style="" label="" id=""></w2:span>
+    				<xf:trigger style="" id="" type="button" class="txt-item">
+    					<xf:label><![CDATA[담당자 관리]]></xf:label>
+    				</xf:trigger>
+    			</xf:group>
+    		</xf:group><xf:group style="" id="" class="main-wrap">
+    			<xf:group class="welcome-wrap" id="" style="">
+    				<xf:group class="welcome-item" id="" style="">
+    					<xf:group id="" style="margin: 12px 0 8px 16px;">
+    						<w2:span id="" label="김올리 님" style="margin-right: 4px;color: #555;font-size: 16px;font-weight: 700;"></w2:span>
+    						<w2:span id="" label="오늘도 파이팅입니다!" style="color: #555;font-size: 16px;font-weight: 500"></w2:span>
+    					</xf:group>
+    					<w2:textbox id="" label="신사영업점 현황입니다." style="margin-left: 16px;color: #333;font-size: 28px;font-weight: 700;"></w2:textbox>
+    				</xf:group>
+    				<xf:group class="welcome-item right" id="" style="">
+    					<xf:select1 allOption="" appearance="minimal" chooseOption="" direction="auto" disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" style="" submenuSize="auto">
+    						<xf:choices>
+    							<xf:item>
+    								<xf:label><![CDATA[일별]]></xf:label>
+    								<xf:value><![CDATA[]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[주별]]></xf:label>
+    								<xf:value><![CDATA[]]></xf:value>
+    							</xf:item>
+    							<xf:item>
+    								<xf:label><![CDATA[월별]]></xf:label>
+    								<xf:value><![CDATA[]]></xf:value>
+    							</xf:item>
+    						</xf:choices>
+    					</xf:select1>
+    					<w2:inputCalendar calendarValueType="yearMonthDate" id="" style=""></w2:inputCalendar>
+    					<xf:trigger id="" style="display: flex;align-items: center;justify-content: center;width: 73px;height: 38px;margin-left: 12px;background: #333;border-radius: 8px;color: #fff;font-weight: 700;" type="button">
+    						<xf:label><![CDATA[조회]]></xf:label>
+    					</xf:trigger>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="tab-notice" id="" style="">
+    				<xf:group class="notice-up" id="" style="">
+    					<xf:group id="" style="display: flex;align-items: center;">
+    						<w2:span class="notice-txt" id="" label="공지사항" style=""></w2:span>
+    						<w2:span class="notice-txt title" id="" label="시스템 개편에 따른 사용 매뉴얼 위치 안내" style=""></w2:span>
+    					</xf:group>
+    					<w2:span id="" label="2025.07.01" style=""></w2:span>
+    					<xf:trigger id="" style="" type="button">
+    						<xf:label><![CDATA[]]></xf:label>
+    					</xf:trigger>
+    				</xf:group>
+    				<xf:group class="notice-down" id="" style=""></xf:group>
+    			</xf:group>
+    			<xf:group class="str-ctr" id="" style="">
+    				<xf:group class="tab-notice " id="" style="">
+    					<xf:group class="notice-up" id="" style="">
+    						<xf:group class="" id="" style="display: flex;align-items: center;">
+    							<w2:span class="notice-txt" id="" label="STR 처리 현황" style=""></w2:span>
+    						</xf:group>
+    						<xf:trigger id="" style="" type="button">
+    							<xf:label><![CDATA[]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group class="notice-down" id="" style="">
+    						<xf:group class="chart-item" id="" style="">
+    							<xf:group class="chart-title" id="" style="">
+    								<w2:textbox id="" label="Alert 검출된 의심 거래 수" style=""></w2:textbox>
+    							</xf:group>
+    							<xf:group class="chart-img" id="" style=""></xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="tab-notice ctr" id="" style="">
+    					<xf:group class="notice-up" id="" style="">
+    						<xf:trigger id="" style="" type="button">
+    							<xf:label><![CDATA[]]></xf:label>
+    						</xf:trigger>
+    						<w2:span class="notice-txt" id="" label="CTR 처리 현황" style=""></w2:span>
+    					</xf:group>
+    					<xf:group class="notice-down" id="" style="">
+    						<xf:group class="chart-wrap" id="">
+    							<xf:group class="chart-item chart-two" id="" style="">
+    								<xf:group class="chart-title" id="" style="">
+    									<w2:textbox id="" label="취급자 점검" style=""></w2:textbox>
+    								</xf:group>
+    								<xf:group class="chart-img" id="" style=""></xf:group>
+    							</xf:group>
+    							<xf:group class="chart-item chart-two" id="" style="">
+    								<xf:group class="chart-title" id="" style="">
+    									<w2:textbox id="" label="책임자 점검" style=""></w2:textbox>
+    								</xf:group>
+    								<xf:group class="chart-img" id="" style=""></xf:group>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="str-sign" id="" style="">
+    				<xf:group class="tab-notice str-two" id="" style="">
+    					<xf:group class="notice-up" id="" style="">
+    						<xf:group class="" id="" style="display: flex;align-items: center;">
+    							<w2:span class="notice-txt" id="" label="STR 처리 현황" style=""></w2:span>
+    						</xf:group>
+    						<xf:trigger id="" style="" type="button">
+    							<xf:label><![CDATA[]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group class="notice-down" id="" style="">
+    						<xf:group class="chart-wrap chart-wrap-two" id="" style="">
+    							<xf:group class="chart-item chart-two" id="" style="">
+    								<xf:group class="chart-title" id="" style="">
+    									<w2:textbox id="" label="취급자 점검" style=""></w2:textbox>
+    								</xf:group>
+    								<xf:group class="chart-img" id="" style=""></xf:group>
+    							</xf:group>
+    							<xf:group class="chart-item chart-two box" id="" style="">
+    								<xf:group class="chart-title" id="" style="">
+    									<xf:group id="" style="">
+    										<w2:textbox id="" label="법인고객" style="height: 27px;color: #555;font-size: 18px;font-weight: 700;line-height: 18px;">
+    										</w2:textbox>
+    										<w2:textbox id="" label="본점점검 이행률" style="height: 27px;color: #555;font-size: 18px;font-weight: 700;line-height: 18px;">
+    										</w2:textbox>
+    									</xf:group>
+    								</xf:group>
+    								<xf:group class="chart-img" id="" style="">
+    									<w2:span id="" label="83%" style=""></w2:span>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="tab-notice sign" id="" style="">
+    					<xf:group class="notice-up" id="" style="">
+    						<xf:trigger id="" style="" type="button">
+    							<xf:label><![CDATA[]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    					<xf:group class="notice-down" id="" style="">
+    						<xf:group class="sign-item" id="" style="">
+    							<xf:group id="" style="">
+    								<w2:textbox id="" label="보안서약서" style="height: 36px;color: #0982d8;font-size: 24px;font-weight: 700;line-height: 36px;">
+    								</w2:textbox>
+    								<w2:textbox id="" label="서명하기" style="height: 36px;color: #0982d8;font-size: 24px;font-weight: 700;line-height: 36px;">
+    								</w2:textbox>
+    							</xf:group>
+    						</xf:group>
+    						<xf:trigger id="" style="" type="button">
+    							<xf:label><![CDATA[서명하기]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group><xf:trigger style="" id="" type="button" class="footer-button">
+    			<xf:label></xf:label>
+    		</xf:trigger></body>
+</html>

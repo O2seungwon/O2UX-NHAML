@@ -1,0 +1,426 @@
+/*amd /cm/udc/brcSearchBox.xml 12537 bd610d8769345ea0513ae5eb716a5fc87437370127dd8d2dcc22fb4b86248059 */
+define({declaration:{A:{version:'1.0',encoding:'UTF-8'}},E:[{T:1,N:'html',A:{xmlns:'http://www.w3.org/1999/xhtml','xmlns:ev':'http://www.w3.org/2001/xml-events','xmlns:w2':'http://www.inswave.com/websquare','xmlns:xf':'http://www.w3.org/2002/xforms'},E:[{T:1,N:'head',A:{},E:[{T:1,N:'w2:type',A:{palette:'support'},E:[{T:3,text:'COMPONENT'}]},{T:1,N:'w2:buildDate'},{T:1,N:'w2:MSA'},{T:1,N:'xf:model',E:[{T:1,N:'w2:dataCollection',A:{baseNode:'map'},E:[{T:1,N:'w2:aliasDataMap',A:{scope:'',id:'adm_dataMap'}},{T:1,N:'w2:dataList',A:{id:'dlt_samuso',baseNode:'list',style:'',repeatNode:'map'},E:[{T:1,N:'w2:columnInfo',E:[{T:1,N:'w2:column',A:{id:'chk',name:'선택',dataType:'text'}},{T:1,N:'w2:column',A:{id:'BRC',name:'사무소코드',dataType:'text'}},{T:1,N:'w2:column',A:{id:'BRNM',name:'사무소명',dataType:'text'}},{T:1,N:'w2:column',A:{id:'PROV_C',name:'시도코드',dataType:'text'}},{T:1,N:'w2:column',A:{id:'PROVNM',name:'시도명',dataType:'text'}},{T:1,N:'w2:column',A:{id:'COFF_BRC',name:'시군지부사무소코드',dataType:'text'}},{T:1,N:'w2:column',A:{id:'COFFNM',name:'시군지부명',dataType:'text'}},{T:1,N:'w2:column',A:{id:'MBR_BRC',name:'본소사무소코드',dataType:'text'}},{T:1,N:'w2:column',A:{id:'MBRNM',name:'본소명',dataType:'text'}},{T:1,N:'w2:column',A:{id:'RG_DTM',name:'검색일시',dataType:'text'}}]}]},{T:1,N:'w2:dataMap',A:{baseNode:'map',id:'dma_search'},E:[{T:1,N:'w2:keyInfo',E:[{T:1,N:'w2:key',A:{id:'lPROV_C',name:'지역조회조건',dataType:'text'}},{T:1,N:'w2:key',A:{id:'lBRC',name:'사무소코드',dataType:'text'}},{T:1,N:'w2:key',A:{id:'lBRNM',name:'사무소명',dataType:'text'}}]}]}]},{T:1,N:'w2:workflowCollection'}]},{T:1,N:'w2:layoutInfo'},{T:1,N:'w2:publicInfo',A:{method:'scwin.setValueCd,scwin.getValueCd,scwin.setValueNm,scwin.getValueNm,scwin.focus,scwin.init,scwin.getValueChul,scwin.setValueChul,scwin.setInit'}},{T:1,N:'script',A:{lazy:'false',type:'text/javascript'},E:[{T:4,cdata:function(scopeObj){with(scopeObj){/**
+ * @component
+ * @componentName udc_brcSearchBox
+ * @pluginName 
+ * @company Inswave
+ * @developer Max
+ * @category /cm/udc
+ * @notSupportBrowser 
+ * @version
+ * @htmlRender
+ * @icon
+ * @disableIcon
+ * @description
+ * @width
+ * @height
+ * @license
+ * @imagePath
+ * @homepage
+ */
+
+/**
+ * @property
+ * @name id
+ * @category 01.Basic & ETC
+ * @type string
+ * @option
+ * @default
+ * @necessary N
+ * @bindparent
+ * @description udc의 id값을 설정한다.
+ */
+
+/**
+ * @property
+ * @name class
+ * @category 01.Basic & ETC
+ * @type string
+ * @option
+ * @default
+ * @necessary N
+ * @bindparent
+ * @description udc의 CSS Class를 지정한다.
+ */
+
+/**
+ * @property
+ * @name style
+ * @category 01.Basic & ETC
+ * @type string
+ * @option
+ * @default
+ * @necessary N
+ * @bindparent
+ * @description style을 지정한다.
+ */
+
+/**
+ * @property
+ * @name refCd
+ * @category 01.Basic & ETC
+ * @type bindColumn
+ * @option
+ * @default
+ * @necessary N
+ * @bindparent
+ * @description 사무소 code를 dataMap에 바인딩할 때 사용. 
+ *  "data:" prefix를 추가하여 data:[DataMap ID].[Key id] 형태로 지정해야 함. 
+ * 예) data:dataMap1.dept
+ */
+
+/**
+ * @property
+ * @name refNm
+ * @category 01.Basic & ETC
+ * @type bindColumn
+ * @option
+ * @default
+ * @necessary N
+ * @bindparent
+ * @description 사무소 Name을 dataMap에 바인딩할 때 사용. 
+ *  "data:" prefix를 추가하여 data:[DataMap ID].[Key id] 형태로 지정해야 함. 
+ * 예) data:dataMap1.dept
+ */
+
+/**
+ * @property
+ * @name refChul
+ * @category 01.Basic & ETC
+ * @type bindColumn
+ * @option
+ * @default
+ * @necessary N
+ * @bindparent
+ * @description 사무소 code를 dataMap에 바인딩할 때 사용. 
+ *  "data:" prefix를 추가하여 data:[DataMap ID].[Key id] 형태로 지정해야 함. 
+ * 예) data:dataMap1.dept
+ */
+
+/**
+ * @property
+ * @name readOnly
+ * @category 01.Basic & ETC
+ * @type combobox
+ * @option [true,false]
+ * @default
+ * @necessary N
+ * @bindparent
+ * @description HTML의 readOnly
+ */
+
+/**
+ * @property
+ * @name chulUse
+ * @category 01.Basic & ETC
+ * @type combobox
+ * @option [true,false]
+ * @default false
+ * @necessary N
+ * @bindparent
+ * @description 출장소포함여부 체크박스 사용여부
+ */
+
+scwin.onpageload = function () {
+  scwin.option = $p.getOptions();
+  let dataMap = "";
+
+  // 속성 readOnly 확인
+  if (!$c.util.isEmpty($p, scwin.option.readOnly)) {
+    ibx_brcCode.setReadOnly(scwin.option.readOnly); //코드 readOnly
+  }
+
+  // 속성 refCd 바인딩
+  if (!$c.util.isEmpty($p, scwin.option.refCd)) {
+    const dataObj = scwin.option.refCd.replaceAll("data:", "").split(".");
+    if ($c.util.isEmpty($p, dataMap)) {
+      dataMap = dataObj[0];
+      adm_dataMap.setScope(`../${dataMap}`);
+    }
+    ibx_brcCode.setRef(`data:adm_dataMap.${dataObj[1]}`);
+  }
+
+  // 속성 refTo 확인
+  if (!$c.util.isEmpty($p, scwin.option.refNm)) {
+    const dataObj = scwin.option.refNm.replaceAll("data:", "").split(".");
+    if ($c.util.isEmpty($p, dataMap)) {
+      dataMap = dataObj[0];
+      adm_dataMap.setScope(`../${dataMap}`);
+    }
+    ibx_brName.setRef(`data:adm_dataMap.${dataObj[1]}`);
+  }
+
+  // 속성 refChul 확인
+  if (!$c.util.isEmpty($p, scwin.option.refChul)) {
+    const dataObj = scwin.option.refChul.replaceAll("data:", "").split(".");
+    if ($c.util.isEmpty($p, dataMap)) {
+      dataMap = dataObj[0];
+      adm_dataMap.setScope(`../${dataMap}`);
+    }
+    cbx_chul.setRef(`data:adm_dataMap.${dataObj[1]}`);
+  }
+
+  // 속성 chulUse 에 따른 체크박스표기
+  if (!$c.util.isEmpty($p, scwin.option.chulUse)) {
+    if (scwin.option.chulUse == "true") {
+      cbx_chul.show("");
+    } else {
+      cbx_chul.hide("");
+    }
+  }
+};
+scwin.getPluginName = function () {
+  return "UDC2";
+};
+
+/**
+ * @method
+ * @name setValueCd
+ * @description 사무소코드 변경
+ * @param {String} value 변경할 사무소코드
+ * @returns
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.setValueCd = function (value) {
+  ibx_brcCode.setValue(value);
+  scwin.ibx_brcCode_oneditenter();
+};
+
+/**
+ * @method
+ * @name getValueCd
+ * @description 사무소코드 조회
+ * @param
+ * @returns {String} 사무소코드 return
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.getValueCd = function () {
+  return ibx_brcCode.getValue();
+};
+
+/**
+ * @method
+ * @name setValueNm
+ * @description 사무소명 변경
+ * @param {String} value 변경할 사무소명
+ * @returns
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.setValueNm = function (value) {
+  ibx_brName.setValue(value);
+};
+
+/**
+ * @method
+ * @name getValueNm
+ * @description 사무소명 조회
+ * @param
+ * @returns {String} 사무소명 return
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.getValueNm = function () {
+  return ibx_brName.getValue();
+};
+
+/**
+ * @method
+ * @name focus
+ * @description 사무소코드 포커스
+ * @param
+ * @returns
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.focus = function () {
+  ibx_brcCode.focus();
+};
+
+/**
+ * @method
+ * @name init
+ * @description 사무소 값 초기화
+ * @param
+ * @returns
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.init = function () {
+  ibx_brcCode.setValue("");
+  ibx_brName.setValue("");
+  cbx_chul.setValue("");
+};
+
+/**
+ * @event
+ * @name ibx_brcCode_onchange
+ * @description 사무소코드 변경시 onchange Event
+ */
+scwin.ibx_brcCode_onchange = function (info) {
+  if ($c.util.isEmpty($p, info.newValue)) {
+    ibx_brName.setValue(""); //값이 없으면 name도 초기화
+  } else {
+    const match = dlt_samuso.getMatchedJSON("BRC", info.newValue, true);
+    if (match.length < 1) {
+      ibx_brName.setValue(""); //값이 없으면 name도 초기화
+    } else {
+      ibx_brName.setValue(dlt_samuso.getCellData(match[0], "BRNM"));
+    }
+  }
+};
+
+/**
+ * @event
+ * @name ibx_brcCode_oneditenter
+ * @description 사무소코드 enter keyup
+ */
+scwin.ibx_brcCode_oneditenter = function () {
+  if ($c.util.isEmpty($p, ibx_brcCode.getValue())) return;
+  const searchBrc = $c.str.trim($p, ibx_brcCode.getValue());
+  //사무소코드 조회 -> 조회결과가 1건이면 name에 setValue / 다건이면 사무소조회 팝업 open
+  if ($c.num.isNumber($p, searchBrc)) {
+    //숫자면
+    dma_search.set("lBRC", $c.str.lpad($p, searchBrc, 6, "0"));
+  } else {
+    dma_search.set("lBRNM", searchBrc);
+  }
+
+  //action 다름! ** 아래 url 수정 필요! 
+  let actionUrl = "/CM01001/searchBranch.ml";
+  if ($c.num.parseInt($p, ibx_brcCode.getValue()) > 100000) {
+    //100000 넘으면 농축협으로 조회
+    actionUrl = "/CM01001D/getSearchSanghoBranch.ml";
+  }
+  // if (sbx_brSrcDs.getValue() == "5") { 
+  //     actionUrl = "/CM01001D/getSearchSanghoBranch.ml";
+  // } else if (scwin.samusoGbn == "1" && sendCds)  {   //K6나 K5에 사무소조회시 본부조회 권한줄때 타사무소조회팝업 사용
+  //     actionUrl = "/CM01001C/getSearchOtherBranch.ml";
+  // }
+
+  const searchOption = {
+    id: "sbm_brcSearchBox",
+    //서브미션ID
+    action: actionUrl,
+    ref: "dma_search",
+    //서버로보낼 dataCollection ID
+    target: "dlt_samuso",
+    //서버로 응답받을 dataCollection ID
+    submitDoneHandler: scwin.searchSubmitDone //Response Status 코드 값이 정상 일 경우 동작할 callbackFunction
+  };
+  $c.sbm.executeSubmit($p, searchOption);
+};
+
+/**
+ * @method
+ * @name searchSubmitDone
+ * @description 사무소조회 submission callback
+ * @param
+ * @returns
+ * @hidden Y
+ * @exception
+ * @example
+ */
+scwin.searchSubmitDone = function (resObj) {
+  //사무소코드 조회 -> 조회결과가 1건이면 name에 setValue / 다건이면 사무소조회 팝업 open
+  if (dlt_samuso.getRowCount() == 1) {
+    ibx_brcCode.setValue(dlt_samuso.getCellData(0, "BRC"));
+    ibx_brName.setValue(dlt_samuso.getCellData(0, "BRNM"));
+  } else {
+    scwin.popupSamuso();
+  }
+};
+
+/**
+ * @event
+ * @name btn_srchBrc_onclick
+ * @description 사무소아이콘 클릭 시, 사무소팝업 open
+ */
+scwin.btn_srchBrc_onclick = function (e) {
+  scwin.popupSamuso();
+};
+
+/**
+ * @method
+ * @name popupSamuso
+ * @description 사무소 팝업 open
+ * @param
+ * @returns
+ * @hidden Y
+ * @exception
+ * @example
+ */
+scwin.popupSamuso = function () {
+  //팝업 옵션 설정
+  const options = {
+    id: "CM1001",
+    popupName: "사무소찾기",
+    width: 1082,
+    height: 610
+  };
+
+  //팝업에 전달할 dataObject
+  const data = {
+    brc: ibx_brcCode.getValue()
+  };
+  let url = "/ui/CM/CM1001.xml";
+  if ($c.num.parseInt($p, ibx_brcCode.getValue()) > 100000) {
+    //100000 이상이면 농축협으로 봄
+    url = "/ui/CM/CM1001D.xml";
+  }
+  $c.win.openPopup($p, url, options, data).then(res => {
+    ibx_brcCode.setValue(res.BRC);
+    ibx_brName.setValue(res.BRNM);
+  });
+};
+
+/**
+ * @method
+ * @name getValueChul
+ * @description 출장소포함여부 체크값
+ * @param 
+ * @returns {String} 출장소포함여부 체크값
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.getValueChul = function () {
+  return cbx_chul.getValue();
+};
+
+/**
+ * @method
+ * @name setValueChul
+ * @description 출장소포함여부 값 변경 (0 / 1)
+ * @param {string} value 출장소포함여부 값 변경
+ * @returns
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.setValueChul = function (value) {
+  cbx_chul.setValue(value);
+};
+
+/**
+ * @method
+ * @name setInit
+ * @description udc 초기화 함수 (공용)
+ * @param
+ * @returns
+ * @hidden N
+ * @exception
+ * @example
+ */
+scwin.setInit = function () {
+  scwin.init();
+};
+}}}]}]},{T:1,N:'body',A:{'ev:onpageload':'scwin.onpageload'},E:[{T:1,N:'xf:group',A:{class:'wrap_period',id:'grp_wrap',style:''},E:[{T:1,N:'xf:group',A:{id:'grp_searchBr',class:'fl'},E:[{T:1,N:'xf:input',A:{ref:'data:dma_popupParam01.param01',adjustMaxLength:'false',style:'width: 100px;height:30px;',id:'ibx_brcCode',class:'','ev:onchange':'scwin.ibx_brcCode_onchange','ev:oneditenter':'scwin.ibx_brcCode_oneditenter'}},{T:1,N:'xf:input',A:{ref:'data:dma_popupParam01.param01','ev:onchange':'scwin.ipt_schNo_onchange',adjustMaxLength:'false',style:'width:200px;height:30px;margin-left : 4px;border-color: var(--w02)',allowChar:'0-9-',id:'ibx_brName',class:'search-input',readOnly:'true'}},{T:1,N:'xf:trigger',A:{style:'margin-right: 4px;',id:'btn_srchBrc',type:'button',class:'btn_cm search','ev:onclick':'scwin.btn_srchBrc_onclick'},E:[{T:1,N:'xf:label'}]},{T:1,N:'xf:select',A:{selectedindex:'-1',id:'cbx_chul',appearance:'full',style:'display: none;',cols:'',rows:'',ref:''},E:[{T:1,N:'xf:choices',E:[{T:1,N:'xf:item',E:[{T:1,N:'xf:label',E:[{T:4,cdata:'출장소 포함'}]},{T:1,N:'xf:value',E:[{T:4,cdata:'1'}]}]}]}]}]}]}]}]}]})

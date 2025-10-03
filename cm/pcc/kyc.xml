@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ev="http://www.w3.org/2001/xml-events"
+xmlns:w2="http://www.inswave.com/websquare"
+xmlns:xf="http://www.w3.org/2002/xforms">
+	<head>
+		<w2:type>COMMON</w2:type>
+		<w2:buildDate/>
+		<w2:MSA/>
+		<xf:model>
+			<w2:dataCollection baseNode="map">
+			</w2:dataCollection>
+			<w2:workflowCollection>
+			</w2:workflowCollection>
+		</xf:model>
+		<w2:layoutInfo>
+		</w2:layoutInfo>
+		<w2:publicInfo method=""/>
+		<script type="text/javascript" lazy="false"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+
+/**
+ * 평가산출내역팝업
+ * 전달 파라메터 
+        PTTN_KEY_YM,
+        CUSNO,
+        KYC_SQNO,
+        PSCRP_DSC,
+        EVL_DT,
+
+        RLNO,
+        CUSNM,
+        WK_DSC,
+        MODL_DSC,
+        BTWK_BAS_YM ,
+        MSF_AGNT_DSC
+ */
+scwin.popupEvlClcnBrk = function(params){
+
+    getCount(params).then(function(cnt){
+        console.log(cnt);
+        if(cnt){
+
+            // 팝업 옵션
+            const options = {
+                id: "popup01",
+                type: "wframePopup",
+                popupName: "KY02101",
+                width: 1200, 
+                height: 700,
+            }
+            // 셋팅될 파라메터  
+           
+            if(cnt.I_MODL_CNT >0 && cnt.BS_MODL_CNT>0 ){
+                params.DSC_VAL = '1';
+                $c.win.openPopup("/ui/KY/KY02101.xml", options, params);
+            }else if(cnt.I_MODL_CNT > 0 && !(cnt.BS_MODL_CNT>0)){
+                params.DSC_VAL = '2';
+                $c.win.openPopup("/ui/KY/KY02101.xml", options, params);
+            }else if(!(cnt.I_MODL_CNT > 0) && (cnt.BS_MODL_CNT>0)){
+                params.DSC_VAL = '3';
+                $c.win.openPopup("/ui/KY/KY02101.xml", options, params);
+            }else {
+                alert('위험평가 산출내역이 없습니다.');
+            }
+        }
+    });
+
+    function getCount(params){
+        return new Promise((resolve,reject)=>{
+            $c.data.createDataMap("dma_ra_count_search"
+            , ["PTTN_KEY_YM", "CUSNO", "KYC_SQNO","PSCRP_DSC","EVL_DT"] 
+            , ["파티션키년월", "고객번호", "KYC일련번호","개인법인구분코드","평가일자"]);
+            var dma_ra_count_search = $p.getComponentById("dma_ra_count_search");
+            dma_ra_count_search.setJSON(params);
+
+            $c.sbm.executeSubmit({
+                id          : "sbm_KY02101",
+                action      : "/KY02101/count.ml",
+                ref         : "dma_ra_count_search",
+                // target      : "dma_count" ,
+                submitDoneHandler : function(e){
+                    resolve(e.responseJSON);
+                },
+                submitErrorHandler : function(e){ 
+                    reject(e);
+                }
+            });
+        })
+
+    }
+
+}
+
+]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload">
+	</body>
+</html>

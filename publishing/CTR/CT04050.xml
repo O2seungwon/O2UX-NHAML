@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="고액현금거래 점검/결재 현황">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            			<w2:column id="col7" name="name7" dataType="text"></w2:column>
+            			<w2:column id="col8" name="name8" dataType="text"></w2:column>
+            			<w2:column id="col9" name="name9" dataType="text"></w2:column>
+            			<w2:column id="col10" name="name10" dataType="text"></w2:column>
+            			<w2:column id="col11" name="name11" dataType="text"></w2:column>
+            			<w2:column id="col12" name="name12" dataType="text"></w2:column>
+            			<w2:column id="col13" name="name13" dataType="text"></w2:column>
+            			<w2:column id="col14" name="name14" dataType="text"></w2:column>
+            			<w2:column id="col15" name="name15" dataType="text"></w2:column>
+            			<w2:column id="col16" name="name16" dataType="text"></w2:column>
+            			<w2:column id="col17" name="name17" dataType="text"></w2:column>
+            			<w2:column id="col18" name="name18" dataType="text"></w2:column>
+            			<w2:column id="col19" name="name19" dataType="text"></w2:column>
+            			<w2:column id="col20" name="name20" dataType="text"></w2:column>
+            			<w2:column id="col21" name="name21" dataType="text"></w2:column>
+            			<w2:column id="col22" name="name22" dataType="text"></w2:column>
+            			<w2:column id="col23" name="name23" dataType="text"></w2:column>
+            			<w2:column id="col24" name="name24" dataType="text"></w2:column>
+            			<w2:column id="col25" name="name25" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col10><![CDATA[여]]></col10>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row>
+            				<col10><![CDATA[여]]></col10>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[]]></col2>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[]]></col2>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col10><![CDATA[여]]></col10>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[]]></col2>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col10><![CDATA[여]]></col10>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[]]></col2>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col10><![CDATA[여]]></col10>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[]]></col2>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col10><![CDATA[여]]></col10>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[]]></col2>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col10><![CDATA[여]]></col10>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[]]></col2>
+            				<col3><![CDATA[2025-08-08]]></col3>
+            				<col4><![CDATA[2025-08-08]]></col4>
+            				<col5><![CDATA[2025-08-08]]></col5>
+            				<col6><![CDATA[[41]경기영업본부]]></col6>
+            				<col7><![CDATA[001110]]></col7>
+            				<col8><![CDATA[정왕동지점]]></col8>
+            				<col9><![CDATA[CTR-점검명세결재(영업점)]]></col9>
+            				<col10><![CDATA[여]]></col10>
+            				<col11><![CDATA[연은혁]]></col11>
+            				<col12><![CDATA[2025-08-08<br/>15:15:15]]></col12>
+            				<col13><![CDATA[2025-08-08]]></col13>
+            				<col14><![CDATA[5]]></col14>
+            				<col15><![CDATA[0]]></col15>
+            				<col16><![CDATA[5]]></col16>
+            				<col17><![CDATA[부]]></col17>
+            				<col18><![CDATA[2025-08-08<br/>15:15:15]]></col18>
+            				<col19><![CDATA[여]]></col19>
+            				<col20><![CDATA[2025-08-08<br/>15:15:15]]></col20>
+            				<col21><![CDATA[0]]></col21>
+            				<col22><![CDATA[2]]></col22>
+            				<col23><![CDATA[0]]></col23>
+            				<col24><![CDATA[0]]></col24>
+            				<col25><![CDATA[1]]></col25>
+            			</w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="일자" style=""></w2:textbox>
+    						<xf:group id="" class="flex"><xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled" chooseOption="" disabled="false" style="width: 118px;margin-right: 0px;" allOption="" id="" renderType="" class="sel-box" direction="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[거래일자]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1><xf:group id="" class="input-cal-wrap">
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="width: 188px;" id="" placeholder="yyyy.mm.dd" renderType="" class="input-cal left" renderDiv="true" calendarValueType="">
+    								</w2:inputCalendar>
+    								<w2:span style="" id="" label="-" class="cal-dash-span"></w2:span>
+    								<w2:inputCalendar footerDiv="true" rightAlign="false" focusOnDateSelect="false" style="width: 188px;" id="" placeholder="yyyy.mm.dd" renderType="" class="input-cal right" renderDiv="true" calendarValueType="yearMonthDate">
+    								</w2:inputCalendar>
+    							</xf:group></xf:group></xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="사무소" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 116px;margin-right: 4px;"
+    								submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    							<xf:input class="" id="" placeholder="" style="width: 116px;margin-right: 4px;"></xf:input>
+    							<xf:input class="search-input" id="" placeholder="" style="width: 264px;" readOnly="true"></xf:input>
+    							<xf:trigger class="btn_cm search icon" id="" meta_snippetCategory="10_입력폼"
+    								meta_snippetName="10_10 InputBox_조회버튼" style="" type="button">
+    								<xf:label><![CDATA[Search]]></xf:label>
+    							</xf:trigger>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="출장소 포함" style=""></w2:textbox>
+    							<xf:select appearance="full" class="check-icon" cols="" disabled="" id="" ref="" renderType="checkboxgroup"
+    								rows="" selectedindex="1" style="width: 28px;height: 30px;">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="점검상태" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="점검여부" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 116px;" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="고액현금거래 점검/결재 현황" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+
+    					<xf:group class="rt" id="" style="">
+    						<xf:group class="right-item-txt" id="" style="">
+    							<w2:span class="span-icon" id="" label="* 업적평가 기준은 검출 건이 있는 1일을 1회로 산정하고,"
+    								style="margin-right: 5px;font-weight:500;">
+    							</w2:span>
+    							<w2:span class="" id="" label="칸이 업적평가 반영사유임" style="margin-right: 10px;font-weight:500;"></w2:span>
+    						</xf:group>
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[인쇄]]></xf:label>
+    						</xf:trigger>
+
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="none" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row" id=""
+    					keepDefaultColumnWidth="true" rowNumHeaderValue="순번" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    					rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;"
+    					visibleRowNum="10">
+    					<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    					<w2:header style="" id="header1">
+    						<w2:row style="" id="row1">
+    							<w2:column width="70" inputType="image" id="column25" value="" displayMode="label"
+    								imageSrc="/cm/images/icons/file-icon20.svg" rowSpan="2" viewType="icon">
+    							</w2:column>
+    							<w2:column width="70" inputType="text" id="column24" value="선택" displayMode="label" rowSpan="2"></w2:column>
+    							<w2:column width="490" inputType="text" id="column23" value="점검대상영역" displayMode="label" colSpan="7">
+    							</w2:column>
+    							<w2:column width="280" inputType="text" id="column16" value="영업점 점검처리 정보" displayMode="label" colSpan="4">
+    							</w2:column>
+    							<w2:column width="490" inputType="text" id="column12" value="본부 점검처리 정보" displayMode="label" colSpan="7">
+    							</w2:column>
+    							<w2:column width="100" inputType="text" id="column5" value="업적평가&lt;br/&gt;반영건수" displayMode="label"
+    								rowSpan="2">
+    							</w2:column>
+    							<w2:column width="280" inputType="text" id="column4" value="업적평가 반영 사유" displayMode="label" colSpan="4">
+    							</w2:column>
+    						</w2:row>
+    						<w2:row style="" id="row3">
+    							<w2:column width="150" inputType="text" id="column73" value="거래일자" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column72" value="검출일" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column71" value="점검기한" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column70" value="영업본부" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column69" value="사무소" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column68" value="사무소명" displayMode="label"></w2:column>
+    							<w2:column width="200" inputType="text" id="column67" value="점검대상" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column66" value="점검여부" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column65" value="담당자" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column64" value="완료일시" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column63" value="취소일시" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column62" value="전체건수" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column61" value="제외건수" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column60" value="보고건수" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column59" value="본부점검&lt;br/&gt;확정여부" displayMode="label">
+    							</w2:column>
+    							<w2:column width="150" inputType="text" id="column58" value="확정일시" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column57" value="오류통보서&lt;br/&gt;발송여부" displayMode="label">
+    							</w2:column>
+    							<w2:column width="150" inputType="text" id="column56" value="발송일시" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column54" value="점검기한 초과" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column53" value="오류_과보고" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column52" value="오류_누락보고" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="column51" value="오류_기타오류" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody style="" id="gBody1">
+    						<w2:row style="" id="row2">
+    							<w2:column width="70" inputType="image" id="col1" displayMode="label"
+    								imageSrc="/cm/images/icons/file-icon20.svg" viewType="icon">
+    							</w2:column>
+    							<w2:column width="70" inputType="checkbox" id="col2" displayMode="label" viewType="icon"></w2:column>
+    							<w2:column width="150" inputType="text" id="col3" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col4" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col5" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col6" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="col7" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="textImage" id="col8" displayMode="label"
+    								imageSrc="/cm/images/icons/file-icon20.svg" viewType="icon">
+    							</w2:column>
+    							<w2:column width="200" inputType="text" id="col9" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="col10" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" id="col11" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col12" displayMode="label" escape="false"></w2:column>
+    							<w2:column width="150" inputType="text" id="col13" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col14" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col15" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col16" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col17" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col18" displayMode="label" escape="false"></w2:column>
+    							<w2:column width="100" inputType="text" id="col19" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col20" displayMode="label" escape="false"></w2:column>
+    							<w2:column width="100" inputType="text" id="col21" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col22" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col23" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col24" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="100" inputType="text" id="col25" displayMode="label" textAlign="right" style=""
+    								class="">
+    							</w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    					<w2:footer style="" id="footer1">
+    						<w2:row style="" id="row4">
+    							<w2:column width="70" inputType="text" style="" id="column98" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column97" value="합계" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column96" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column95" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column94" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column93" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column92" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column91" value="" displayMode="label"></w2:column>
+    							<w2:column width="200" inputType="text" style="" id="column90" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column89" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column88" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column87" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column86" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column85" value="274" displayMode="label"
+    								textAlign="right">
+    							</w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column84" value="24" displayMode="label"
+    								textAlign="right">
+    							</w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column83" value="246" displayMode="label"
+    								textAlign="right">
+    							</w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column82" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column81" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column80" value="" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" style="" id="column79" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column78" value="0" displayMode="label"
+    								textAlign="right">
+    							</w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column77" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column76" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column75" value="" displayMode="label"></w2:column>
+    							<w2:column width="100" inputType="text" style="" id="column74" value="" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:footer>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="footer-box" id="" style="">
+    			<xf:group class="left-button" id="" style="">
+    			</xf:group>
+    			<xf:group class="right-button" id="" style="">
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="오류통보서" style=""></w2:span>
+    				</xf:group>
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="확정취소" style=""></w2:span>
+    				</xf:group><xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="확정" style=""></w2:span>
+    				</xf:group>
+    				
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="제3자 고객확인의무 고위험 통계">
+    	<w2:type>COMPONENT</w2:type>
+    	<w2:buildDate />
+    	<w2:MSA />
+    	<xf:model>
+    		<w2:dataCollection baseNode="map" />
+    		<w2:workflowCollection />
+    	</xf:model>
+    	<w2:layoutInfo />
+    	<w2:publicInfo method="" />
+    	<script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    	<w2:require as="udc_brCombo" type="page" variableClone="true" src="/cm/udc/brCombo.xml"></w2:require>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="" style="">
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="수행일자" style=""></w2:textbox>
+    							<xf:group class="input-cal-wrap" id="">
+    								<w2:inputCalendar calendarValueType="" class="cal-only" focusOnDateSelect="false" footerDiv="true" id=""
+    									placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="">
+    								</w2:inputCalendar>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="조회구분" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="사무소" style=""></w2:textbox>
+    							<w2:udc_brCombo autoSet="true" style=""></w2:udc_brCombo>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="고객구분" style=""></w2:textbox>
+    							<xf:select appearance="full" class="check-icon" cols="" disabled="" id="" ref="" renderType="checkboxgroup"
+    								rows="" selectedindex="1" style="height: 30px;">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[신규고객]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[기존고객]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select>
+    						</xf:group>
+    						<xf:group class="inquiry-box last" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="직원포함여부" style=""></w2:textbox>
+    							<xf:select1 allOption="" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 130px;" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[[0] 직원미포함]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="" style="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="제3자 고객확인의무 고위험 통계" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    						<xf:group class="button-box" id="" style="">
+    							<w2:span id="" label="* 해당 항목 마우스 더블클릭 시 고객확인의무조회 화면으로 연계됩니다." style=""></w2:span>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="none" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row" id=""
+    					keepDefaultColumnWidth="true" rowNumHeaderValue="순번" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    					rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 550px;"
+    					visibleRowNum="10">
+    					<w2:caption id="caption1" style="" value="this is a grid caption."></w2:caption>
+    					<w2:header id="header1" style="">
+    						<w2:row id="row1" style="">
+    							<w2:column displayMode="label" id="column44" inputType="text" rowSpan="3" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column43" inputType="text" rowSpan="3" value="사무소코드" width="100">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column42" inputType="text" rowSpan="3" value="사무소명" width="100">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column236" inputType="text" rowSpan="3" value="구분" width="70">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column241" inputType="text" rowSpan="3" value="고객구분" width="100">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column231" inputType="text" rowSpan="3" value="직원여부" width="70">
+    							</w2:column>
+    							<w2:column colSpan="32" displayMode="label" id="column41" inputType="text" value="(초고)EDD수행" width="2240">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column226" inputType="text" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column221" inputType="text" width="70"></w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column9" inputType="text" value="(고)EDD수행" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column7" inputType="text" value="CDD수행" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column5" inputType="text" value="수행보류" width="140">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column3" inputType="text" rowSpan="3" value="전체건수" width="70">
+    							</w2:column>
+    						</w2:row>
+    						<w2:row id="row4" style="">
+    							<w2:column colSpan="2" displayMode="label" id="column173" inputType="text" value="FATF 성명서 위험국가"
+    								width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column171" inputType="text" value="FATF미이행국" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column169" inputType="text" value="조세피난처" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column167" inputType="text" value="고위험직업" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column165" inputType="text" value="고위험업종" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column227" inputType="text" value="고위험상품" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column163" inputType="text" value="고액자산가" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column161" inputType="text" value="FATF" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column159" inputType="text" value="UN 제재" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column157" inputType="text" value="OFAC 제재" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column155" inputType="text" value="FinCEN 311" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column153" inputType="text" value="INCSR" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column151" inputType="text" value="승인대상1" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column149" inputType="text" value="승인대상2" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column147" inputType="text" value="EDD1" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column145" inputType="text" value="EDD2" width="140">
+    							</w2:column>
+    							<w2:column colSpan="2" displayMode="label" id="column143" inputType="text" value="기타" width="140">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column141" inputType="text" rowSpan="2" value="건수" width="70">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column140" inputType="text" rowSpan="2" value="비율" width="70">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column139" inputType="text" rowSpan="2" value="건수" width="70">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column138" inputType="text" rowSpan="2" value="비율" width="70">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column137" inputType="text" rowSpan="2" value="건수" width="70">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column136" inputType="text" rowSpan="2" value="비율" width="70">
+    							</w2:column>
+    						</w2:row>
+    						<w2:row id="row5" style="">
+    							<w2:column displayMode="label" id="column217" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column216" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column215" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column214" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column213" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column212" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column211" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column210" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column209" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column208" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column228" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column223" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column207" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column206" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column205" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column204" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column203" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column202" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column201" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column200" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column199" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column198" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column197" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column196" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column195" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column194" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column193" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column192" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column191" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column190" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column189" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column188" inputType="text" value="비율" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column187" inputType="text" value="건수" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column186" inputType="text" value="비율" width="70"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody id="gBody1" style="">
+    						<w2:row id="row2" style="">
+    							<w2:column displayMode="label" id="col1" imageSrc="/cm/images/icons/file-icon20.svg" inputType="image"
+    								viewType="icon" width="70">
+    							</w2:column>
+    							<w2:column displayMode="label" id="col2" inputType="text" width="100"></w2:column>
+    							<w2:column displayMode="label" id="col3" inputType="text" width="100"></w2:column>
+    							<w2:column displayMode="label" id="column239" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column244" inputType="text" width="100"></w2:column>
+    							<w2:column displayMode="label" id="column234" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col4" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col5" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col6" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col7" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col8" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col9" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col10" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col11" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col12" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col13" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column229" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column224" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col14" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col15" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col16" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col17" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col18" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col19" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col20" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col21" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col22" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col23" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col24" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col25" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col26" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col27" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col28" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col29" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col30" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col31" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col32" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col33" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col34" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col35" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col36" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col37" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col38" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col39" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col40" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col41" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col42" inputType="text" textAlign="right" width="70"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    					<w2:footer id="footer1" style="">
+    						<w2:row id="row3" style="">
+    							<w2:column colSpan="3" displayMode="label" id="column132" inputType="text" value="합계" width="210">
+    							</w2:column>
+    							<w2:column displayMode="label" id="column240" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column245" inputType="text" width="100"></w2:column>
+    							<w2:column displayMode="label" id="column235" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column129" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column128" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column127" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column126" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column125" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column124" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column123" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column122" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column121" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column120" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column230" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column225" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column119" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column118" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column117" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column116" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column115" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column114" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column113" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column112" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column111" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column110" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column109" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column108" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column107" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column106" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column105" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column104" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column103" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column102" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column101" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column100" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column99" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column98" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column97" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column96" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column95" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column94" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column93" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column92" inputType="text" textAlign="right" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column91" inputType="text" textAlign="right" width="70"></w2:column>
+    						</w2:row>
+    					</w2:footer>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="footer-box" id="" style="">
+    			<xf:group class="left-button" id="" style="">
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="등록" style=""></w2:span>
+    				</xf:group>
+    				<xf:group class="edit btn-a" id="" style="" tagname="a">
+    					<w2:span id="" label="수정" style=""></w2:span>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="right-button" id="" style=""></xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

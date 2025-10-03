@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="현장점검 결과등록">
+    	<w2:type>COMPONENT</w2:type>
+    	<w2:buildDate />
+    	<w2:MSA />
+    	<xf:model>
+    		<w2:dataCollection baseNode="map">
+    			<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+    				<w2:columnInfo>
+    					<w2:column id="col1" name="name1" dataType="text"></w2:column>
+    					<w2:column id="col2" name="name2" dataType="text"></w2:column>
+    					<w2:column id="col3" name="name3" dataType="text"></w2:column>
+    					<w2:column id="col4" name="name4" dataType="text"></w2:column>
+    					<w2:column id="col5" name="name5" dataType="text"></w2:column>
+    					<w2:column id="col6" name="name6" dataType="text"></w2:column>
+    					<w2:column id="col7" name="name7" dataType="text"></w2:column>
+    					<w2:column id="col8" name="name8" dataType="text"></w2:column>
+    					<w2:column id="col9" name="name9" dataType="text"></w2:column>
+    					<w2:column id="col10" name="name10" dataType="text"></w2:column>
+    					<w2:column id="col11" name="name11" dataType="text"></w2:column>
+    				</w2:columnInfo>
+    				<w2:data use="true">
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    				</w2:data>
+    			</w2:dataList>
+    		</w2:dataCollection>
+    		<w2:workflowCollection />
+    	</xf:model>
+    	<w2:layoutInfo />
+    	<w2:publicInfo method="" />
+    	<script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    	<w2:require as="udc_brCombo" type="page" variableClone="" src="/cm/udc/brCombo.xml"></w2:require>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="조회기간" style=""></w2:textbox>
+    							<xf:group class="input-cal-wrap" id="" style="">
+    								<w2:inputCalendar calendarValueType="" class="input-cal left" focusOnDateSelect="false" footerDiv="true"
+    									id="" placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="width: 188px;">
+    								</w2:inputCalendar>
+    								<w2:span class="cal-dash-span" id="" label="-" style=""></w2:span>
+    								<w2:inputCalendar calendarValueType="yearMonthDate" class="input-cal right" focusOnDateSelect="false"
+    									footerDiv="true" id="" placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="width: 188px;">
+    								</w2:inputCalendar>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="점검결과" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="native" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="사무소" style=""></w2:textbox>
+    							<w2:udc_brCombo autoSet="true" style=""></w2:udc_brCombo>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="현장점검 결과등록" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:group class="delete btn-a" id="" style="" tagname="a">
+    							<w2:span id="" label="삭제" style=""></w2:span>
+    						</xf:group>
+    						<xf:group class="edit btn-a" id="" style="" tagname="a">
+    							<w2:span id="" label="수정" style=""></w2:span>
+    						</xf:group>
+
+    						<w2:span class="dash-span" id="" label="" style=""></w2:span>
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[인쇄]]></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row"
+    					id="" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;" visibleRowNum="10">
+    					<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    					<w2:header id="header2" style="">
+    						<w2:row id="row3" style="">
+    							<w2:column removeBorderStyle="false" viewType="icon" width="70" imageSrc="/cm/images/icons/file-icon20.svg"
+    								inputType="text" id="column12" value="" blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column11" value="반송사무소명"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column10" value="점검일자"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column9" value="등록일자"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column8" value="등록자"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column7" value="현장점검체크리스트"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column6" value="평가참여현황"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column5" value="평가정답율"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column4" value="점검결과"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="column3" value="교육일지 제출여부"
+    								blockSelect="false" displayMode="label">
+    							</w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody id="gBody2" style="">
+    						<w2:row id="row4" style="">
+    							<w2:column removeBorderStyle="false" viewType="icon" width="70" imageSrc="/cm/images/icons/file-icon20.svg"
+    								inputType="image" id="col1" blockSelect="false" displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col2" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col3" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col4" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col5" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col6" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="button" id="col7" blockSelect="false"
+    								displayMode="label" value="평가참여현황" viewType="icon" class="td-button3 write" style="">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col8" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col9" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    							<w2:column removeBorderStyle="false" width="70" inputType="text" id="col10" blockSelect="false"
+    								displayMode="label">
+    							</w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="footer-box" id="" style="">
+    			<xf:group class="left-button" id="" style="">
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="등록" style=""></w2:span>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="right-button" id="" style=""></xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

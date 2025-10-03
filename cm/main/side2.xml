@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:w2="http://www.inswave.com/websquare"
+	xmlns:xf="http://www.w3.org/2002/xforms">
+	<head meta_screenName="레이아웃 Left Menu 프레임" meta_screenId="side">
+		<w2:type>COMPONENT</w2:type>
+		<w2:buildDate />
+		<w2:MSA />
+		<xf:model>
+			<w2:dataCollection baseNode="map">
+				<w2:dataList id="dlt_menu" baseNode="list" saveRemovedData="true" repeatNode="map" ev:ondataload="scwin.dlt_menu_ondataload">
+					<w2:columnInfo>
+						<w2:column id="SORT_SQ" name="SORT_SQ" dataType="text"></w2:column>
+						<w2:column id="FAVORITE_YN" name="FAVORITE_YN" dataType="text"></w2:column>
+						<w2:column id="MNNM" name="MNNM" dataType="text"></w2:column>
+						<w2:column id="MENU_C" name="MENU_C" dataType="text"></w2:column>
+						<w2:column id="UPPER_ID" name="UPPER_ID" dataType="text"></w2:column>
+						<w2:column id="MENU_AUTH" name="MENU_AUTH" dataType="text"></w2:column>
+						<w2:column id="HELP_POPUP_YN" name="HELP_POPUP_YN" dataType="text"></w2:column>
+						<w2:column id="DEP" name="DEP" dataType="text"></w2:column>
+						<w2:column id="MENU_LVL_C" name="MENU_LVL_C" dataType="text"></w2:column>
+						<w2:column id="PGID" name="PGID" dataType="text"></w2:column>
+						<w2:column id="PGM_PATHNM" name="PGM_PATHNM" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+				<w2:dataMap baseNode="map" id="dma_menuSearch">
+					<w2:keyInfo>
+						<w2:key id="GRP" name="name1" dataType="text"></w2:key>
+						<w2:key id="EMP" name="name2" dataType="text"></w2:key>
+					</w2:keyInfo>
+				</w2:dataMap>
+				<w2:linkedDataList bind="dlt_menu" id="ldt_menu_Lv1">
+					<w2:condition type="filter"><![CDATA[MENU_LVL_C=='2']]></w2:condition>
+					<w2:condition type="sort"><![CDATA[]]>
+					</w2:condition>
+				</w2:linkedDataList>
+				<w2:dataList baseNode="list" repeatNode="map" id="dlt_simpleNm" saveRemovedData="true">
+					<w2:columnInfo>
+						<w2:column id="MENU_C" name="메뉴코드" dataType="text"></w2:column>
+						<w2:column id="MNNM" name="메뉴명" dataType="text"></w2:column>
+						<w2:column id="SIMNM" name="약어메뉴명" dataType="text"></w2:column>
+						<w2:column id="ICON" name="이미지" dataType="text"></w2:column>
+					</w2:columnInfo>
+				</w2:dataList>
+			</w2:dataCollection>
+			<w2:workflowCollection />
+		</xf:model>
+		<w2:layoutInfo />
+		<w2:publicInfo method="" />
+		<script lazy="false" type="text/javascript"><![CDATA[// 최대 HISTORY 저장 개수	
+scwin.HISTORY_MAX_SIZE = 10;
+
+// 메뉴 Flag
+scwin.flagObj = [false, false, false];
+
+//활성 Window 정보
+scwin.activeWindow = {};
+
+scwin.onpageload = function() {
+    
+};
+
+
+/**
+ * @method
+ * @name getInitData
+ * @description 메뉴, 즐겨찾기 등의 초기 데이터를 가져온다.
+ * @hidden N
+ * @exception 
+ */
+scwin.getInitData = function () {
+
+    dma_menuSearch.setJSON({"GRP" : "1", "EMP": "2"});
+
+    const searchCodeGrpOption = {
+        id: "sbm_InitCont",
+        action: "/menu/all.ml",
+        // action : "/data/sampleData/menu_sample.json",
+        ref : "dma_menuSearch",
+        target: "dlt_menu",
+        isProcessMsg: false,
+        submitDoneHandler: scwin.initDataCallback
+    };
+
+    $c.sbm.executeSubmit(searchCodeGrpOption);
+};
+
+/**
+ * @method
+ * @name initDataCallback
+ * @description 초기 데이터를 가져온 직후 동작하는 callback 함수
+ * @hidden N
+ * @exception 
+ */
+scwin.initDataCallback = async function () {
+    // $p.parent().pfm_header.getWindow().txt_empNm.setValue(dma_defInfo.get("EMP_NM"));
+    // $p.parent().pfm_header.getWindow().txt_empCd.setValue(dma_defInfo.get("EMP_CD"));
+    
+    console.log("@@@@@@@@@@@@@@@@@@@ side.xml > 메뉴경로에 /ui/ 와 .xml 붙여주기")
+    for (let i = 0; i < dlt_menu.getRowCount(); i++) {
+        const path = dlt_menu.getCellData(i, "PGM_PATHNM");
+        if (path.length > 0) {
+            dlt_menu.setCellData(i, "PGM_PATHNM", "/ui/"+dlt_menu.getCellData(i, "PGM_PATHNM") + ".xml");
+        }
+    }
+
+    //1레벨 메뉴 그리기
+    scwin.init_gen();
+
+    $c.data.menuComp = dlt_menu; //전체 공통 영역에 메뉴리스트 데이터 변수 설정
+
+    let option = {
+        isHistory: true,
+        closable: false
+    };
+
+    const layout = $p.main().main.getLayoutId();
+
+    if (layout == "S") {
+        const menuCd = $w.getParameter("menuCd");
+
+        if ($c.util.isEmpty(menuCd)) {
+            $c.win.openMenu("메인", "/cm/main/main.xml", "MAIN", null, option);
+        } else {
+            const menuInfo = dlt_menu.getMatchedJSON("MENU_C", menuCd);
+
+            if ((menuInfo.length > 0) && (!$c.util.isEmpty(menuInfo[0].PGM_PATHNM))) {
+                const option = {
+                    isHistory: true
+                };
+                return $c.win.openMenu(menuInfo[0].MNNM, menuInfo[0].PGM_PATHNM, menuInfo[0].MENU_C, null, option);
+            }
+        }
+    } else {
+        await $c.win.openMenu("메인", "/cm/main/main.xml", "MAIN", null, option);
+        (async function openSideMenu(tabIndex) {
+            const menuCd = $w.getParameter("menuCd");
+
+            if ($c.util.isEmpty(menuCd) === false) {
+                const menuInfo = dlt_menu.getMatchedJSON("MENU_C", menuCd);
+
+                if ((menuInfo.length > 0) && (!$c.util.isEmpty(menuInfo[0].PGM_PATHNM))) {
+                    const option = {
+                        isHistory: true
+                    };
+                    await $c.win.openMenu(menuInfo[0].MNNM, menuInfo[0].PGM_PATHNM, menuInfo[0].MENU_C, null, option);
+                }
+            }
+        })();
+    }
+};
+
+
+/**
+ * @method
+ * @name init_gen
+ * @description 최초화면 로딩 시 셋팅될 1depth Menu를 만든다.
+ * @param
+ * @hidden N
+ * @exception 
+ */
+scwin.init_gen = function () {
+    //임시
+    const simpleNm = [
+        {MENU_C : "010000000", MNNM : "고액현금거래보고", SIMNM:"CTR",        ICON : "lnb-icon-ctr"},
+        {MENU_C : "020000000", MNNM : "혐의거래보고",     SIMNM:"STR",        ICON : "lnb-icon-str"},
+        {MENU_C : "030000000", MNNM : "고객확인의무",     SIMNM:"KYC",        ICON : "lnb-icon-kyc"},
+        {MENU_C : "040000000", MNNM : "업무공통",         SIMNM:"업무공통",   ICON : "lnb-icon-common"},
+        {MENU_C : "050000000", MNNM : "RBA 평가관리",     SIMNM:"RBA",        ICON : "lnb-icon-rba"},
+        {MENU_C : "070000000", MNNM : "KoFIU 위험평가",   SIMNM:"KoFIU",      ICON : "lnb-icon-kofiu"},
+        {MENU_C : "080000000", MNNM : "요주의인물",       SIMNM:"WLF",        ICON : "lnb-icon-wlf"},
+        {MENU_C : "090000000", MNNM : "제3자 고객확인",   SIMNM:"제3자",      ICON : "lnb-icon-third"},
+        {MENU_C : "990000000", MNNM : "시스템관리",       SIMNM:"시스템관리", ICON : "lnb-icon-system"}
+    ]
+    dlt_simpleNm.setJSON(simpleNm);
+    // const first = ldt_menu_Lv1.getAllJSON();//dlt_menu.getMatchedJSON("MENU_LVL_C", 2);
+
+    for (let i = 0; i < ldt_menu_Lv1.getRowCount(); i++) {
+        const dataObj = ldt_menu_Lv1.getRowJSON(i);
+        const menuCode = dataObj.MENU_C;
+        let menuName = dataObj.MNNM;
+        
+        const simpJSON = dlt_simpleNm.getMatchedJSON("MENU_C", menuCode, true);
+        if (simpJSON.length > 0) {
+            menuName = simpJSON[0].SIMNM;   //임시로 약어명세팅
+        }
+        
+        const idx = gen_sideMenu.insertChild();
+
+        //메뉴명 setting
+        const menu1 = gen_sideMenu.getChild(idx, "spa_menuLv1");
+              menu1.setValue(menuName);
+              menu1.setUserData('menuCode', menuCode);
+        const img1 = gen_sideMenu.getChild(idx, "spa_menuImg");
+              img1.addClass(simpJSON[0].ICON);
+
+        //lv2 메뉴 setting
+        const genMenu2 = gen_sideMenu.getChild(idx, "gen_2depth");
+        const menu2JSON = dlt_menu.getMatchedJSON("UPPER_ID", menuCode, true);
+
+        if (menu2JSON.length > 0) {
+            
+            for (let i2 = 0; i2 < menu2JSON.length; i2++){
+                const idxlv2 = genMenu2.insertChild();
+                const menu2 = genMenu2.getChild(idxlv2, "spa_2depth"); 
+                      menu2.setValue(menu2JSON[i2].MNNM);
+                      menu2.setUserData('menuCode', menu2JSON[i2].MENU_C);
+                
+                
+                //lv3 메뉴 setting
+                const genMenu3 = genMenu2.getChild(idxlv2, "gen_3depth");
+                const menu3JSON = dlt_menu.getMatchedJSON("UPPER_ID", menu2JSON[i2].MENU_C, true);
+
+                if (menu3JSON.length > 0) {
+                    for (let i3 = 0; i3 < menu3JSON.length; i3++){
+                        const idxlv3 = genMenu3.insertChild();
+                        const menu3Cd = genMenu3.getChild(idxlv3, "spa_menu3Cd"); 
+                              menu3Cd.setValue(`[${menu3JSON[i3].MENU_C}]`);
+                        const menu3Nm = genMenu3.getChild(idxlv3, "spa_menu3Nm"); 
+                              menu3Nm.setValue(menu3JSON[i3].MNNM);
+                        genMenu3.getChild(idxlv3, "grp_3depthMenu").setUserData('menuCode', menu2JSON[i2].MENU_C);
+                    }
+                }
+            }
+            
+            
+
+        } else {
+            //하위 메뉴가 없는 경우는????
+        }
+        
+    
+        // no_depth Class
+        // const length = dlt_menu.getMatchedJSON("UPPER_ID", dataObj.MENU_C).length
+        // if (length <= 0) gen_sideMenu.getChild(idx, 'grp_1depth').addClass('no_depth');
+    }
+};
+
+scwin.spa_2depth_onclick = function (e) {
+    
+    const idx = this.getGeneratedIndex();
+    const menu3 = this.getGenerator().getChild(idx, "gen_3depth");;
+    if (menu3.hasClass("active")) {
+        menu3.removeClass("active");
+    } else {
+        menu3.addClass("active");
+    }
+    
+    // this.getGenerator().getChildren()[1];
+    this.getGenerator().getChild(idx, "");
+
+  //      $('.list-item')[$('.list-item').hasClass('active') ? 'removeClass' : 'addClass']('active');
+};
+
+scwin.grp_3depthMenu_onclick = function (e) {
+    debugger;
+};
+
+scwin.grp_thumbnail_onclick = function (e) {
+    if ($p.main().grp_thum.getStyle("display") == "none") {
+        $p.main().grp_thum.show("");
+        $p.main().pfm_thumbnail.getWindow().scwin.openMenuInit();
+    } else {
+        $p.main().grp_thum.hide("");
+    }
+
+}; 
+]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload">
+		<xf:group style="display: flex;height: 100vh;position: relative;padding: 0;" id="" class="nhbank">
+			<xf:group style="" id="" class="left-lnb">
+				<xf:group style="" id="" class="lnb-area">
+					<xf:group style="" id="" class="lnb-area-wrap fix-menu">
+						<xf:group style="" id="" class="lnb-list">
+							<xf:group tagname="a" id="" class="lnb-item">
+								<w2:span style="" id="" label="" class="lnb-icon lnb-icon-dash"></w2:span>
+								<w2:span style="" id="" label="대시보드" class="lnb-title"></w2:span>
+							</xf:group>
+							<xf:group tagname="a" id="" class="lnb-item">
+								<w2:span style="" id="" label="" class="lnb-icon lnb-icon-bookmark"></w2:span>
+								<w2:span style="" id="" label="즐겨찾기" class="lnb-title"></w2:span>
+							</xf:group>
+						</xf:group>
+					</xf:group>
+					<xf:group style="" id="" class="lnb-area-wrap">
+						<xf:group style="" id="" class="lnb-list">
+							<w2:generator style="" id="gen_sideMenu" class="">
+								<xf:group id="grp_lv1Btn" class="lnb-item">
+									<w2:span style="" id="spa_menuImg" label="" class="lnb-icon lnb-icon-ctr"></w2:span>
+									<w2:span style="" id="spa_menuLv1" label="CTR" class="lnb-title"></w2:span>
+
+									<xf:group class="lnb-side" id="" style="">
+										<xf:group class="side-up" id="grp_search" style="">
+											<xf:input id="ibx_searchMenu" placeholder="비밀번호, 화면 명" style=""></xf:input>
+											<w2:span id="spa_lv1Title" label="고액현금거래보고" style=""></w2:span>
+										</xf:group>
+										<xf:group class="side-down" id="grp_2depthList" style="">
+											<w2:generator style="" id="gen_2depth" class="side-list">
+
+													<w2:span class="title-txt" id="spa_2depth" label="보고서 관리" style="" ev:onclick="scwin.spa_2depth_onclick"></w2:span>
+													<w2:generator style="" id="gen_3depth" class="list-item">
+														<xf:group tagname="a" style="" id="grp_3depthMenu" class="a-box" ev:onclick="scwin.grp_3depthMenu_onclick">
+															<w2:span style="" id="spa_menu3Cd" label="[CT01020]"></w2:span>
+															<w2:span style="" id="spa_menu3Nm" label="고액현금거래 점검/결재현황"></w2:span>
+														</xf:group>
+													</w2:generator>
+												</w2:generator>
+										</xf:group>
+									</xf:group>
+								</xf:group>
+							</w2:generator>
+						</xf:group>
+						<xf:group style="" id="" class="lnb-list">
+							<xf:group tagname="a" id="" class="lnb-item">
+								<w2:span style="" id="" label="" class="lnb-icon lnb-icon-system"></w2:span>
+								<w2:span style="" id="" label="시스템관리" class="lnb-title"></w2:span>
+							</xf:group>
+							<xf:group tagname="a" id="grp_thumbnail" class="lnb-item" ev:onclick="scwin.grp_thumbnail_onclick">
+								<w2:span style="" id="" label="" class="lnb-icon lnb-icon-thumbnail"></w2:span>
+								<w2:span style="" id="" label="썸네일" class="lnb-title"></w2:span>
+							</xf:group>
+						</xf:group>
+					</xf:group>
+				</xf:group>
+			</xf:group>
+
+
+		</xf:group>
+	</body>
+</html>

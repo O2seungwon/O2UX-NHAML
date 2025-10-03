@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ev="http://www.w3.org/2001/xml-events"
+xmlns:w2="http://www.inswave.com/websquare"
+xmlns:xf="http://www.w3.org/2002/xforms">
+	<head meta_screenName="문자열 관련 함수" meta_screenId="$c.str" meta_screenDesc="문자열 관련 함수를 작성한다.">
+		<w2:type>COMMON</w2:type>
+		<w2:buildDate/>
+		<w2:MSA/>
+		<xf:model>
+			<w2:dataCollection baseNode="map"/>
+			<w2:workflowCollection/>
+		</xf:model>
+		<w2:layoutInfo/>
+		<w2:publicInfo method="scwin.serialize,scwin.lpad,scwin.rpad,scwin.formatSSN,scwin.formatTime,scwin.getLocale,scwin.existKorean,scwin.isKorean,scwin.isFinalConsonant,scwin.attachPostposition,scwin.isBizID,scwin.isSSN,scwin.isEmail,scwin.replaceAll,scwin.trim,scwin.getByteLength,scwin.maskEndString,scwin.maskEmail,scwin.maskPassPort,scwin.maskCardNo,scwin.maskCusNo,scwin.formatMappedAcno,scwin.formatAcno,scwin.formatAcnoMask,scwin.formatAcnoForSbjc,scwin.formatAcnoLpad,scwin.formatRlnoMasked,scwin.formatTelNo,scwin.formatTelNoMask"/>
+		<script lazy="false" type="text/javascript"><![CDATA[
+/**
+ * @component
+ * @componentName udc_str
+ * @pluginName
+ * @company
+ * @developer
+ * @category /cm/gcc
+ * @notSupportBrowser
+ * @version
+ * @htmlRender
+ * @icon
+ * @disableIcon
+ * @description
+ * @width
+ * @height
+ * @license
+ * @imagePath
+ * @homepage
+ */
+// =============================================================================
+/**
+ * 문자열 관련 함수를 작성한다.
+ *
+ * @author Inswave Systems
+ * @class str
+ * @namespace $c.str
+ */
+// =============================================================================
+
+scwin.onpageload = function() {
+	
+};
+
+/**
+ * @method
+ * @name serialize
+ * @description XML, JSON 객체를 String 타입으로 반환한다.
+ * @param {Object} object String으로 변환할 JSON 객체
+ * @param {String} replacer 치환할 문자열
+ * @param {Number} space 여백 수
+ * @returns {String} String으로 변환된 객체
+ * @hidden N
+ * @exception 
+ */ 
+scwin.serialize = function(object, replacer, space) {
+	if (typeof object === 'string') {
+		return object;
+	} else if ($c.util.isJSON(object)) {
+		return JSON.stringify(object, replacer, space);
+	} else if ($c.util.isXmlDoc(object)) {
+		return WebSquare.xml.serialize(object);
+	} else {
+		return object;
+	}
+};
+
+
+/**
+ * @method
+ * @name lpad
+ * @description 좌측에 문자열 채우기
+ * @param {String} str 포멧터를 적용할 문자열
+ * @param {Number} length 0 으로 채울 길이
+ * @param {String} char 채우고자하는 문자(char)
+ * @returns {String} 일정길이 만큼 char으로 채워진 문자열
+ * @hidden N
+ * @exception
+ * @example
+ * $c.str.lpad("24", 4, "0"); // "0024"
+ * $c.str.lpad("11321", 8, "A"); // "AAA11321" 
+ */ 
+scwin.lpad = function (str, length, char) {
+	if (typeof str === "number") {
+		str = str.toString();
+	}
+	
+	if (char.length > length) {
+		console.warn("[$c.str.lpad] 오류 : 채우고자 하는 문자열이 요청 길이보다 큽니다");
+		return str + "";
+	}
+	
+	while (str.length < length) {
+		str = char + str;
+	}
+
+	str = str.length >= length ? str.substring(0, length) : str;
+	return str;
+};
+
+/**
+ * @method
+ * @name rpad
+ * @description 우측에 문자열 채우기
+ * @param {String} str 포멧터를 적용할 문자열
+ * @param {Number} length 0 으로 채울 길이
+ * @param {String} char 채우고자하는 문자(char)
+ * @returns {String} 일정길이 만큼 char으로 채워진 문자열
+ * @hidden N
+ * @exception
+ * @example
+ * $c.str.rpad("24", 4, "0"); // "2400"
+ * $c.str.rpad("11321", 8, "A"); // "11321AAA"
+ */ 
+scwin.rpad = function (str, length, char) {
+	if (char.length > length) {
+		console.warn("[$c.str.rpad] 오류 : 채우고자 하는 문자열이 요청 길이보다 큽니다");
+		return str + "";
+	}
+	
+	while (str.length < length) {
+		str += char;
+	}
+	
+	str = str.length >= length ? str.substring(0, length) : str;
+	return str;
+};
+
+/**
+ * @method
+ * @name formatSSN
+ * @description 주민번호 문자열에 Formatter(######-#######)를 적용하여 반환한다.
+ * @param {String} str 주민번호 문자열
+ * @returns {String} 포멧터가 적용된 주민번호 문자열
+ * @hidden N
+ * @exception
+ * @example $c.str.formatSSN("1234561234567");  // "123456-1234567"
+ */ 
+scwin.formatSSN = function(str) {
+	const front = String(str).substring(0, 6);
+	const back = String(str).substring(6, 13);
+	const output = `${front}-${back}`;
+
+	return output;
+};
+
+/**
+ * @method
+ * @name formatTime
+ * @description 문자열에 시간 형식 Formatter를 적용하여 반환한다.
+ * @param {String} str 포멧터를 적용할 문자열
+ * @returns {String} 포멧터가 적용된 문자열
+ * @hidden N
+ * @exception
+ * @example
+ * $c.str.formatTime("123402"); // 12:34:02
+ * $c.str.formatTime("1234"); // 12:34:02
+ */ 
+scwin.formatTime = function (str) {
+	try {
+		const hour = String(str).substring(0, 2);
+		const minute = String(str).substring(2, 4);
+		const second = String(str).substring(4, 6);
+		if ($c.util.isEmpty(second)) {
+			return hour + ":" + minute;
+		} else {
+			return hour + ":" + minute + ":" + second;
+		}
+	} catch (ex) {
+		console.error(ex);
+		return str;
+	}
+};
+
+/**
+ * @method
+ * @name getLocale
+ * @param {String} str 어떤 유형인지 리턴받을 문자
+ * @returns {Number} 유니코드 기준
+ * @description 문자(char)의 유형을 리턴한다.
+ * 한글음절[ 44032 ~ 55203 ] => 1
+ * 한글자모[ 4352 ~ 4601 ] => 2 
+ * 숫자[ 48 ~ 57 ] => 4
+ * 특수문자[ 32 ~ 47 || 58 ~ 64 || 91 ~ 96 || 123 ~ 126 ] => 8
+ * 영문대[ 65 ~ 90 ] => 16
+ * 영문소[ 97 ~ 122 ] => 32
+ * 기타[그외 나머지] => 48
+ * @hidden N
+ * @exception
+ * @example 
+ * $c.str.getLocale("가"); // 1
+ * $c.str.getLocale("ㅏ"); // 2
+ * $c.str.getLocale("1");  // 4
+ * $c.str.getLocale("!");  // 8
+ * $c.str.getLocale("A");  // 16
+ * $c.str.getLocale("a");  // 32
+ * $c.str.getLocale("?");  // 48
+ */ 
+scwin.getLocale = function(str) {
+	let locale = 0;
+	if (str.length > 0) {
+		const charCode = str.charCodeAt(0);
+
+		if (charCode >= 0XAC00 && charCode <= 0XD7A3) { // 한글음절.[ 44032 ~ 55203 ]
+			locale = 0X1; // 1
+		} else if ((charCode >= 0X1100 && charCode <= 0X11F9) || (charCode >= 0X3131 && charCode <= 0X318E)) { // 한글자모.[ 4352 ~ 4601 ]
+			locale = 0X2; // 2
+		} else if (charCode >= 0X30 && charCode <= 0X39) { // 숫자.[ 48 ~ 57 ]
+			locale = 0X4; // 4
+		} else if ((charCode >= 0X20 && charCode <= 0X2F) || (charCode >= 0X3A && charCode <= 0X40) || (charCode >= 0X5B && charCode <= 0X60)
+			|| (charCode >= 0X7B && charCode <= 0X7E)) { // 특수문자
+			locale = 0X8; // 8
+		} else if (charCode >= 0X41 && charCode <= 0X5A) { // 영문 대.[ 65 ~ 90 ]
+			locale = 0X10; // 16
+		} else if (charCode >= 0X61 && charCode <= 0X7A) { // 영문 소.[ 97 ~ 122 ]
+			locale = 0X20; // 32
+		} else { // 기타
+			locale = 0X30; // 48
+		}
+	}
+	return locale;
+};
+
+/**
+ * @method
+ * @name existKorean
+ * @description 입력받은 문자열에 한글이 포함되어 있는지 여부를 검사한다.
+ * @param {String} value 한글 유형인지 검증할 문자열
+ * @returns {Boolean} 한글포함여부
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.str.existKorean("abc"); // false
+ * $c.str.existKorean("abc무궁화"); // true
+ * $c.str.existKorean("무궁화꽃이"); // true
+ */ 
+scwin.existKorean = function(value) {
+	const check = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+	if (check.test(value)) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+/**
+ * @method
+ * @name isKorean
+ * @description 입력받은 문자열 전체가 한글인지를 검사한다.
+ * @param {String} str 한글이 포함되어 있는지 검증 받을 문자열
+ * @returns {Boolean} 검사결과
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.str.isKorean("abcd"); // false
+ * $c.str.isKorean("abcd무궁화"); // false
+ * $c.str.isKorean("무궁화"); // true
+ */ 
+scwin.isKorean = function(str) {
+	let result = false;
+
+	for (let i = 0; i < str.length; i++) {
+		let c = str.charAt(i);
+		if (!scwin.existKorean(c)) {
+			result = false;
+			break;
+		} else {
+			result = true;
+		}
+
+	}
+	return result;
+};
+
+/**
+ * @method
+ * @name isFinalConsonant
+ * @description 종성이 존재하는지 여부를 검사한다.
+ * @param {String} str 종성의 여부를 검사할 문자열
+ * @returns {Boolean} 검사결과
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.str.isFinalConsonant("종서");    // return false
+ * $c.str.isFinalConsonant("종성");    // return true
+ * $c.str.isFinalConsonant("입니다");  // return false
+ * $c.str.isFinalConsonant("입니당");  // return true
+ */ 
+scwin.isFinalConsonant = function(str) {
+	let code = str.charCodeAt(str.length - 1);
+	if ((code < 44032) || (code > 55197)) {
+		return false;
+	}
+	if ((code - 16) % 28 == 0) {
+		return false;
+	}
+	return true;
+};
+
+/**
+ * @method
+ * @name attachPostposition
+ * @description 단어 뒤에 '은'이나 '는'을 붙여서 반환한다.
+ * @param {String} str 은, 는 붙일 문자열
+ * @returns {Boolean} 변환된 문자열
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.str.attachPostposition("나");  // return 예시)"나는"
+ * $c.str.attachPostposition("나와 너");      // return 예시)"나와 너는"
+ * $c.str.attachPostposition("그래서");       // return 예시)"그래서는"
+ * $c.str.attachPostposition("그랬습니다만"); // return 예시)"그랬습니다만은"
+*/
+scwin.attachPostposition = function(str) {
+	if ($c.win.getLanguage() === "ko") {
+		if (scwin.isFinalConsonant(str)) {
+			str = str + "은";
+		} else {
+			str = str + "는";
+		}
+		return str;
+	} else {
+		return str;
+	}
+};
+
+/**
+ * @method
+ * @name isBizID
+ * @description 사업자번호 유효성을 검사한다.
+ * @param {String} str 사업자번호 문자열
+ * @returns {Boolean} 검사결과 (정상이면 true, 비정상이면 false를 반환)
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.str.isBizID("1102112345"); // false
+ * $c.str.isBizID("1078616054"); // true
+ * $c.str.isBizID("2208139938"); // true
+ * $c.str.isBizID("1248100998"); // true
+*/
+scwin.isBizID = function(str) {
+	let sum = 0;
+	const aBizID = new Array(10);
+	const checkID = new Array("1", "3", "7", "1", "3", "7", "1", "3", "5");
+
+	for (let i = 0; i < 10; i++) {
+		aBizID[i] = str.substring(i, i + 1);
+	}
+	
+	for (let i = 0; i < 9; i++) {
+		sum += aBizID[i] * checkID[i];
+	}
+	
+	sum = sum + parseInt((aBizID[8] * 5) / 10);
+	const temp = sum % 10;
+	let temp1 = 0;
+
+	if (temp != 0) {
+		temp1 = 10 - temp;
+	} else {
+		temp1 = 0;
+	}
+	
+	if (temp1 != aBizID[9]) {
+		return false;
+	}
+	
+	return true;
+};
+
+/**
+ * @method
+ * @name isSSN
+ * @description 내외국인 주민등록번호 유효성을 검사한다.
+ * @param {String} str 문자열
+ * @returns {Boolean} 검사결과 (정상이면 true, 비정상이면 false를 반환)
+ * @hidden N
+ * @exception 
+ * @example $c.str.isSSN("9701011234567");
+*/
+scwin.isSSN = function(str) {
+	const checkID = new Array(2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5);
+	let i = 0, sum = 0;
+	let temp = 0;
+	let yy = "";
+
+	if (str.length != 13) {
+		return false;
+	}
+	
+	for (i = 0; i < 13; i++) {
+		if (str.charAt(i) < '0' || str.charAt(i) > '9') {
+			return false;
+		}
+	}
+
+	// foreigner PersonID Pass
+	if (str.substring(6, 13) == "5000000" || str.substring(6, 13) == "6000000" || str.substring(6, 13) == "7000000"
+		|| str.substring(6, 13) == "8000000") {
+		return true;
+	}
+	
+	for (i = 0; i < 12; i++) {
+		sum += str.charAt(i) * checkID[i];
+	}
+	
+	temp = sum - Math.floor(sum / 11) * 11;
+	temp = 11 - temp;
+	temp = temp - Math.floor(temp / 10) * 10;
+
+	// 나이 (-) 체크
+	if (str.charAt(6) == '1' || str.charAt(6) == '2' || str.charAt(6) == '5' || str.charAt(6) == '6') {
+		yy = "19";
+	} else {
+		yy = "20";
+	}
+
+	if (parseInt($c.date.getServerDateTime("yyyy")) - parseInt(yy + str.substring(0, 2)) < 0) {
+		return false;
+	}
+
+	// 외국인 주민번호 체크로직 추가
+	if (str.charAt(6) != '5' && str.charAt(6) != '6' && str.charAt(6) != '7' && str.charAt(6) != '8') {
+		if (temp == $c.num.parseInt(str.charAt(12))) {
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		if ((temp + 2) % 10 == $c.num.parseInt(str.charAt(12))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	return false;
+};
+
+/**
+ * @method
+ * @name isEmail
+ * @description 이메일 주소의 유효성을 검사한다.
+ * @param {String} str 메일주소
+ * @returns {Boolean} 검사결과 (정상이면 true, 비정상이면 false를 반환)
+ * @hidden N
+ * @exception 
+ * @example $c.str.isEmail("emailTest@email.com");  // true
+*/
+scwin.isEmail = function(str) {
+	if (typeof str != "undefined" && str != "") {
+		const format = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+		if (format.test(str)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	return true;
+};
+
+/**
+ * @method
+ * @name replaceAll
+ * @description 문자열을 치환한다.
+ * @param {String} str 문자열
+ * @param {String} orgStr 검색할 문자
+ * @param {String} repStr 치환할 문자
+ * @hidden N
+ * @exception 
+ * @returns {String} 치환문자열
+ * @example $c.str.replaceAll(obj.getValue(), "/", "");
+*/
+scwin.replaceAll = function( str, orgStr, repStr ){
+	try {
+		str = "" + str;
+		return str.split(orgStr).join(repStr);
+	} catch (ex) {
+		console.error(ex);
+		return str;
+	}
+};
+
+/**
+ * @method
+ * @name trim
+ * @description 입력된 문자열의 좌우측 공백을 제거한 문자열을 구한다.
+ * @param {String} str 좌우측 공백문자를 제거하려는 문자열
+ * @returns {String} 입력된 문자열에서 좌우측 공백이 제거된 문자열
+ * @hidden N
+ * @exception 
+ * @example $c.str.trim("   a   ");  // return "a"
+*/
+scwin.trim = function(str) {
+	try {
+		if (typeof str == "undefined" || str == null) {
+			str ="";
+		}
+		if (typeof str !== "string") {
+			str = str + "";
+		}
+		return str.trim();
+	} catch (ex) {
+		console.error(ex);
+	}
+};
+
+/**
+ * @method
+ * @name getByteLength
+ * @description 문자열의 바이트 기준 문자열 길이를 반환한다.
+ * @param {String} str 문자열
+ * @param {String} ignoreChar 길이 측정 시 무사할 문자열
+ * @returns {Number} 문자열 길이
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.str.getByteLength("1231aABC");  // 8
+ * $c.str.getByteLength("1231a한글");  // 9
+*/
+scwin.getByteLength = function(str, ignoreChar) {
+	return WebSquare.util.getStringByteSize(str, ignoreChar);
+};
+
+/**
+ * @method
+ * @name maskEndString
+ * @description 문자형식에 마스킹처리
+ * @param {String} str 마스킹 처리 할 문자열
+ * @param {Number} maskLen 마스킹 처리 할 길이 (없으면 문자열 절반 마스킹)
+ * @param {String} char 마스킹 문자 (default "*")
+ * @returns {String} 마스킹처리된 고객번호
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.str.maskEndString("T10004", 5, "@"); // return "T@@@@@";
+ * $c.str.maskEndString("A1234567", 5);    // return "A12*****";
+ * $c.str.maskEndString("SAMPLE001");      // return "SAMP*****";
+ * $c.str.maskEndString("A123", 5);        // return "A123";
+ */ 
+scwin.maskEndString = function(str, maskLen, char) {
+    // $p, str, mask, char
+    if(typeof $p == 'string') { 
+        char = maskLen;
+        maskLen = str;
+        str = $p;
+	}
+    if ($c.util.isEmpty(char)) char = "*";
+
+    if ($c.util.isEmpty(scwin.trim(str))) return str;
+    if ($c.util.isEmpty(maskLen)) maskLen = Math.round(str.length/2);   //없으면 문자열 절반 마스킹
+	if (str.length <= maskLen ) return str;   //마스킹처리 길이보다 작으면 return
+	
+	return scwin.rpad(str.substring(0, str.length-maskLen), str.length, char);
+};
+
+/**
+ * @method
+ * @name maskEmail
+ * @description 이메일 주소의 도메인을 3자리 이후 마스킹을 한다.
+ * @param {String} str 이메일 주소
+ * @returns {String} 마스킹 된 이메일
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.str.maskEmail("sample1234@naver.com");    //return "sam*******@naver.com";
+ * $c.str.maskEmail("abc@naver.com");           //return "abc@naver.com";
+ */ 
+scwin.maskEmail = function(str) {
+	if (!scwin.isEmail(str)) return str;
+
+    const splitedEmail = str.split("@");
+    const email = splitedEmail[0];
+    const domain = splitedEmail[1];
+	if(email.length < 4) return str;
+
+    const maskEmail = scwin.maskEndString(email, email.length - 3);
+	return maskEmail + "@" + domain
+};
+
+/**
+ * @method
+ * @name maskPassPort
+ * @description 여권번호 중 뒤에서 4자리 마스킹 처리
+ * @param {String} str 여권번호
+ * @returns {String} 마스킹 된 여권번호
+ * @hidden N
+ * @exception 
+ * @example $c.str.maskPassPort("AB1234567");  //return "AB123****";
+ */ 
+scwin.maskPassPort = function(str) {
+    if ($c.util.isEmpty(str)) return "";
+	if(str.length < 5) return str;
+
+    const rtnStr = scwin.maskEndString(str, 4, "*");
+	return rtnStr;
+};
+
+/**
+ * @method
+ * @name maskCardNo
+ * @description 카드번호 처음 6자리와 마지막 4자리 노출 나머지는 마스킹 처리
+ * @param {String} str 카드번호
+ * @returns {String} 마스킹 된 카드번호
+ * @hidden N
+ * @exception 
+ * @example 
+ * 16자리 : $c.str.maskCardNo("1234567812345678");   //return "1234-56**-****-5678";
+ * 15자리 : $c.str.maskCardNo("1234-5678-1234-567");    //return "1234-56**-****-567";
+ */ 
+scwin.maskCardNo = function(str) {
+	const cardNo = scwin.trim(str)?.replaceAll("-", "");
+    let rtnStr = "";
+
+    if ($c.util.isEmpty(cardNo)) return str;
+    
+    if(cardNo.length == 15) {
+        rtnStr =  cardNo.replace((/(\d{4})(\d{2})(\d{6})(\d{3})/), "$1-$2**-****-$4");
+    } else if(cardNo.length == 16) {
+        rtnStr =  cardNo.replace((/(\d{4})(\d{2})(\d{6})(\d{4})/), "$1-$2**-****-$4");
+    } else {
+        rtnStr = str;
+    }
+
+	return rtnStr;
+};
+
+
+/**
+ * @method
+ * @name maskCusNo
+ * @description 고객번호 마스킹처리 (뒷 5자리 * 처리)
+ * @param {String} str 고객번호
+ * @returns {String} 마스킹처리된 고객번호
+ * @hidden N
+ * @exception 
+ * @example $c.str.maskCusNo("T10004"); // return "T*****";
+ */ 
+scwin.maskCusNo = function(str) {
+	const cusNo = scwin.trim(str)?.replaceAll("-", "");
+	if(cusNo.length < 2 ) return str;
+	
+	const len = cusNo.length > 5 ? 5 : Math.round(cusNo.length/2);
+    const rtnStr = scwin.maskEndString(cusNo, len, "*");
+
+	return rtnStr;
+};
+
+/**
+ * @method
+ * @name formatMappedAcno
+ * @description (STR 전용) 맵핑을 위한 17자리 계좌 만드는 함수
+ * @param {String} acnoStr 변환 할 계좌번호 문자열
+ * @returns {String} 17자리수가 채워진 문자열 리턴
+ * @hidden N
+ * @exception 
+ * @example 
+ */ 
+scwin.formatMappedAcno = function(acnoStr) {
+	let retStr = "";
+	const acnoLen = acnoStr.length;
+	
+    if( acnoLen == 11 ) {
+        retStr =  acnoStr.replace((/(\d{3})(\d{2})(\d{6})/), "0000$10$20$3");
+	} else if( acnoLen == 12 ) {
+        retStr =  acnoStr.replace((/(\d{4})(\d{2})(\d{6})/), "000$10$20$3");
+	} else if( acnoLen == 14 ) {
+		if( acnoStr.substring(0, 2) == "91" ) {
+			retStr = `000${acnoStr}`;
+		} else {
+            retStr =  acnoStr.replace((/(\d{6})(\d{2})(\d{6})/), "0$10$20$3");
+		}
+	} else if( acnoLen == 15 ) {
+        retStr =  acnoStr.replace((/(\d{6})(\d{3})(\d{6})/), "0$1$20$3");
+	} else if( acnoLen == 16 ) {
+		retStr = `0${acnoStr}`;
+	} else {
+		retStr = acnoStr;
+    }
+
+	return retStr;
+};
+
+/**
+ * @method
+ * @name formatAcno
+ * @description 계좌번호 포맷팅
+ * @param {String} str 농협 계좌번호
+ * @returns {String} format처리된 계좌번호
+ * @hidden N
+ * @exception 
+ * @example $c.str.formatAcno("29603174123"); //return "296-03-174123";
+ */ 
+ scwin.formatAcno = function(str) {
+	let accNo = scwin.trim(str);
+	if($c.util.isEmpty(accNo) || !accNo.replaceAll("0", "")) return "";
+	const accNoLen = accNo.length;
+    const delim = "-";
+    let rtnAcc = "";
+
+	if (accNoLen == 11) {
+		/*구계좌 중앙회포맷 3-2-6 */
+		rtnAcc = accNo.substring(0,3) + delim + accNo.substring(3,5) + delim + accNo.substring(5,11);
+	
+    } else if (accNoLen == 12){
+		/*구계좌 중앙회 포맷 4-2-6 */
+        rtnAcc = accNo.substring(0,4) + delim + accNo.substring(4,6) + delim + accNo.substring(6,12);
+	
+    } else if (accNoLen == 13){
+		/*  신계좌 3-4-4-2 */
+        rtnAcc = accNo.substring(0,3) + delim + accNo.substring(3,7) + delim + accNo.substring(7,11) + delim + accNo.substring(11,13);
+
+	} else if (accNoLen == 14){
+		/*
+			가상계좌는 패딩 없이 넘김.
+			790, 791 - 은행
+			792 - 농축협
+			793 - 은행(외화)
+			64,65 - 은행
+			66,67 - 농축협
+		*/
+		if(	['790','791','792','793'].includes(accNo.substring(0,3)) || ['64','65','66','67'].includes(accNo.substring(6,8))) {
+			rtnAcc = accNo;
+		} else {
+            /*구계좌 조합 포맷 6-2-6*/
+            rtnAcc = accNo.substring(0,6) + delim + accNo.substring(6,8) + delim + accNo.substring(8,14);
+        }
+	
+    } else if (accNoLen == 15){
+		/*구계좌 조합  포맷 6-3-6 */
+        rtnAcc = accNo.substring(0,6) + delim + accNo.substring(6,9) + delim + accNo.substring(9,15);
+
+	} else if (accNoLen == 16){
+		/*특수계좌 6-3-7*/
+        rtnAcc = accNo.substring(0,6) + delim + accNo.substring(6,9) + delim + accNo.substring(9,16);
+
+	} else if (accNoLen == 17){
+		/*구계좌 공통포맷 7-3-7 */
+        rtnAcc = accNo.substring(0,7) + delim + accNo.substring(7,10) + delim + accNo.substring(10,17);
+	} else {
+        rtnAcc = accNo;
+    }
+
+    return rtnAcc;
+};
+
+/**
+ * @method
+ * @name formatAcnoMask
+ * @description 마스킹 처리된 계좌번호 포맷팅
+ * @param {String} str 농협 계좌번호
+ * @returns {String} Masking된 계좌번호
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.str.formatAcnoMask("29603174123"); //return "296-03-******";
+ * $c.str.formatAcnoMask("12345673331234567"); //return "1234567-333-1******"";
+ */ 
+ scwin.formatAcnoMask = function(str) {
+    const accNo = scwin.trim(str);
+	if($c.util.isEmpty(accNo) || !accNo.replaceAll("0", "")) return "";
+    const maskAccNo = scwin.maskEndString(accNo, 6);
+    const rtnAcc = scwin.formatAcno(maskAccNo);
+    return rtnAcc;
+ };
+
+ 
+/**
+ * @method
+ * @name formatAcnoForSbjc
+ * @description 조회완료후 계좌번호컬럼 포맷팅
+ * @param {String} pAcno 계좌번호
+ * @param {String} pAcSbjc 과콕코드
+ * @param {String} pAudMbAcno 회원계좌번호
+ * @param {String} pAcBrc 계좌사무소코드
+ * @param {String} pBnknm 은행명
+ * @param {String} pCkno 수표번호
+ * @returns {String} 마스킹처리된 계좌번호
+ * @hidden N
+ * @exception 
+ * @example 
+ */ 
+scwin.formatAcnoForSbjc = function(pAcno, pAcSbjc, pAudMbAcno, pAcBrc, pBnknm, pCkno) {	
+	const delimeter = "-";
+
+	if(pAcSbjc == '136') {
+		return pAcBrc + '-'+ pAcSbjc + '-' + pCkno;
+	}
+	
+	if(pAcSbjc == '210') {
+		if( scwin.trim(pAudMbAcno)  != '' && pAudMbAcno.length >= 8) {
+			return pAcBrc + '-' + pAcSbjc + '-' + pAudMbAcno.substring(0,8);
+		}
+
+		return scwin.formatAcno(pAcno);
+	}
+	
+	if( ['090', '190', '752', '137', '167'].includes(pAcSbjc)){
+		if(pAcno.length == 18) {
+			return pAcno.replace(/^(\d{2})(\d{4})(\d{4})(\d{4})(\d{4})$/, `$2${delimeter}$3${delimeter}$4${delimeter}$5`);
+		}
+		
+		if(pAcno.length == 16) {
+			return pAcno.replace(/^(\d{4})(\d{4})(\d{4})(\d{4})$/, `$1${delimeter}$2${delimeter}$3${delimeter}$4`);
+		}
+
+		return pAcno;
+	}
+
+	if(['755', '143'].includes(pAcSbjc)) {
+		if(pBnknm){
+			return pAcno + `[${pBnknm}]`;
+		}
+		return pAcno;
+	}
+	
+	if(['700', '800', '818', '809'].includes(pAcSbjc)) {
+		return pAcno.substring(0,6) + '-' + pAcno.substring(6, 9) + '-' + pAcno.substring(9, pAcno.length);
+	}
+	return scwin.formatAcno(pAcno);
+};
+
+/**
+ * @method
+ * @name formatAcnoLpad
+ * @description 계좌번호 조회시 자릿수 조정하기
+ * @param {String} pAcno1 계좌번호 앞자리
+ * @param {String} pAcno2 계좌번호 중간자리
+ * @param {String} pAcno3 계좌번호 뒷자리
+ * @returns {String} 자릿수 조정된 계좌번호
+ * @hidden N
+ * @exception 
+ * @example $c.str.formatAcnoLpad("296","317", "4123");  //return "296317004123";
+ */ 
+scwin.formatAcnoLpad = function(pAcno1, pAcno2, pAcno3) {
+	const lAcno1 = $c.num.parseInt(scwin.trim(pAcno1));
+	const lAcno2 = $c.num.parseInt($c.str.trim(pAcno2));
+
+	let padlen = 6;
+	if (lAcno1 < 9999) padlen = 4;
+	if (lAcno1 < 999) padlen = 3;
+	const accountNo1 = pAcno1.padStart(padlen, "0");
+
+	let padlen2 = 6
+	if (lAcno2 < 99) padlen2 = 2;
+	if (lAcno2 > 99 && lAcno2 <= 999) padlen2 = 3;
+
+	let accountNo2 = pAcno2.padStart(padlen2, "0");
+
+	return accountNo1 + accountNo2 + pAcno3.padStart(6, "0");
+};
+
+
+/**
+ * @method
+ * @name formatRlnoMasked
+ * @description 실명번호 or 사업자번호 formatting
+ * @param {String} str 실명번호 or 사업자번호
+ * @param {String} pIsMask masking 여부
+ * @returns {String} Masking된 실명번호
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.str.formatRlnoMasked("0111220034567");   //return "111-22-34567";
+ * $c.str.formatRlnoMasked("9001011234567", "Y");   //return "900101-*******";
+ */ 
+scwin.formatRlnoMasked = function(str, pIsMask = 'N') {
+	let retVal = "";
+	let lRlno = scwin.trim(str.replaceAll('-',''));
+
+	if(lRlno.length == 13 && lRlno.substring(0,1) == '0' && lRlno.substring(6, 8) == '00') {	// 사업자번호에 13자리 맞추기 위해 '0' 이 채워진경우
+		lRlno = lRlno.substring(1,4) + lRlno.substring(4,6) + lRlno.substring(8, 13);
+	}
+
+	if (lRlno.length == 13) {   // 주민번호, 법인번호 6-7
+        if(pIsMask !== 'N') lRlno = scwin.maskEndString(lRlno, 7);
+        retVal = lRlno.substring(0, 6) + "-" + lRlno.substring(6, 13);
+
+    } else if (lRlno.length == 10) {    // 사업자번호 3-2-5 
+        if(pIsMask !== 'N') lRlno = scwin.maskEndString(lRlno, 5);
+        retVal = lRlno.substring(0, 3) + "-" + lRlno.substring(3, 5) + "-" + lRlno.substring(5, 10);
+
+    } else {
+        retVal = str;
+	}
+
+	return retVal;
+};
+
+/**
+ * @method
+ * @name formatTelNo
+ * @description 문자열에 전화번호 형식 Formatter를 적용하여 반환한다.
+ * @param {String} str 포멧터를 적용할 문자열
+ * @returns {String} 포멧터가 적용된 문자열
+ * @hidden N
+ * @exception
+ * @example
+ * $c.str.formatTelNo("0212345678");  // return "02-1234-5678"
+ * $c.str.formatTelNo("0312225432");  // return "031-222-5432"
+ * $c.str.formatTelNo("007022215432") // return "0070-2221-5432"
+ */ 
+scwin.formatTelNo = function(str) {
+	if(typeof $p == 'string') { 
+		str = $p;
+	} 
+    str = $c.str.trim(str).replaceAll('-', '');
+    let rtnStr = "";
+
+	if (str.length < 8 || str.length > 13) return str;
+
+	if (str.length == 8 ) {
+        rtnStr = str.replace((/(\d{4})(\d{4})/), "$1-$2");
+	
+    } else if( str.length == 10) {
+		if( str.substring(0,2) == '02') {
+            rtnStr = str.replace((/(\d{2})(\d{4})(\d{4})/), "$1-$2-$3");
+		} else {
+            rtnStr = str.replace((/(\d{3})(\d{3})(\d{4})/), "$1-$2-$3");
+        }
+	
+    } else if( str.length == 12 ) {
+        rtnStr = str.replace((/(\d{4})(\d{4})(\d{4})/), "$1-$2-$3");
+	
+    } else if (str.length == 11) {
+        rtnStr = str.replace((/(\d{3})(\d{4})(\d{4})/), "$1-$2-$3");
+
+    } else if( str.length == 13 ) {
+        rtnStr = str.replace((/(\d{2})(\d{3})(\d{4})(\d{4})/), "$1-$2-$3-$4");
+
+	} else {
+        rtnStr = str;
+    }
+
+	return rtnStr;	
+};
+
+
+/**
+ * @method
+ * @name formatTelNoMask
+ * @description 문자열에 전화번호 형식 Formatter를 적용하여 반환한다.
+ * @param {String} str 포멧터를 적용할 문자열
+ * @returns {String} 포멧터가 적용된 문자열
+ * @hidden N
+ * @exception
+ * @example
+ * $c.str.formatTelNoMask("0212345678");  // return "02-1234-5678"
+ * $c.str.formatTelNoMask("0312225432");  // return "031-222-5432"
+ * $c.str.formatTelNoMask("010-1234-5678");   //return "010-11**-11**";
+ */ 
+scwin.formatTelNoMask = function(str) {
+    if(typeof $p == 'string') { 
+		str = $p;
+	} 
+
+    str = scwin.trim(str).replaceAll('-', '');
+    if( str.length < 8 || str.length > 13 ) return str;
+
+	if (str.length == 8 ) {
+        rtnStr = str.replace((/(\d{4})(\d{4})/), "$1-$2");
+	
+    } else if( str.length == 10) {
+		if( str.substring(0,2) == '02') {
+            rtnStr = str.replace((/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/), "$1-$2**-$4**");
+		} else {
+            rtnStr = str.replace((/(\d{3})(\d{2})(\d{1})(\d{2})(\d{2})/), "$1-$2*-$4**");
+        }
+	
+    } else if (str.length == 11) {
+        rtnStr = str.replace((/(\d{3})(\d{2})(\d{2})(\d{2})(\d{2})/), "$1-$2**-$4**");
+
+    } else if( str.length == 12 ) {
+        rtnStr = str.replace((/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/), "$1-$2**-$4**");
+	
+    } else if( str.length == 13 ) {
+        rtnStr = str.replace((/(\d{2})(\d{3})(\d{2})(\d{2})(\d{2})(\d{2})/), "$1-$2-$3**-$5**");
+
+	} else {
+        rtnStr = str;
+    }
+
+	return rtnStr;	
+};]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload"/>
+</html>

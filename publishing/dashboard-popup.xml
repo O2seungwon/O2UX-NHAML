@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/dashboard.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="대시보드-나의업무팝업">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    /* 마이페이지 탭 안 알림숫자 추가 */
+	var tabControl = document.getElementById("mf_mypage-tab");
+    if(tabControl){
+        var tabALink = tabControl.querySelector("#mf_mypage-tab_tab_tabs5 .w2tabcontrol_tab_center a");
+        if(tabALink){
+            var textSpan = document.createElement("span");
+            textSpan.textContent = "3";
+            textSpan.className = "tab-a-span"
+            tabALink.parentNode.insertBefore(textSpan, tabALink.nextSibling);
+        }
+    }
+
+    /* active 클래스 추가 */
+    $('#mf_title-txt').click(function(){
+        $('.list-item')[$('.list-item').hasClass('active') ? 'removeClass' : 'addClass']('active');
+    })
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    <xf:group style="" id="" class="dashboard-popup">
+    			<xf:group style="" id="" class="title-wrap">
+    				<w2:span label="나의업무" style="" id=""></w2:span>
+    			</xf:group>
+    			<xf:group style="" id="" class="content-wrap">
+    				<xf:group style="" id="" class="item-box">
+    					<xf:group style="" id="" class="item-list">
+    						<w2:span label="Alert 모니터링" style="" id=""></w2:span>
+    						<w2:span label="06" style="" id=""></w2:span>
+    					</xf:group>
+    					<xf:group class="item-list" id="" style="">
+    						<w2:span id="" label="Case 모니터링" style=""></w2:span>
+    						<w2:span id="" label="33" style=""></w2:span>
+    					</xf:group>
+    					<xf:group class="item-list" id="" style="">
+    						<w2:span id="" label="보고 점검 현황" style=""></w2:span>
+    						<w2:span id="" label="22" style=""></w2:span>
+    					</xf:group>
+    					<xf:group class="item-list active" id="" style="">
+    						<w2:span id="" label="보고 점검 현황" style=""></w2:span>
+    						<w2:span id="" label="06" style=""></w2:span>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="" id="" class="item-wrap">
+    					<xf:group style="" id="" class="item-title">
+    						<w2:span label="보고 점검 현황" style="" id=""></w2:span>
+    						<w2:span label="총" style="" id=""></w2:span>
+    						<w2:span label="06" style="" id=""></w2:span>
+    						<w2:span label="건" style="" id=""></w2:span>
+    					</xf:group>
+    					<xf:group style="" id="">
+    						<xf:group tagname="table" style="width:100%;" id="" class="w2tb">
+    							<w2:attributes>
+    								<w2:summary></w2:summary>
+    							</w2:attributes>
+    							<xf:group tagname="caption"></xf:group>
+    							<xf:group tagname="colgroup">
+    								<xf:group tagname="col" style="width:130px;"></xf:group>
+    								<xf:group tagname="col" style="width:auto;"></xf:group>
+    								<xf:group tagname="col" style="width:175px;"></xf:group>
+    								<xf:group tagname="col" style="width:175px;"></xf:group>
+    								<xf:group tagname="col" style="width:124px;"></xf:group>
+    							</xf:group>
+    							<xf:group tagname="tr" style="" class="first-tr">
+    								<xf:group tagname="th" style="border-top-left-radius: 16px;" class="w2tb_th">사무소코드<w2:attributes>
+    										<w2:scope>col</w2:scope>
+    									</w2:attributes></xf:group>
+    								<xf:group tagname="th" style="" class="w2tb_th">사무소코드<w2:attributes>
+    										<w2:scope>col</w2:scope>
+    									</w2:attributes></xf:group>
+    								<xf:group tagname="th" style="" class="w2tb_th">검출일<w2:attributes>
+    										<w2:scope>col</w2:scope>
+    									</w2:attributes></xf:group>
+    								<xf:group tagname="th" style="" class="w2tb_th">점검기한<w2:attributes>
+    										<w2:scope>col</w2:scope>
+    									</w2:attributes></xf:group>
+    								<xf:group tagname="th" style="border-top-right-radius: 16px;" class="w2tb_th">점검상태<w2:attributes>
+    										<w2:scope>col</w2:scope>
+    									</w2:attributes></xf:group>
+    							</xf:group>
+    							<xf:group tagname="tr" style="">
+    								<xf:group tagname="td" style="" class="w2tb_td">000616</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">광주지점</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">2025-06-30</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">2025-06-30</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">미점검</xf:group>
+    							</xf:group>
+    							<xf:group tagname="tr" style="">
+    								<xf:group tagname="td" style="" class="w2tb_td">000616</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">광주지점</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">2025-06-30</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">2025-06-30</xf:group>
+    								<xf:group tagname="td" style="" class="w2tb_td">미점검</xf:group>
+    							</xf:group>
+    						<xf:group tagname="tr" style=""><xf:group tagname="td" class="w2tb_td">000616<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">광주지점<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">미점검<w2:attributes></w2:attributes></xf:group></xf:group><xf:group tagname="tr" style=""><xf:group tagname="td" class="w2tb_td">000616<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">광주지점<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">미점검<w2:attributes></w2:attributes></xf:group></xf:group><xf:group tagname="tr" style=""><xf:group tagname="td" class="w2tb_td">000616<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">광주지점<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">미점검<w2:attributes></w2:attributes></xf:group></xf:group><xf:group tagname="tr" style=""><xf:group tagname="td" class="w2tb_td">000616<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">광주지점<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group><xf:group tagname="td" class="w2tb_td">2025-06-30<w2:attributes></w2:attributes></xf:group>
+	<xf:group tagname="td" class="w2tb_td">미점검<w2:attributes></w2:attributes></xf:group></xf:group></xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group></body>
+</html>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="AI 통계현황">
+    	<w2:type>COMPONENT</w2:type>
+    	<w2:buildDate />
+    	<w2:MSA />
+    	<xf:model>
+    		<w2:dataCollection baseNode="map">
+    			<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+    				<w2:columnInfo>
+    					<w2:column id="col1" name="name1" dataType="text"></w2:column>
+    					<w2:column id="sample22" name="name2" dataType="text"></w2:column>
+    					<w2:column id="col3" name="name3" dataType="text"></w2:column>
+    					<w2:column id="col4" name="name4" dataType="text"></w2:column>
+    					<w2:column id="col5" name="name5" dataType="text"></w2:column>
+    					<w2:column id="col6" name="name6" dataType="text"></w2:column>
+    					<w2:column id="col7" name="name7" dataType="text"></w2:column>
+    					<w2:column id="col8" name="name8" dataType="text"></w2:column>
+    					<w2:column id="col9" name="name9" dataType="text"></w2:column>
+    					<w2:column id="col10" name="name10" dataType="text"></w2:column>
+    					<w2:column id="col11" name="name11" dataType="text"></w2:column>
+    					<w2:column id="col12" name="name12" dataType="text"></w2:column>
+    					<w2:column id="col13" name="name13" dataType="text"></w2:column>
+    					<w2:column id="col14" name="name14" dataType="text"></w2:column>
+    					<w2:column id="col15" name="name15" dataType="text"></w2:column>
+    					<w2:column id="col16" name="name16" dataType="text"></w2:column>
+    					<w2:column id="col17" name="name17" dataType="text"></w2:column>
+    					<w2:column id="col18" name="name18" dataType="text"></w2:column>
+    					<w2:column id="col19" name="name19" dataType="text"></w2:column>
+    					<w2:column id="col20" name="name20" dataType="text"></w2:column>
+    					<w2:column id="col21" name="name21" dataType="text"></w2:column>
+    					<w2:column id="col22" name="name22" dataType="text"></w2:column>
+    					<w2:column id="col23" name="name23" dataType="text"></w2:column>
+    					<w2:column id="col24" name="name24" dataType="text"></w2:column>
+    					<w2:column id="col25" name="name25" dataType="text"></w2:column>
+    					<w2:column id="col26" name="name26" dataType="text"></w2:column>
+    					<w2:column id="col27" name="name27" dataType="text"></w2:column>
+    					<w2:column id="col28" name="name28" dataType="text"></w2:column>
+    					<w2:column id="col29" name="name29" dataType="text"></w2:column>
+    					<w2:column id="col30" name="name30" dataType="text"></w2:column>
+    				</w2:columnInfo>
+    				<w2:data use="true">
+    					<w2:row>
+    						<col1><![CDATA[2023-08-18]]></col1>
+    						<sample22><![CDATA[1]]></sample22>
+    						<col3><![CDATA[0]]></col3>
+    						<col4><![CDATA[1 (100.%)]]></col4>
+    						<col5><![CDATA[0]]></col5>
+    						<col6><![CDATA[0(%)]]></col6>
+    						<col7><![CDATA[0(0.%)]]></col7>
+    						<col8><![CDATA[0(0.%)]]></col8>
+    						<col9><![CDATA[1]]></col9>
+    						<col10><![CDATA[0(%)]]></col10>
+    						<col11><![CDATA[0(0.%)]]></col11>
+    						<col12><![CDATA[0(0.%)]]></col12>
+    						<col13><![CDATA[0]]></col13>
+    						<col14><![CDATA[0]]></col14>
+    						<col15><![CDATA[0(0.%)]]></col15>
+    						<col16><![CDATA[0(0.%)]]></col16>
+    						<col17><![CDATA[0(0.%)]]></col17>
+    						<col18><![CDATA[0(0.%)]]></col18>
+    						<col19><![CDATA[0]]></col19>
+    						<col20><![CDATA[0]]></col20>
+    						<col21><![CDATA[0(0.%)]]></col21>
+    						<col22><![CDATA[0(0.%)]]></col22>
+    						<col23><![CDATA[0(0.%)]]></col23>
+    						<col24><![CDATA[0(0.%)]]></col24>
+    						<col25><![CDATA[0]]></col25>
+    						<col26><![CDATA[0]]></col26>
+    						<col27><![CDATA[0(0.%)]]></col27>
+    						<col28><![CDATA[0(0.%)]]></col28>
+    						<col29><![CDATA[0(0.%)]]></col29>
+    						<col30><![CDATA[0(0.%)]]></col30>
+    					</w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    					<w2:row></w2:row>
+    				</w2:data>
+    			</w2:dataList>
+    		</w2:dataCollection>
+    		<w2:workflowCollection />
+    	</xf:model>
+    	<w2:layoutInfo />
+    	<w2:publicInfo method="" />
+    	<script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    	<w2:require as="udc_brCombo" type="page" variableClone="" src="/cm/udc/brCombo.xml"></w2:require>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="검출일자" style=""></w2:textbox>
+    							<xf:group class="input-cal-wrap" id="" style="">
+    								<w2:inputCalendar calendarValueType="" class="input-cal left" focusOnDateSelect="false" footerDiv="true"
+    									id="" placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="width: 188px;">
+    								</w2:inputCalendar>
+    								<w2:span class="cal-dash-span" id="" label="-" style=""></w2:span>
+    								<w2:inputCalendar calendarValueType="yearMonthDate" class="input-cal right" focusOnDateSelect="false"
+    									footerDiv="true" id="" placeholder="yyyy.mm.dd" renderDiv="true" renderType="" rightAlign="false" style="width: 188px;">
+    								</w2:inputCalendar>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="조회구분" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style=""
+    								submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box last" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="사무소" style=""></w2:textbox>
+    							<w2:udc_brCombo autoSet="true" style=""></w2:udc_brCombo>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="AI 통계현황" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="none" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row" id=""
+    					keepDefaultColumnWidth="true" rowNumHeaderValue="순번" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    					rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 350px;"
+    					visibleRowNum="10">
+    					<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    					<w2:header style="" id="header1">
+    						<w2:row style="" id="row1">
+    							<w2:column width="120" inputType="text" id="column30" value="검출일" displayMode="label" colSpan=""
+    								rowSpan="2">
+    							</w2:column>
+    							<w2:column width="360" inputType="text" id="column29" value="전체" displayMode="label" colSpan="3"
+    								rowSpan="">
+    							</w2:column>
+    							<w2:column width="480" inputType="text" id="column26" value="비혐의 판단" displayMode="label" colSpan="4"
+    								rowSpan="">
+    							</w2:column>
+    							<w2:column width="480" inputType="text" id="column22" value="혐의판단" displayMode="label" colSpan="4"
+    								rowSpan="">
+    							</w2:column>
+    							<w2:column width="720" inputType="text" id="column18" value="AI 수신 (개인)" displayMode="label" colSpan="6"
+    								rowSpan="">
+    							</w2:column>
+    							<w2:column width="720" inputType="text" id="column12" value="AI 수신 (법인)" displayMode="label" colSpan="6"
+    								rowSpan="">
+    							</w2:column>
+    							<w2:column width="720" inputType="text" id="column6" value="AI 외환" displayMode="label" colSpan="6"
+    								rowSpan="">
+    							</w2:column>
+    						</w2:row>
+    						<w2:row style="" id="row4">
+    							<w2:column width="120" inputType="text" id="column119" value="총검출" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column118" value="AI판단총건수" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column117" value="영업점점검율" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column116" value="영업점&lt;br/&gt;비혐의처리" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column115" value="AI비혐의판단" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column114" value="AI 비혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column113" value="AI비혐의비적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column112" value="영업점&lt;br/&gt;혐의처리" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column111" value="AI혐의판단" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column110" value="AI 혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column109" value="AI혐의비적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column108" value="AI판단&lt;br/&gt;대상건수" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column107" value="점검건수&lt;br/&gt;(중위험제외)" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column106" value="비혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column105" value="비혐의비적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column104" value="혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column103" value="혐의비적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column102" value="AI판단&lt;br/&gt;대상건수" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column101" value="점검건수&lt;br/&gt;(중위험제외)" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column100" value="비혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column99" value="비혐의비적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column98" value="혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column97" value="혐의비적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column96" value="AI판단&lt;br/&gt;대상건수" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column95" value="점검건수&lt;br/&gt;(중위험제외)" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column94" value="비혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column93" value="비혐의비적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column92" value="혐의적중" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column91" value="혐의비적중" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody style="" id="gBody1">
+    						<w2:row style="" id="row2">
+    							<w2:column width="120" inputType="text" id="col1" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="sample22" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col3" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col4" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col5" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col6" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col7" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col8" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col9" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col10" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col11" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col12" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col13" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col14" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col15" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col16" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col17" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col18" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col19" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col20" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col21" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col22" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col23" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col24" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col25" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col26" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col27" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col28" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col29" displayMode="label" textAlign="right"></w2:column>
+    							<w2:column width="120" inputType="text" id="col30" displayMode="label" textAlign="right"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    					<w2:footer style="" id="footer1">
+    						<w2:row style="" id="row3">
+    							<w2:column width="120" inputType="text" id="column90" displayMode="label" value="합계"></w2:column>
+    							<w2:column width="120" inputType="text" id="column89" displayMode="label" textAlign="right" value="4,419"></w2:column>
+    							<w2:column width="120" inputType="text" id="column88" displayMode="label" textAlign="right" value="1,842"></w2:column>
+    							<w2:column width="120" inputType="text" id="column87" displayMode="label" textAlign="right"
+    								value="81.3554578">
+    							</w2:column>
+    							<w2:column width="120" inputType="text" id="column86" displayMode="label" textAlign="right" value="1927"></w2:column>
+    							<w2:column width="120" inputType="text" id="column85" displayMode="label" textAlign="right" value="121"></w2:column>
+    							<w2:column width="120" inputType="text" id="column84" displayMode="label" textAlign="right" value="555"></w2:column>
+    							<w2:column width="120" inputType="text" id="column83" displayMode="label" textAlign="right" value="111"></w2:column>
+    							<w2:column width="120" inputType="text" id="column82" displayMode="label" textAlign="right" value="24"></w2:column>
+    							<w2:column width="120" inputType="text" id="column81" displayMode="label" textAlign="right" value="1215"></w2:column>
+    							<w2:column width="120" inputType="text" id="column80" displayMode="label" textAlign="right" value="1111"></w2:column>
+    							<w2:column width="120" inputType="text" id="column79" displayMode="label" textAlign="right" value="352"></w2:column>
+    							<w2:column width="120" inputType="text" id="column78" displayMode="label" textAlign="right" value="1105"></w2:column>
+    							<w2:column width="120" inputType="text" id="column77" displayMode="label" textAlign="right" value="50"></w2:column>
+    							<w2:column width="120" inputType="text" id="column76" displayMode="label" textAlign="right" value="80"></w2:column>
+    							<w2:column width="120" inputType="text" id="column75" displayMode="label" textAlign="right" value="3"></w2:column>
+    							<w2:column width="120" inputType="text" id="column74" displayMode="label" textAlign="right" value="880"></w2:column>
+    							<w2:column width="120" inputType="text" id="column73" displayMode="label" textAlign="right" value="120"></w2:column>
+    							<w2:column width="120" inputType="text" id="column72" displayMode="label" textAlign="right" value="555"></w2:column>
+    							<w2:column width="120" inputType="text" id="column71" displayMode="label" textAlign="right" value="12"></w2:column>
+    							<w2:column width="120" inputType="text" id="column70" displayMode="label" textAlign="right" value="66"></w2:column>
+    							<w2:column width="120" inputType="text" id="column69" displayMode="label" textAlign="right" value="67"></w2:column>
+    							<w2:column width="120" inputType="text" id="column68" displayMode="label" textAlign="right" value="133"></w2:column>
+    							<w2:column width="120" inputType="text" id="column67" displayMode="label" textAlign="right" value="0"></w2:column>
+    							<w2:column width="120" inputType="text" id="column66" displayMode="label" textAlign="right" value="3"></w2:column>
+    							<w2:column width="120" inputType="text" id="column65" displayMode="label" textAlign="right" value="222"></w2:column>
+    							<w2:column width="120" inputType="text" id="column64" displayMode="label" textAlign="right" value="0"></w2:column>
+    							<w2:column width="120" inputType="text" id="column63" displayMode="label" textAlign="right" value="3"></w2:column>
+    							<w2:column width="120" inputType="text" id="column62" displayMode="label" textAlign="right" value="0"></w2:column>
+    							<w2:column width="120" inputType="text" id="column61" displayMode="label" textAlign="right" value="0"></w2:column>
+    						</w2:row>
+    					</w2:footer>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

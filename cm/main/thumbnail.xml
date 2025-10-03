@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:w2="http://www.inswave.com/websquare"
+	xmlns:xf="http://www.w3.org/2002/xforms">
+	<head meta_screenId="contentHeader" meta_screenName="공통 화면 헤더 영역 프레임" meta_desc="화면 제목, 공통 버튼을 표시합니다.">
+		<w2:type>COMPONENT</w2:type>
+		<w2:buildDate />
+		<xf:model>
+			<xf:instance>
+				<data xmlns="" />
+			</xf:instance>
+			<w2:dataCollection baseNode="map"></w2:dataCollection>
+		</xf:model>
+		<w2:layoutInfo></w2:layoutInfo>
+		<w2:publicInfo
+			method="scwin.wfTitleFavInit,scwin.setMenuNavi,scwin.generator_insertMenu,scwin.setFavStatus,scwin.showScreenInfo,scwin.reload"></w2:publicInfo>
+		<script type="text/javascript" lazy="false"><![CDATA[scwin.onpageload = function () {
+    // $(".side").css("overflow", "visible"); 
+};
+
+/**
+ * @method
+ * @name openMenuInit
+ * @description contentHeader의 초기화 로직, 메뉴 정보를 셋팅한다.
+ * @hidden N
+ * @exception 
+ * @example ${example}
+ */
+scwin.openMenuInit = function () {
+    
+    gen_thumb.removeAll();
+    
+    const winObj = $p.main().wdc_main;
+    for (let i = 0; i < winObj.windows.length; i++) {
+        let idx = gen_thumb.insertChild();
+
+        const src = winObj.windows[i].src;  //화면경로
+        const fileName = src.match(/([^/]+)(?=\.xml$)/);    //화면id
+        const winId = winObj.windows[i].id;             //ex) mf_wdc_main_subWindow1
+        const windowId = winObj.windows[i].windowId;    //ex) MAIN, CT01010
+
+        const grpObj = gen_thumb.getChild(idx, "grp_windowTool");
+              grpObj.setUserData("winId", winId);
+              grpObj.setUserData("windowId", windowId);
+
+        //메뉴이미지 설정
+        const menuImg = gen_thumb.getChild(idx, "img_menuImg");
+              menuImg.setSrc(`/img/thumbnail/${fileName[1]}.png`);
+              menuImg.setUserData("winId", winId);
+              menuImg.setUserData("windowId", windowId);
+        
+        //메뉴명 설정
+        const winMenu = gen_thumb.getChild(idx, "tbx_winMenu");
+              winMenu.setValue(winObj.windows[i].title);
+        
+        //핀고정 설정
+        const btnFix = gen_thumb.getChild(idx, "btn_fix");
+              btnFix.setUserData("winId", winId);
+        if (winObj.windows[i].isFix) btnFix.addClass("on");
+
+        //창닫기 설정
+        const btnClose = gen_thumb.getChild(idx, "btn_close");
+              btnClose.setUserData("winId", winId);
+              btnClose.setUserData("windowId", windowId);
+        
+        //현재창 설정
+        const selectMenu = gen_thumb.getChild(idx, "tbx_selectMenu");   //현재선택된 메뉴
+        if (winObj.getSelectedWindowId() == windowId){
+            selectMenu.addClass("selectMenu");
+        }
+
+        if (windowId == "MAIN" ) { // 메인은 핀고정x, 닫기x
+            btnFix.hide("");    //핀고정숨김
+            btnClose.hide("");  //닫기버튼 숨김
+        }
+    }
+};
+
+/**
+ * @event
+ * @name btn_fix_onclick
+ * @description 핀고정처리
+ */
+scwin.btn_fix_onclick = function (e) {
+    
+    this.addClass("on");
+    const winId = this.getUserData("winId");
+    const winObj = $p.main().wdc_main;
+
+    const fixArr = winObj.fixedWindowArr;
+    let fixFlag = false;
+    
+    for (let i = 0; i < fixArr.length; i++) {
+        if (winId == fixArr[i].id) {
+            fixFlag = true;
+            break;
+        }
+    }
+
+    if (fixFlag) {  //고정여부에 따라 해제/설정
+        $p.main().wdc_main.unfixWindow(winId);
+        this.removeClass("on");
+    } else {
+        $p.main().wdc_main.fixWindow(winId);
+        this.addClass("on");
+    }
+};
+
+/**
+ * @event
+ * @name img_menuImg_onclick
+ * @description 이미지 클릭 시, 메뉴 이동
+ */
+scwin.img_menuImg_onclick = function (e) {
+    const winObj = $p.main().wdc_main;
+    const winId = this.getUserData("winId");
+    const windowId = this.getUserData("windowId");
+
+    winObj.selectNameLayer(winId);  //windowContainer 변경
+
+    //현재창 
+    $p.$(".selectMenu").removeClass("selectMenu");
+    gen_thumb.getChild(this.getGeneratedIndex(), "tbx_selectMenu").addClass("selectMenu");
+
+};
+
+/**
+ * @event
+ * @name btn_close_onclick
+ * @description 창닫기 onclick
+ */
+scwin.btn_close_onclick = function (e) {
+    const windowId = this.getUserData("windowId");
+
+    //현재창 표기.
+    //닫은 창이 현재창인 경우, 마지막 창이 현재창
+    if (gen_thumb.getChild(this.getGeneratedIndex(), "tbx_selectMenu").hasClass("selectMenu")) {
+        gen_thumb.getChild(this.getGeneratedIndex()-1, "tbx_selectMenu").addClass("selectMenu");
+    }
+debugger;
+    // $p.main().wdc_main.closeWindow(windowId);
+    gen_thumb.removeChild(this.getGeneratedIndex()); //generator 삭제
+    // scwin.grp_dim_onclick();
+};
+
+/**
+ * @event
+ * @name btn_closeAll_onclick
+ * @description 전체닫기 onclick
+ */
+scwin.btn_closeAll_onclick = function (e) {
+    $p.main().wdc_main.doCloseAll();
+};
+
+/**
+ * @event
+ * @name img_menuImg_onerror
+ * @description 이미지 로딩 실패시, 임시 이미지로 대체
+ */
+scwin.img_menuImg_onerror = function (e) {
+    this.setSrc("/img/thumbnail/default.png");
+};
+]]></script>
+		<style>
+			.fix {
+			background: url(/cm/images/product/ico_fixpin.svg) no-repeat center;
+			overflow: hidden;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border: 1px solid var(--ws-gray-300);
+			border-radius: 4px;
+			text-indent: -9999px;
+			}
+			.fix.on {margin-left:2px; background: url(/cm/images/product/ico_fixpin_on.svg) no-repeat center;}
+			.winGrop {position:relative;
+			margin-right:5px;}
+			.closeAll {margin-left: auto;}
+			.selectMenu {
+            display: flex!important;
+            justify-content: center;
+            align-items: center;
+            width: 47px;
+            height: 23px;
+			margin: 0 4px;
+			border-radius: 8px;
+			background-color: #1bab97;
+			color: #fff;
+			font-size: 12px;
+			font-weight: 700;
+			visibility: visible;
+			}
+			.thumClose {
+			position:absolute;
+			border-radius: 3px;
+			background: url(/cm/images/product/ico_wdc_close.svg) no-repeat center;
+			background-color:#fff;
+			text-indent:-9999px;
+			width:20px;
+			height:20px;
+			top:-2px;
+			right:-2px;
+			}
+            .thummain {
+            flex-wrap: wrap;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            gap: 12px;
+            left: 80px;
+            bottom: 0px;
+            }
+		</style>
+	</head>
+	<body ev:onpageload="scwin.onpageload">
+		<xf:group style="position: fixed;top:0px;bottom: 0px;left:80px;" id="">
+			<xf:group class="thummain" id="grp_main" style="padding:21px 40px 24px 40px;z-index: 99999;background-color: #fff;">
+				<xf:group class="" id="" style="">
+					<w2:generator style="" id="gen_thumb" tagname="ul">
+						<xf:group id="grp_windowTool" style="padding: 12px;background: rgba(255, 255, 255, 0.32);border-radius: 8px;box-shadow: 0 4px 12px 5px rgba(99, 103, 104, 0.10);backdrop-filter:blur(2px);" tagname="li" class="fl">
+							<xf:image src="" style="width:237px;height:120px;display: block;cursor:pointer;margin-bottom: 9px;" id="img_menuImg" ev:onclick="scwin.img_menuImg_onclick" ev:onerror="scwin.img_menuImg_onerror">
+							</xf:image>
+							<xf:trigger class="fix fl" id="btn_fix" style="" toolTip="핀고정 추가/해제" type="button" ev:onclick="scwin.btn_fix_onclick">
+								<xf:label><![CDATA[핀]]></xf:label>
+							</xf:trigger>
+							<w2:textbox class="fl" id="tbx_selectMenu" label="현재창" ref="" style="display: none;"></w2:textbox>
+							<w2:textbox class="" id="tbx_winMenu" label="메뉴명" ref="" style="display: flex; align-items: center;height: 23px;font-size: 14px;color: #333;font-weight: 500;"></w2:textbox>
+
+							<xf:trigger class="thumClose" id="btn_close" style="" toolTip="창닫기" type="button" ev:onclick="scwin.btn_close_onclick">
+								<xf:label><![CDATA[닫기]]></xf:label>
+							</xf:trigger>
+						</xf:group>
+					</w2:generator>
+				</xf:group>
+				<xf:group style="" id="" class="">
+					<xf:trigger class="fl" disabled="" escape="false" id="btn_closeAll" style="width: 80px;height:24px;padding: 0" type="button" ev:onclick="scwin.btn_closeAll_onclick">
+						<xf:label><![CDATA[전체닫기]]></xf:label>
+					</xf:trigger>
+				</xf:group>
+			</xf:group>
+			
+		</xf:group>
+
+	</body>
+</html>

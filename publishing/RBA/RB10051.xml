@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="평가결과 등록 ">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="popup-content" id="" style="">
+    		<xf:group adaptiveThreshold="" class="right-tabless" id="" meta_snippetCategory="06_그리드" meta_snippetKeyComponent="true"
+    			meta_snippetName="6_02 그리드_순번_상태" style="margin-bottom: 20px;">
+    			<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    				meta_snippetName="2_02 서브타이틀(h3)" style="">
+    				<w2:textbox class="" id="" label="평가항목 상세" style="" tagname="h3"></w2:textbox>
+    				<xf:group class="rt" id="" style=""></xf:group>
+    			</xf:group>
+    			<xf:group class="w2tb gray-table" id="" style="width:100%;" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="caption"></xf:group>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:160px;" tagname="col"></xf:group>
+
+    					<xf:group style="" tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:160px;"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    					<xf:group tagname="col" style="width:160px;"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group class="f-tr" style="" tagname="tr">
+    					<xf:group class="w2tb_th" style="padding: 20px 0 8px 20px;height: 60px;" tagname="th">
+    						업무구분
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    					</xf:group>
+    					<xf:group class="w2tb_td" style="padding: 20px 0 8px 0;height: 60px;" tagname="td"><w2:textbox class=" tal" id="" label="KoFIU(고유위험)" style=""></w2:textbox></xf:group>
+    					<xf:group class="w2tb_th" style="padding: 20px 0 8px 20px;height: 60px;" tagname="th">
+    						영역
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    					</xf:group>
+    					<xf:group class="w2tb_td" style="padding: 20px 0 8px 0;height: 60px;" tagname="td">
+    						<w2:textbox class=" tal" id="" label="고객특성" style=""></w2:textbox>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th">
+    						평가사무소
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td" style="">
+    						<w2:attributes></w2:attributes>
+    						<w2:textbox class=" tal" id="" label="자금세탁방지부" style=""></w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="" tagname="tr">
+    					<xf:group class="w2tb_th" style="" tagname="th">
+    						제목
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    					</xf:group>
+    					<xf:group class="w2tb_td" style="" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>5</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<w2:textbox class=" tal" id="" label="(I. 1.01.02) 고위험국가 고객 거래 금액 규모 (2점, 상대평가)" style=""></w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="" tagname="tr">
+    					<xf:group class="w2tb_th" tagname="th">
+    						상세내용
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    					</xf:group>
+    					<xf:group class="w2tb_td" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>5</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<w2:textbox class=" tal" id=""
+    							label="[지표] 자금세탁/테러자금조달 위험도가 높은 국가의 국적/소재지 고객의 거래 금액규모&lt;br/&gt;&lt;br/&gt;[설명]&lt;br/&gt;1. &amp;nbsp; 금융기관 및 DNFBP는 특정국가의 자금세탁방지제도와 금융거래 환경이 취약하여 발생할 수 있는 자금세탁 등의 위험을 평가 하여야함 &lt;br/&gt;2. &amp;nbsp; 고객(또는 실소유자)이 고위험국가 관련자로 확인된 때에는 강화된 고객확인을 이행하여야 함 &lt;br/&gt;3. &amp;nbsp; 지속적으로 고위험국가 관련 여부를 확인해야하며 고위험 국가 관련자인 경우 거래 모니터링을 강화해야 함고위험국가 확인이 불완전하고 부정확한 정보로 수행되면 고위험 고객을 식별하지 못하여 필요한 통제절차가&lt;br/&gt; &amp;nbsp; &amp;nbsp; 적용되지않고 자금세탁/테러자금조달 거래가 발생할 수 있으며 금융기관 및 DNFBP에 대한 신뢰성 악화로 제재를 받게 됨&lt;br/&gt;&lt;br/&gt;[산정 기준/범위]&lt;br/&gt;1. &amp;nbsp; 기간 : 평가대상기간(하반기 또는 상반기)&lt;br/&gt;2. &amp;nbsp; 고위험국가(고위험국가 목록은 자료실 참조)&lt;br/&gt; &amp;nbsp; &amp;nbsp; 가. FATF가 발표하는 취약국 또는 비협조 국가리스트 &lt;br/&gt; &amp;nbsp; &amp;nbsp; 나. UN 또는 타 국제기구(World bank, OECD, IMF 등)에서 발표하는 제재, 봉쇄 또는 기타 이와 유사한 조치와 관련된 국가리스트"
+    							style="margin-bottom: 20px;" escape="false">
+    						</w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="" tagname="tr">
+    					<xf:group class="w2tb_th" style="padding: 8px 0 20px 20px;height: 60px;" tagname="th">
+    						참고자료
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    					</xf:group>
+    					<xf:group class="w2tb_td txt-left" style="padding: 8px 20px 20px 0;height: 60px;" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>5</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:group class="popup-file-wrap" id="" style="">
+    							<xf:group class="file-wrap" id="">
+    								<xf:group class="popup-file" id="" style="">
+    									<w2:span class="txt" id="" label="보고서_진행현황_관련자료1_hwp" style=""></w2:span>
+    									<w2:span class="close-button" id="" label="" style=""></w2:span>
+    								</xf:group>
+    								<xf:group class="popup-file" id="" style="">
+    									<w2:span class="txt" id="" label="보고서_진행현황_관련자료2_hwp" style=""></w2:span>
+    									<w2:span class="close-button" id="" label="" style=""></w2:span>
+    								</xf:group>
+    								<xf:group class="popup-file" id="" style="">
+    									<w2:span class="txt" id="" label="보고서_진행현황_hwp" style=""></w2:span>
+    									<w2:span class="close-button" id="" label="" style=""></w2:span>
+    								</xf:group>
+    								<xf:group class="popup-file" id="" style="">
+    									<w2:span class="txt" id="" label="보고서_진행현황_관련자료1_hwp" style=""></w2:span>
+    									<w2:span class="close-button" id="" label="" style=""></w2:span>
+    								</xf:group>
+    							</xf:group>
+    							<xf:group class="flex-end" id="">
+    								<xf:trigger id="" style="" type="button">
+    									<xf:label><![CDATA[파일추가]]></xf:label>
+    								</xf:trigger>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group id="" class="right-tabless">
+    			<xf:group meta_snippetCategory="02_타이틀" meta_snippetName="2_02 서브타이틀(h3)" meta_snippetKeyComponent="true" style="" id=""
+    				class="titbox">
+    				<w2:textbox tagname="h3" style="" id="" label="평가결과" class=""></w2:textbox>
+    				<xf:group style="" id="" class="rt">
+    					<xf:group style="" id="" class="button-box">
+    						<w2:span style="" id="" label="* 평가결과는 담당자만 등록 가능합니다."></w2:span>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group tagname="table" style="width:100%;" id="" class="w2tb gray-table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="caption"></xf:group>
+    				<xf:group tagname="colgroup">
+    					<xf:group tagname="col" style="width:160px;"></xf:group>
+    					<xf:group tagname="col" style=""></xf:group>
+    					<xf:group tagname="col" style="width:160px;"></xf:group>
+    					<xf:group tagname="col" style=""></xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="" class="f-tr">
+    					<xf:group tagname="th" style="padding: 20px 0 8px 20px;height: 60px;border-top-left-radius:16px;" class="w2tb_th">
+    						질문
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    					</xf:group>
+    					<xf:group tagname="td" style="padding: 20px 0 8px 0;height: 60px;" class="w2tb_td">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<w2:textbox style="" id="" label="자금세탁방지 업무 준수를 위해, 해당항목에 대한 의견 선택 및 사유 작성 바랍니다." class=" tal"></w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group tagname="th" style="" class="w2tb_th">
+    						입력값
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:span style="" id="" label="필수" class="important-span"></w2:span>
+    					</xf:group>
+    					<xf:group tagname="td" style="" class="w2tb_td">
+    						<w2:attributes>
+    							<w2:colspan>1</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:input style="" id=""></xf:input>
+    					</xf:group>
+    					<xf:group tagname="th" class="w2tb_th">
+    						담당자
+    						<w2:attributes></w2:attributes>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td">
+    						<w2:attributes></w2:attributes>
+    						<w2:textbox style="" id="" label="[97100713] 조수형" class=" tal"></w2:textbox>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group tagname="th" class="w2tb_th">
+    						의견상세
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:span style="" id="" label="필수" class="important-span"></w2:span>
+    					</xf:group>
+    					<xf:group tagname="td" class="w2tb_td">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:textarea style="" id=""></xf:textarea>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group tagname="tr" style="">
+    					<xf:group tagname="th" style="padding: 8px 0 20px 20px;height: 60px;" class="w2tb_th">
+    						첨부파일
+    						<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes>
+    						<w2:span style="" id="" label="필수" class="important-span"></w2:span>
+    					</xf:group>
+    					<xf:group tagname="td" style="padding: 8px 20px 20px 0;height: 60px;" class="w2tb_td txt-left">
+    						<w2:attributes>
+    							<w2:colspan>3</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<xf:group style="" id="" class="popup-file-wrap">
+    							<xf:group id="" class="file-wrap">
+    								<xf:group style="" id="" class="popup-file">
+    									<w2:span style="" id="" label="보고서_진행현황_관련자료1_hwp" class="txt"></w2:span>
+    									<w2:span style="" id="" label="" class="close-button"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="popup-file">
+    									<w2:span style="" id="" label="보고서_진행현황_관련자료2_hwp" class="txt"></w2:span>
+    									<w2:span style="" id="" label="" class="close-button"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="popup-file">
+    									<w2:span style="" id="" label="보고서_진행현황_hwp" class="txt"></w2:span>
+    									<w2:span style="" id="" label="" class="close-button"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="popup-file">
+    									<w2:span style="" id="" label="보고서_진행현황_관련자료1_hwp" class="txt"></w2:span>
+    									<w2:span style="" id="" label="" class="close-button"></w2:span>
+    								</xf:group>
+    							</xf:group>
+    							<xf:group id="" class="flex-end">
+    								<xf:trigger style="" id="" type="button">
+    									<xf:label><![CDATA[파일추가]]></xf:label>
+    								</xf:trigger>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="footer-box" id="" style="">
+    			<xf:trigger id="" style="" type="button">
+    				<xf:label><![CDATA[저장]]></xf:label>
+    			</xf:trigger>
+    			<w2:span class="dash-span" id="" label="" style=""></w2:span>
+    			<xf:trigger id="" style="border:1px solid var(--w07);background-color:transparent;color:var(--w07);" type="button">
+    				<xf:label><![CDATA[상신 취소]]></xf:label>
+    			</xf:trigger>
+    			<xf:trigger id="" style="margin-left:8px;border:1px solid var(--w07);background-color:transparent;color:var(--w07);" type="button">
+    				<xf:label><![CDATA[결재 상신]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

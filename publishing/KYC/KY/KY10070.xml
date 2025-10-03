@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="83번 지방자치단체조합 관리">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList2" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="" dataType="text"></w2:column>
+            			<w2:column id="col2" name="고객구분" dataType="text"></w2:column>
+            			<w2:column id="col3" name="실명번호" dataType="text"></w2:column>
+            			<w2:column id="col4" name="기관명" dataType="text"></w2:column>
+            			<w2:column id="col5" name="등록자" dataType="text"></w2:column>
+            			<w2:column id="col6" name="등록일시" dataType="text"></w2:column>
+            			<w2:column id="col7" name="변경자" dataType="text"></w2:column>
+            			<w2:column id="col8" name="변경일시" dataType="text"></w2:column>
+            			<w2:column id="col9" name="변경구분" dataType="text"></w2:column>
+            			<w2:column id="col10" name="삭제자" dataType="text"></w2:column>
+            			<w2:column id="col11" name="삭제일시" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col9><![CDATA[]]></col9>
+            				<col10><![CDATA[]]></col10>
+            				<col11><![CDATA[]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col9><![CDATA[]]></col9>
+            				<col10><![CDATA[]]></col10>
+            				<col11><![CDATA[]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col9><![CDATA[]]></col9>
+            				<col10><![CDATA[]]></col10>
+            				<col11><![CDATA[]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col9><![CDATA[]]></col9>
+            				<col10><![CDATA[]]></col10>
+            				<col11><![CDATA[]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col9><![CDATA[]]></col9>
+            				<col10><![CDATA[]]></col10>
+            				<col11><![CDATA[]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            			<w2:row>
+            				<col1><![CDATA[]]></col1>
+            				<col2><![CDATA[83번지방자치단체 조합]]></col2>
+            				<col3><![CDATA[]]></col3>
+            				<col4><![CDATA[(헌)라무대차]]></col4>
+            				<col5><![CDATA[계하천]]></col5>
+            				<col6><![CDATA[2020-11-23 16:58:47]]></col6>
+            				<col7><![CDATA[계하천]]></col7>
+            				<col8><![CDATA[2020-11-02 13:50:33]]></col8>
+            				<col9><![CDATA[신규]]></col9>
+            				<col10><![CDATA[계하천]]></col10>
+            				<col11><![CDATA[2020-11-02 13:50:33]]></col11>
+            			</w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="고객구분코드" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="변경구분" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 116px;" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto flex-end" id="" style="">
+    							<xf:select1 appearance="full" class="radio-select" cols="" disabled="" id="" meta_snippetCategory="10_입력폼"
+    								meta_snippetKeyComponent="true" meta_snippetName="10_05 Radio" ref="" renderType="radiogroup" rows="1" selectedIndex="1"
+    								style="">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[전체]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[개인]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[사업자]]></xf:label>
+    										<xf:value><![CDATA[]]></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="실명(사업자)번호" style=""></w2:textbox>
+    							<xf:input class="" id="" placeholder="" style="width: 264px;" disabled="true"></xf:input>
+    						</xf:group>
+    						<xf:group class="inquiry-box last" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="고객명" style=""></w2:textbox>
+    							<xf:input class="" id="" placeholder="" style="width: 116px;"></xf:input>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="83번 지방자치단체조합 관리" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="76" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:group class="delete btn-a" id="" style="" tagname="a">
+    							<w2:span id="" label="삭제" style=""></w2:span>
+    						</xf:group>
+    						<w2:span class="dash-span" id="" label="" style=""></w2:span>
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList2" focusMode="row"
+    					id="" keepDefaultColumnWidth="true" rowNumHeaderValue="순번" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    					rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;"
+    					visibleRowNum="10">
+    					<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    					<w2:header style="" id="header1">
+    						<w2:row style="" id="row1">
+    							<w2:column width="70" inputType="image" style="" id="column11" value="" displayMode="label"
+    								imageSrc="/cm/images/icons/file-icon20.svg" viewType="icon" fixColumnWidth="true">
+    							</w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column10" value="고객구분" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column9" value="실명번호" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column8" value="기관명" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column7" value="등록자" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column6" value="등록일시" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column5" value="변경자" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column4" value="변경일시" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column3" value="변경구분" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column2" value="삭제자" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column1" value="삭제일시" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody style="" id="gBody1">
+    						<w2:row style="" id="row2">
+    							<w2:column width="70" inputType="image" style="" id="col1" value="" displayMode="label"
+    								imageSrc="/cm/images/icons/file-icon20.svg" viewType="icon">
+    							</w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col2" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col3" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col4" value="" displayMode="label" textAlign="left"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col5" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col6" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col7" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col8" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col9" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col10" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col11" value="" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="footer-box" id="" style="">
+    			<xf:group class="left-button" id="" style="">
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="등록" style=""></w2:span>
+    				</xf:group>
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="수정" style=""></w2:span>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="right-button" id="" style="">
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

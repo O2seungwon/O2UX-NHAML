@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:w2="http://www.inswave.com/websquare"
+	xmlns:xf="http://www.w3.org/2002/xforms">
+	<head meta_screenId="index_windowContainer" meta_screenName="Multi View 레이아웃" meta_desc="WindowContainer를 이용해서 업무 화면을 로딩하는 레이아웃">
+
+		<w2:type>COMPONENT</w2:type>
+		<w2:buildDate />
+		<xf:model>
+			<xf:instance>
+				<data xmlns=""></data>
+			</xf:instance>
+		</xf:model>
+		<w2:layoutInfo></w2:layoutInfo>
+		<w2:publicInfo method="scwin.settingBox_handlerEvent"></w2:publicInfo>
+		<w2:common src="/cm/pcc/main.xml" id="main"></w2:common>
+		<script type="text/javascript" lazy="false"><![CDATA[scwin.onpageload = function () {
+
+    // pfm_header.getWindow().btn_toggle_menu.bind(
+    //     'onclick', function (e) {
+    //         pfm_header.getWindow().btn_toggle_menu.toggleClass("on");
+    //         grp_wrap.toggleClass("show_menu");
+    // });
+	
+    // main.initMainLoad(); 
+    scwin.searchLoginInfo();    //로그인정보 가져오기
+    scwin.serverProfile();      //서버정보 가져오기
+};
+
+/**
+ * @method
+ * @name searchLoginInfo
+ * @description 로그인 정보 가져오기!
+ * @param {string} e 이벤트 객체
+ * @hidden N
+ * @exception 
+ */
+scwin.searchLoginInfo = function() {
+    const searchCodeGrpOption = {
+        id : "sbm_loginInfo",
+        action : "/session-user.ml",
+        method : "get",
+        submitDoneHandler: function (res) {
+            // 권한정보 저장
+            $c.data.setUserInfo(res.responseJSON);
+            main.initMainLoad();
+        },
+        submitErrorHandler : function (res) {
+            $c.win.alert("로그인 정보가 없습니다.<br> 로그인 화면으로 이동합니다 ! ").then(()=>{
+                top.window.location.href = "/websquare/websquare.html?w2xPath=/cm/main/login.xml";
+            });
+        }
+    };
+    $c.sbm.executeDynamic(searchCodeGrpOption);
+
+};
+
+/**
+ * @method
+ * @name serverProfile
+ * @description 서버 정보 가져오기!
+ * @param {string} e 이벤트 객체
+ * @hidden N
+ * @exception 
+ */
+scwin.serverProfile = function() {
+    const submission = {
+        id : "sbm_serverProfile",
+        action : "/information/server-profile.ml",
+        method : "get",
+        submitDoneHandler: function (res) {
+            $c.data.setServerInfo(res.responseJSON.server);
+        }
+    };
+    $c.sbm.executeDynamic(submission);
+};
+
+/**
+ * @method
+ * @name settingBox_handlerEvent
+ * @description layout을 선택하는 창에서 이벤트를 제어한다.
+ * @param {string} e 이벤트 객체
+ * @hidden N
+ * @exception 
+ */
+scwin.settingBox_handlerEvent = function (e) {
+    if (e.keyCode == 27 || e.type == "click") {
+        // pfm_header.getWindow().grp_setting.removeClass("on");
+    }
+};
+
+/**
+ * @event
+ * @name wdc_main_onbeforecloseall
+ * @description 모든 windowContainer 종료 시 발생하는 이벤트 정의
+ */
+scwin.wdc_main_onbeforecloseall = function () {
+    
+    main.pushStateMain();
+
+    wdc_main.setUserData("isOnbeforeCloseAll", true);
+    scwin.winCount = wdc_main.windows.length;
+    scwin.winIdx = scwin.winCount;
+
+    (async function closeAllWindows() {
+        for (let i = 1; i < scwin.winCount; i++) {
+            scwin.winIdx--;
+
+            if (scwin.winIdx === 1) {
+                wdc_main.setUserData("isOnbeforeCloseAll", false);
+            }
+            const windowId = wdc_main.windows[scwin.winIdx].windowId;
+            const window = wdc_main.getWindow(windowId);
+            const frame = window.$p.getFrame();
+
+            //bbok
+            // if (main.closeBeforePage(frame)) {
+            if (!wdc_main.windows[scwin.winIdx].isFix && main.closeBeforePage(frame)) { //핀고정은 닫기x
+                await wdc_main.closeWindow(windowId);
+                pfm_side.getWindow().pfm_thumbnail.getWindow().gen_thumb.removeChild(scwin.winIdx); //generator 닫기
+            }
+        }
+    })();
+
+    return false;
+};
+
+]]></script>
+		<style type="text/css"><![CDATA[
+            .container{z-index:0;}
+        ]]></style>
+	</head>
+	<body ev:onpageload="scwin.onpageload" ev:onkeydown="scwin.settingBox_handlerEvent" ev:onclick="scwin.settingBox_handlerEvent" class="wrm">
+		<xf:group class="wrap show_menu" id="grp_wrap" style="">
+            <w2:pageFrame style="" id="pfm_right" class="" src="/cm/main/right.xml"></w2:pageFrame>
+			<xf:group class="container content-wrap" id="grp_container" style="">
+				<xf:group style="" id="" class="contents">
+					<w2:windowContainer class="wdc_layout" controlIconPosition="allright" frameMode="pageFrame" hideTitleOnMaximize="false"
+						id="wdc_main" spaInitCount="0" stopMinimizeOnNameLayer="true" stopToggleOnLast="false" style="" toolbarPosition="top"
+						tooltipDisplay="false" tooltipGroupClass="false" useCloseButton="true" useControlIconTitle="false" useCustomMsg="false"
+						useFixButton="true" useNameContainer="true" useStatusMsg="false" windowAutoResize="false" changeActiveWindow="true"
+						windowMaximizeAll="false" windowTooltipDisplay="true" ev:onbeforecloseall="scwin.wdc_main_onbeforecloseall"
+						fixArrangeFullScreen="true" closeType="noneFixedWindow" windowMaxNum="15">
+					</w2:windowContainer>
+					<xf:group id="" style="position: absolute;bottom:40px;left:10px;min-width:calc( 98% - 20px );z-index: 9980;">
+						<xf:group style="display:none;" id="msg_success" class="msg_box success">
+							<w2:textbox tagname="" style="min-height:20px" id="txt_success" label="정상 처리 되었습니다." class="txt_msg"></w2:textbox>
+						</xf:group>
+						<xf:group style="display:none;" id="msg_info" class="msg_box info">
+							<w2:textbox tagname="" style="" id="txt_info" label="정상 처리 되었습니다." class="txt_msg"></w2:textbox>
+						</xf:group>
+						<xf:group style="display:none;" id="msg_warning" class="msg_box warning">
+							<xf:group style="" id="">
+								<w2:textbox tagname="" style="" id="txt_warning" label="처리 도중 오류가 발생하였습니다." class="txt_msg"></w2:textbox>
+								<xf:trigger ev:onclick="scwin.removeWarnMsg" disabled="" style="" id="btn_warnig" type="button"
+									class="btn_close">
+									<xf:label><![CDATA[테이블버튼]]></xf:label>
+								</xf:trigger>
+							</xf:group>
+							<xf:textarea style="min-height: 100px;" id="textarea_warning" placeholder=""></xf:textarea>
+						</xf:group>
+						<xf:group style="display:none;" id="msg_error" class="msg_box error">
+							<xf:group style="" id="">
+								<w2:textbox tagname="" style="" id="txt_error" label="처리 도중 오류가 발생하였습니다." class="txt_msg"></w2:textbox>
+								<xf:trigger ev:onclick="scwin.removeErrorMsg" disabled="" style="" id="btn_error" type="button"
+									class="btn_close">
+									<xf:label><![CDATA[테이블버튼]]></xf:label>
+								</xf:trigger>
+							</xf:group>
+							<xf:textarea style="min-height: 100px;" id="textarea_error" placeholder=""></xf:textarea>
+						</xf:group>
+					</xf:group>
+				</xf:group>
+				<!-- <w2:pageFrame style="" id="pfm_wtalk" src="/cm/xml/wtalk.xml"></w2:pageFrame> -->
+			</xf:group>
+			<w2:pageFrame style="" id="pfm_side" src="/cm/main/side.xml" class="side"></w2:pageFrame>
+			<w2:pageFrame style="display: none;" id="pfm_footer"></w2:pageFrame>
+            <xf:group style="" id="" class="dim"></xf:group>
+		</xf:group>
+	</body>
+</html>

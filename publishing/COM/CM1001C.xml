@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="타사무소 찾기">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="popup-content" id="" style="">
+    		<xf:group class="acco-wrap" id="" style="">
+    			<xf:group class="box-div" id="">
+    				<xf:group class="inquiry-wrap" id="">
+    					<xf:group class="inquiry-box" id="" style="width: auto;">
+    						<w2:textbox class="inquiry-title" id="" label="지역" style=""></w2:textbox>
+    						<xf:select1 allOption="true" appearance="minimal" chooseOption="true" chooseOptionLabel="[*]전체" class="sel-box"
+    							direction="auto" disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 282px;"
+    							submenuSize="auto">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[텍스트]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[텍스트]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    					</xf:group>
+    					<xf:group class="inquiry-box last" id="" style="width: auto;">
+    						<w2:textbox class="inquiry-title" id="" label="사무소(코드)명" style=""></w2:textbox>
+    						<xf:input id="" placeholder="구미강동지점" style=""></xf:input>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="box-button" id="">
+    				<xf:group class="button-wrap" id="" style="di">
+    					<xf:trigger class="btn-refresh" id="" style="" type="button">
+    						<xf:label></xf:label>
+    					</xf:trigger>
+    					<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    						<xf:label><![CDATA[조회]]></xf:label>
+    					</xf:trigger>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="gvwbox white" id="" style="">
+    			<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    				meta_snippetName="2_02 서브타이틀(h3)" style="">
+    				<w2:textbox class="" id="" label="타사무소 찾기" style="" tagname="h3"></w2:textbox>
+    				<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    					<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    					<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    				</xf:group>
+    				<xf:group class="rt" id="" style="">
+    				</xf:group>
+    			</xf:group>
+    			<w2:gridView autoFit="allColumn" checkAllType="false" class="gvw" dataList="data:dataList1"
+    				defaultCellHeight="20" id="" style="" visibleRowNum="10">
+    				<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    				<w2:header id="header2" style="">
+    					<w2:row id="row3" style="">
+    						<w2:column displayMode="label" id="column6" inputType="text" style="" value="사무소코드" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column5" inputType="text" style="" value="사무소명" width="70"></w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody id="gBody2" style="">
+    					<w2:row id="row4" style="">
+    						<w2:column displayMode="label" id="col1" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="col2" inputType="text" style="" value="" width="70"></w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    			</w2:gridView>
+    		</xf:group>
+    		<xf:group class="footer-box" id="" style="">
+    			<xf:trigger id="" style="" type="button">
+    				<xf:label><![CDATA[확인]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

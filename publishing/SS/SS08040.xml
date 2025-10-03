@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="고객정보변경이력 조회">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            			<w2:column id="col7" name="name7" dataType="text"></w2:column>
+            			<w2:column id="col8" name="name8" dataType="text"></w2:column>
+            			<w2:column id="col9" name="name9" dataType="text"></w2:column>
+            			<w2:column id="col10" name="name10" dataType="text"></w2:column>
+            			<w2:column id="col11" name="name11" dataType="text"></w2:column>
+            			<w2:column id="col12" name="name12" dataType="text"></w2:column>
+            			<w2:column id="col13" name="name13" dataType="text"></w2:column>
+            			<w2:column id="col14" name="name14" dataType="text"></w2:column>
+            			<w2:column id="col15" name="name15" dataType="text"></w2:column>
+            			<w2:column id="col16" name="name16" dataType="text"></w2:column>
+            			<w2:column id="col17" name="name17" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="조회대상" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 118px;margin-right: 4px;"
+    								submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    							<xf:input class="" id="" meta_snippetCategory="10_입력폼" meta_snippetKeyComponent="true"
+    								meta_snippetName="10_10 InputBox_조회버튼" placeholder="" style="width: 264px;">
+    							</xf:input>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="고객명" style=""></w2:textbox>
+    							<xf:input class="" id="" meta_snippetCategory="10_입력폼" meta_snippetKeyComponent="true"
+    								meta_snippetName="10_10 InputBox_조회버튼" placeholder="" style="">
+    							</xf:input>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="고객정보변경이력 조회" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="none" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row" id=""
+    					keepDefaultColumnWidth="true" rowNumHeaderValue="순번" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    					rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;"
+    					visibleRowNum="10">
+    					<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    					<w2:header style="" id="header1">
+    						<w2:row style="" id="row1">
+    							<w2:column width="150" inputType="text" id="column17" value="고객번호" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column16" value="변경이력일련번호" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column15" value="변경테이블명" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column14" value="변경이력구분코드" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column13" value="중앙회조합통합구분코드" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column12" value="변경이력등록일시" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column11" value="실명번호" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column10" value="고객암호화실명번호" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column9" value="고객명" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column8" value="변경전내용" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column7" value="변경후내용" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column6" value="최종변경사무소코드" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column5" value="최종변경단말기번호" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column4" value="최종변경자개인번호" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column3" value="최종변경책임자개인번호" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column2" value="최종변경프로그램명" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="column1" value="BPR업적사무소코드" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody style="" id="gBody1">
+    						<w2:row style="" id="row2">
+    							<w2:column width="150" inputType="text" id="col1" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col2" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col3" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col4" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col5" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col6" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col7" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col8" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col9" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col10" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col11" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col12" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col13" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col14" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col15" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col16" displayMode="label"></w2:column>
+    							<w2:column width="150" inputType="text" id="col17" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

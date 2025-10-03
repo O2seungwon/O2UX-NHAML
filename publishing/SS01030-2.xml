@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/commoon.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="시스템관리-결재선등록수정-화면">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList2" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    /* 테이블 가로세로 스크롤 연동 */
+	const theadWarp = document.querySelector('.table-wrap.thead');
+    const tbodyWarp = document.querySelector('.table-wrap.tbody');
+
+    tbodyWarp.addEventListener('scroll', () => {
+        theadWarp.scrollLeft =
+        tbodyWarp.scrollLeft;
+    })
+
+    /* active 클래스 추가 */
+    $('#mf_title-txt').click(function(){
+        $('.list-item')[$('.list-item').hasClass('active') ? 'removeClass' : 'addClass']('active');
+    })
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<xf:group class="content" id="" style="height: 100%;">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="결재구분" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="native" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="업무구분" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="native" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    						<xf:group class="inquiry-box" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="결재단계" style=""></w2:textbox>
+    							<xf:select1 allOption="true" appearance="minimal" chooseOption="" class="sel-box" direction="auto"
+    								disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="native" style="" submenuSize="auto">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    									<xf:item>
+    										<xf:label><![CDATA[텍스트]]></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select1>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="" style="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group adaptiveThreshold="" class="gvwbox white06" id="" meta_snippetCategory="06_그리드" meta_snippetKeyComponent="true"
+    				meta_snippetName="6_02 그리드_순번_상태" style="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="결재선 관리" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="206" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:group class="delete btn-a" id="" style="" tagname="a">
+    							<w2:span id="" label="삭제" style=""></w2:span>
+    						</xf:group>
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group id="" class="flex">
+    					<w2:gridView scrollByColumnAdaptive="false" rowNumVisible="false" rowStatusWidth="50" keepDefaultColumnWidth="true"
+    						rowNumHeaderValue="순번" scrollByColumn="false" rowStatusHeaderValue="status" checkReadOnlyOnPasteEnable="" focusMode="row"
+    						rowStatusVisible="false" rowNumWidth="50" dataList="data:dataList2" style="height: 150px;" autoFit="none" id="" visibleRowNum="21"
+    						class="gvw grid-50">
+    						<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
+    						<w2:header style="" id="header2">
+    							<w2:row style="" id="row3">
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="40" inputType="text" id="column11"
+    									value="" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="76" inputType="text" id="column10"
+    									value="결재구분" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="76" inputType="text" id="column9"
+    									value="업무구분" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="104" inputType="text" id="column8"
+    									value="결재업무코드" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column hidden="false" width="144" inputType="text" style="" id="column117" value="결재업무명"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="74" inputType="text" id="column6"
+    									value="결재단계" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="74" inputType="text" id="column5"
+    									value="상신취소" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="76" inputType="text" id="column4"
+    									value="반려 이동" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" removeBorderStyle="false" width="144" inputType="text" id="column3"
+    									value="비고" blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column rowSpan="" colSpan="" width="72" inputType="text" id="column39" value="사용여부"
+    									displayMode="label">
+    								</w2:column>
+    							</w2:row>
+    						</w2:header>
+    						<w2:gBody style="" id="gBody2">
+    							<w2:row style="" id="row4">
+    								<w2:column removeBorderStyle="false" width="40" inputType="image" id="col1" blockSelect="false"
+    									displayMode="label" style="padding: 0;" viewType="icon" imageHeight="20" imageWidth="20"
+    									imageSrc="/cm/images/icons/file-icon20.svg">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" width="76" inputType="text" id="col2" blockSelect="false"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" width="76" inputType="text" id="col3" blockSelect="false"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" width="104" inputType="text" id="col4" blockSelect="false"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" width="144" inputType="text" id="col5" blockSelect="false"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" viewType="icon" width="74" inputType="text" id="col7"
+    									blockSelect="false" displayMode="label">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" width="74" inputType="text" id="col8" blockSelect="false"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" width="76" inputType="text" id="col9" blockSelect="false"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column removeBorderStyle="false" width="144" inputType="text" id="col10" blockSelect="false"
+    									displayMode="label">
+    								</w2:column>
+    								<w2:column width="72" inputType="text" id="column40" displayMode="label"></w2:column>
+    							</w2:row>
+    						</w2:gBody>
+    					</w2:gridView>
+    					<xf:group style="" id="" class="width-48">
+    						<xf:group style="padding: 12px;margin-left: 8px;" id="" class="light-gray-box">
+    							<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    								meta_snippetName="2_02 서브타이틀(h3)" style="">
+    								<w2:textbox class="" id="" label="결재선 기본정보" style="" tagname="h3"></w2:textbox>
+    								<xf:group class="rt" id="" style=""></xf:group>
+    							</xf:group>
+    							<xf:group class="table-border-none" id="" style="">
+    								<xf:group class="w2tb gray-table " id="" style="width:100%;" tagname="table">
+    									<w2:attributes>
+    										<w2:summary></w2:summary>
+    									</w2:attributes>
+    									<xf:group tagname="caption"></xf:group>
+    									<xf:group tagname="colgroup">
+    										<xf:group style="width:160px;" tagname="col"></xf:group>
+    										<xf:group style="width:auto;" tagname="col"></xf:group>
+    										<xf:group style="width:160px;" tagname="col"></xf:group>
+    										<xf:group style="width:auto;" tagname="col"></xf:group>
+    									</xf:group>
+    									<xf:group class="f-tr" style="" tagname="tr">
+    										<xf:group class="w2tb_th" style="padding: 20px 0 8px 20px;height: 60px;" tagname="th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="결재구분" style=""></w2:textbox>
+    											<w2:span class="important-span" id="" label="필수" style=""></w2:span>
+    										</xf:group>
+    										<xf:group class="w2tb_td" style="padding: 20px 0 8px 0;height: 60px;" tagname="td">
+    											<w2:attributes>
+    												<w2:colspan>3</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    											<xf:select1 appearance="full" class="radio-select title" cols="" disabled="" id=""
+    												meta_snippetCategory="10_입력폼" meta_snippetKeyComponent="true" meta_snippetName="10_05 Radio" ref="" renderType="radiogroup"
+    												rows="" selectedIndex="1" style="">
+    												<xf:choices>
+    													<xf:item>
+    														<xf:label><![CDATA[사무소]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    													<xf:item>
+    														<xf:label><![CDATA[권한그룹]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    												</xf:choices>
+    											</xf:select1>
+    										</xf:group>
+    									</xf:group>
+    									<xf:group style="" tagname="tr">
+    										<xf:group class="w2tb_th" style="" tagname="th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="업무구분" style=""></w2:textbox>
+    											<w2:span class="important-span" id="" label="필수" style=""></w2:span>
+    										</xf:group>
+    										<xf:group class="w2tb_td" style="" tagname="td">
+    											<w2:attributes>
+    												<w2:colspan>3</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    											<xf:select1 appearance="full" class="radio-select title" cols="" disabled="" id=""
+    												meta_snippetCategory="10_입력폼" meta_snippetKeyComponent="true" meta_snippetName="10_05 Radio" ref="" renderType="radiogroup"
+    												rows="" selectedIndex="1" style="">
+    												<xf:choices>
+    													<xf:item>
+    														<xf:label><![CDATA[CTR]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    													<xf:item>
+    														<xf:label><![CDATA[STR]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    													<xf:item>
+    														<xf:label><![CDATA[KYC]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    													<xf:item>
+    														<xf:label><![CDATA[공통]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    													<xf:item>
+    														<xf:label><![CDATA[RBA]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    												</xf:choices>
+    											</xf:select1>
+    										</xf:group>
+    									</xf:group>
+    									<xf:group style="" tagname="tr">
+    										<xf:group class="w2tb_th" tagname="th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="결재업무코드" style=""></w2:textbox>
+    											<w2:span class="important-span" id="" label="필수" style=""></w2:span>
+    										</xf:group>
+    										<xf:group class="w2tb_td" tagname="td">
+    											<w2:attributes></w2:attributes>
+    											<xf:input id="" style=""></xf:input>
+    										</xf:group>
+    										<xf:group class="w2tb_th" tagname="th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="결재업무명" style=""></w2:textbox>
+    											<w2:span class="important-span" id="" label="필수" style=""></w2:span>
+    										</xf:group>
+    										<xf:group class="w2tb_td" tagname="td">
+    											<w2:attributes></w2:attributes>
+    											<xf:input id="" style=""></xf:input>
+    										</xf:group>
+    									</xf:group>
+    									<xf:group style="" tagname="tr">
+    										<xf:group class="w2tb_th" tagname="th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="결재업무명" style=""></w2:textbox>
+    											<w2:span class="important-span" id="" label="필수" style=""></w2:span>
+    										</xf:group>
+    										<xf:group class="w2tb_td " tagname="td">
+    											<w2:attributes>
+    												<w2:colspan>3</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    											<xf:input id="" style=""></xf:input>
+    										</xf:group>
+    									</xf:group>
+    									<xf:group tagname="tr">
+    										<xf:group tagname="th" class="w2tb_th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="비고" style=""></w2:textbox>
+    										</xf:group>
+    										<xf:group tagname="td" class="w2tb_td ">
+    											<w2:attributes>
+    												<w2:colspan>3</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    											<xf:textarea id="" style=""></xf:textarea>
+    										</xf:group></xf:group><xf:group style="" tagname="tr">
+    										<xf:group class="w2tb_th" tagname="th"><w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes><w2:textbox id="" label="사용여부" style=""></w2:textbox></xf:group>
+    										<xf:group class="w2tb_td " tagname="td">
+    											<w2:attributes>
+    												<w2:colspan>3</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes>
+    											<xf:select1 appearance="full" class="radio-select title" cols="" disabled="" id=""
+    												meta_snippetCategory="10_입력폼" meta_snippetKeyComponent="true" meta_snippetName="10_05 Radio" ref="" renderType="radiogroup"
+    												rows="" selectedIndex="1" style="">
+    												<xf:choices>
+    													<xf:item>
+    														<xf:label><![CDATA[사용]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    													<xf:item>
+    														<xf:label><![CDATA[미사용]]></xf:label>
+    														<xf:value><![CDATA[]]></xf:value>
+    													</xf:item>
+    												</xf:choices>
+    											</xf:select1>
+    										</xf:group>
+    									</xf:group>
+    									<xf:group tagname="tr" style="">
+    										<xf:group tagname="th" class="w2tb_th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="결재업무코드" style=""></w2:textbox>
+    											<w2:span class="important-span" id="" label="필수" style=""></w2:span>
+    										</xf:group>
+    										<xf:group tagname="td" class="w2tb_td ">
+    											<w2:attributes></w2:attributes>
+    											<xf:input id="" style=""></xf:input>
+    										</xf:group>
+    										<xf:group tagname="th" class="w2tb_th">
+    											<w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes>
+    											<w2:textbox id="" label="결재업무명" style=""></w2:textbox>
+    											<w2:span class="important-span" id="" label="필수" style=""></w2:span>
+    										</xf:group>
+    										<xf:group tagname="td" class="w2tb_td">
+    											<w2:attributes></w2:attributes>
+    											<xf:input id="" style=""></xf:input>
+    										</xf:group></xf:group><xf:group style="" tagname="tr">
+    										<xf:group class="w2tb_th" style="padding: 8px 0 20px 20px;height: 60px;" tagname="th"><w2:attributes>
+    												<w2:scope>row</w2:scope>
+    											</w2:attributes><w2:textbox id="" label="등록자" style=""></w2:textbox></xf:group>
+    										<xf:group class="w2tb_td" style="padding: 8px 0 20px 0;height: 60px;" tagname="td">00400549&amp;nbsp;홍길동<w2:attributes>
+    												<w2:colspan>1</w2:colspan>
+    												<w2:rowspan>1</w2:rowspan>
+    											</w2:attributes></xf:group>
+    										<xf:group class="w2tb_th" style="padding: 8px 0 20px 20px;height: 60px;" tagname="th">
+    											<w2:attributes></w2:attributes>
+    											<w2:textbox id="" label="등록일시" style=""></w2:textbox>
+    										</xf:group>
+    										<xf:group class="w2tb_td" style="padding: 8px 20px 20px 0;height: 60px;" tagname="td">2025-09-01&amp;nbsp;16:59:59<w2:attributes></w2:attributes></xf:group>
+    									</xf:group>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    						<xf:group class="ss-none-wrap" id="" style="">
+    							<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    								meta_snippetName="2_02 서브타이틀(h3)" style="">
+    								<w2:textbox class="" id="" label="결재단계" style="" tagname="h3"></w2:textbox>
+    								<xf:group class="rt" id="" style="">
+    									<xf:trigger class="btn_cm btn-download" id="" style="width: 69px" type="button">
+    										<xf:label><![CDATA[초기화]]></xf:label>
+    									</xf:trigger>
+    									<xf:group class="save btn-a" id="" style="width: 86px;" tagname="a">
+    										<w2:span id="" label="등록/수정" style=""></w2:span>
+    									</xf:group>
+    									<w2:span class="dash-span" id="" label="" style=""></w2:span>
+    									<xf:trigger class="btn-a arrow-down" id="" style="" type="button">
+    										<xf:label><![CDATA[]]></xf:label>
+    									</xf:trigger>
+    									<xf:trigger class="btn-a arrow-up" id="" style="" type="button">
+    										<xf:label><![CDATA[]]></xf:label>
+    									</xf:trigger>
+    								</xf:group>
+    							</xf:group>
+    							<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="gvw ss-none" dataList="data:dataList1"
+    								focusMode="row" id="" keepDefaultColumnWidth="true" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    								rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style=""
+    								visibleRowNum="10">
+    								<w2:caption id="caption3" style="" value="this is a grid caption."></w2:caption>
+    								<w2:header id="header1" style="">
+    									<w2:row id="row1" style="">
+    										<w2:column displayMode="label" id="column6" inputType="text" style="" value="선택" width="40"></w2:column>
+    										<w2:column displayMode="label" id="column5" inputType="text" style="" value="결재순서"
+    											width="73">
+    										</w2:column>
+    										<w2:column displayMode="label" id="column4" inputType="text" style="" value="결재그룹코드"
+    											width="97">
+    										</w2:column>
+    										<w2:column displayMode="label" id="column3" inputType="text" style="" value="결제그룹명"
+    											width="430">
+    										</w2:column>
+    										<w2:column displayMode="label" id="column2" inputType="text" style="" value="상신취소"
+    											width="73">
+    										</w2:column>
+    										<w2:column displayMode="label" id="column1" inputType="text" style="" value="반려 시 단계 이동"
+    											width="138">
+    										</w2:column>
+    									</w2:row>
+    								</w2:header>
+    								<w2:gBody id="gBody1" style="">
+    									<w2:row id="row2" style="">
+    										<w2:column displayMode="label" id="col1" inputType="checkbox" style="padding: 0;" value="" width="40"></w2:column>
+    										<w2:column displayMode="label" embeddedInput="true" id="col2" inputType="text" placeholder="1"
+    											style="padding: 0;" value="" width="73">
+    										</w2:column>
+    										<w2:column displayMode="label" embeddedInput="true" id="col3" inputType="text" placeholder="C1"
+    											style="padding: 0;" value="" width="97">
+    										</w2:column>
+    										<w2:column class="ss-none-wrap" displayMode="label" embeddedInput="true" id="col4"
+    											imageHeight="16" imageSrc="/cm/images/icons/search-icon16.svg" imageWidth="16" inputType="textImage" placeholder="C1"
+    											style="padding: 0;" value="" viewType="icon" width="430">
+    										</w2:column>
+    										<w2:column displayMode="label" id="col5" inputType="checkbox" style="" value="" width="73"></w2:column>
+    										<w2:column allOption="" chooseOption="" displayMode="label" embeddedInput="true" id="col6"
+    											inputType="select" ref="" style="padding: 0;" value="" width="138">
+    											<w2:choices>
+    												<w2:item>
+    													<w2:label><![CDATA[C1]]></w2:label>
+    													<w2:value><![CDATA[..]]></w2:value>
+    												</w2:item>
+    												<w2:item>
+    													<w2:label><![CDATA[C1]]></w2:label>
+    													<w2:value><![CDATA[]]></w2:value>
+    												</w2:item>
+    												<w2:item>
+    													<w2:label><![CDATA[C1]]></w2:label>
+    													<w2:value><![CDATA[]]></w2:value>
+    												</w2:item>
+    											</w2:choices>
+    										</w2:column>
+    									</w2:row>
+    								</w2:gBody>
+    							</w2:gridView>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group></xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head>
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+        	<w2:dataCollection baseNode="map">
+        		<w2:dataList baseNode="list" repeatNode="map" id="dataListMenu" saveRemovedData="true">
+        			<w2:columnInfo>
+        				<w2:column id="SORT_SQ" name="SORT_SQ" dataType="text"></w2:column>
+        				<w2:column id="FAVORITE_YN" name="FAVORITE_YN" dataType="text"></w2:column>
+        				<w2:column id="MNNM" name="MNNM" dataType="text"></w2:column>
+        				<w2:column id="MENU_C" name="MENU_C" dataType="text"></w2:column>
+        				<w2:column id="UPPER_ID" name="UPPER_ID" dataType="text"></w2:column>
+        				<w2:column id="MENU_AUTH" name="MENU_AUTH" dataType="text"></w2:column>
+        				<w2:column id="HELP_POPUP_YN" name="HELP_POPUP_YN" dataType="text"></w2:column>
+        				<w2:column id="DEP" name="DEP" dataType="text"></w2:column>
+        				<w2:column id="MENU_LVL_C" name="MENU_LVL_C" dataType="text"></w2:column>
+        				<w2:column id="PGID" name="PGID" dataType="text"></w2:column>
+        				<w2:column id="PGM_PATHNM" name="PGM_PATHNM" dataType="text"></w2:column>
+        			</w2:columnInfo>
+        		</w2:dataList>
+        		<w2:dataMap baseNode="map" id="dataMapSearch">
+        			<w2:keyInfo>
+        				<w2:key id="GRP" name="name1" dataType="text"></w2:key>
+        				<w2:key id="EMP" name="name2" dataType="text"></w2:key>
+        			</w2:keyInfo>
+        		</w2:dataMap>
+        	</w2:dataCollection>
+        	<w2:workflowCollection />
+        	<xf:submission id="submission1" action="http://localhost:8790/menu/all.ml" method="post" mediatype="application/json" ref="data:json,dataMapSearch" target="data:json,dataListMenu"
+        		encoding="UTF-8" instance="" replace="" errorHandler="" customHandler="" mode="asynchronous" processMsg="" ev:submit="scwin.submission1_submit"
+        		ev:submitdone="scwin.submission1_submitdone" ev:submiterror="" abortTrigger="">
+        	</xf:submission>
+        </xf:model>
+        <w2:layoutInfo>
+            <w2:layout name="main"/>
+        </w2:layoutInfo>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    $p.executeSubmission("submission1");
+};
+
+scwin.submission1_submitdone = function (e) {
+    dataListMenu.setJSON(e.responseJSON);
+};
+
+scwin.leftMenu_onlabelclick = function (value, node, index) {
+    $p.parent().scwin.onMenuClick(node);
+};
+
+scwin.excel_onclick = function(e) {
+    //예제 파일의 스크립트 "scwin.btn_ex2_onclick"를 참고하세요.
+    var jsnOptions = {
+        fileName : "메뉴.xlsx"
+    };
+
+    //GridView의 엑셀다운로드 API를 호출합니다. 
+    grdListCodeSub.advancedExcelDownload(jsnOptions);
+};]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+        <xf:group id="grpButtons">
+            <w2:button style="width:50px; height:20px; margin-left: 3px;" id="excel" label="엑셀" ev:onclick="scwin.excel_onclick"></w2:button>
+        </xf:group>
+    	<w2:treeview id="leftMenu" dataType="listed" tooltipGroupClass="false" style="width:350px;height:940px;"
+    		ev:onlabelclick="scwin.leftMenu_onlabelclick">
+    		<w2:itemset nodeset="data:dataListMenu">
+    			<w2:label ref="MNNM"></w2:label>
+    			<w2:value ref="PGM_PATHNM"></w2:value>
+    			<w2:depth ref="MENU_LVL_C"></w2:depth>
+    			<w2:folder ref="DEP"></w2:folder>
+    			<w2:checkbox ref=""></w2:checkbox>
+    			<w2:checkboxDisabled ref=""></w2:checkboxDisabled>
+    			<w2:image ref=""></w2:image>
+    			<w2:iconImage ref=""></w2:iconImage>
+    			<w2:selectedImage ref=""></w2:selectedImage>
+    			<w2:expandedImage ref=""></w2:expandedImage>
+    			<w2:leafImage ref=""></w2:leafImage>
+    		</w2:itemset>
+    	</w2:treeview>
+    </body>
+</html>

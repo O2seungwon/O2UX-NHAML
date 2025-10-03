@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/lnb.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="lnb">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+    /* active 클래스 추가 */
+    $('#mf_title-txt').click(function(){
+        $('.list-item')[$('.list-item').hasClass('active') ? 'removeClass' : 'addClass']('active');
+    })
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group style="display: flex;height: 100vh;position: relative;padding: 0;" id="" class="nhbank">
+    	<xf:group style="" id="" class="left-lnb">
+    		<xf:group style="" id="" class="lnb-area">
+    			<xf:group style="" id="" class="lnb-area-wrap fix-menu">
+    				<xf:group style="" id="" class="lnb-list">
+    					<xf:group tagname="a" id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-dash"></w2:span>
+    						<w2:span style="" id="" label="대시보드" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group tagname="a" id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-bookmark"></w2:span>
+    						<w2:span style="" id="" label="즐겨찾기" class="lnb-title"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group style="" id="" class="lnb-area-wrap">
+    				<xf:group style="" id="" class="lnb-list">
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-ctr"></w2:span>
+    						<w2:span style="" id="" label="CTR" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-str"></w2:span>
+    						<w2:span style="" id="" label="STR" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-kyc"></w2:span>
+    						<w2:span style="" id="" label="KYC" class="lnb-title"></w2:span>
+    						<xf:group style="" id="" class="lnb-side">
+    							<xf:group style="" id="" class="side-up">
+    								<xf:input style="" id="" placeholder="비밀번호, 화면 명"></xf:input>
+    								<w2:span style="" id="" label="고액현금거래보고"></w2:span>
+    							</xf:group>
+    							<xf:group style="" id="" class="side-down">
+    								<xf:group style="" id="" class="side-list">
+    									<w2:span style="" label="보고서 관리" id="" class="title-txt"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="side-list">
+    									<w2:span style="" id="" label="조건등록" class="title-txt"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="side-list">
+    									<w2:span style="" id="title-txt" label="고액현금거래점검" class="title-txt"></w2:span>
+    									<xf:group style="" id="" class="list-item">
+    										<xf:group tagname="a" style="" id="" class="a-box">
+    											<w2:span style="" id="" label="[CT01020]"></w2:span>
+    											<w2:span style="" id="" label="고액현금거래 점검/결재현황"></w2:span>
+    										</xf:group>
+    										<xf:group tagname="a" style="" id="" class="a-box">
+    											<w2:span style="" id="" label="[CT01030]"></w2:span>
+    											<w2:span style="" id="" label="(영업점)고액현금거래 결재관리"></w2:span>
+    										</xf:group>
+    										<xf:group tagname="a" style="" id="" class="a-box">
+    											<w2:span style="" id="" label="[CT01040]"></w2:span>
+    											<w2:span style="" id="" label="(본부)고액현금거래 결재관리"></w2:span>
+    										</xf:group>
+    										<xf:group tagname="a" style="" id="" class="a-box">
+    											<w2:span style="" id="" label="[CT01050]"></w2:span>
+    											<w2:span style="" id="" label="(영업점)고액현금거래 점검대상명세"></w2:span>
+    										</xf:group>
+    										<xf:group tagname="a" style="" id="" class="a-box">
+    											<w2:span style="" id="" label="[CT01060]"></w2:span>
+    											<w2:span style="" id="" label="(본부)고액현금거래 점검대상명세"></w2:span>
+    										</xf:group>
+    										<xf:group tagname="a" style="" id="" class="a-box">
+    											<w2:span style="" id="" label="[CT01070]"></w2:span>
+    											<w2:span style="" id="" label="고액현금거래 거래자별 합계 명세"></w2:span>
+    										</xf:group>
+    										<xf:group tagname="a" style="" id="" class="a-box">
+    											<w2:span style="" id="" label="[CT01080]"></w2:span>
+    											<w2:span style="" id="" label="상세분석 현금거래내역 조회"></w2:span>
+    										</xf:group>
+    									</xf:group>
+    								</xf:group>
+    								<xf:group style="" id="" class="side-list">
+    									<w2:span style="" id="" label="검증관리" class="title-txt"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="side-list">
+    									<w2:span style="" id="" label="통계관리" class="title-txt"></w2:span>
+    								</xf:group>
+    								<xf:group style="" id="" class="side-list">
+    									<w2:span style="" id="" label="관리자" class="title-txt"></w2:span>
+    								</xf:group>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-rba"></w2:span>
+    						<w2:span style="" id="" label="RBA" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-kofiu"></w2:span>
+    						<w2:span style="" id="" label="KoFIU" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-third"></w2:span>
+    						<w2:span style="" id="" label="제3자" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-wlf"></w2:span>
+    						<w2:span style="" id="" label="WLF" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-common"></w2:span>
+    						<w2:span style="" id="" label="업무공통" class="lnb-title"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group style="" id="" class="lnb-list">
+    					<xf:group tagname="a" id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-system"></w2:span>
+    						<w2:span style="" id="" label="시스템관리" class="lnb-title"></w2:span>
+    					</xf:group>
+    					<xf:group tagname="a" id="" class="lnb-item">
+    						<w2:span style="" id="" label="" class="lnb-icon lnb-icon-thumbnail"></w2:span>
+    						<w2:span style="" id="" label="썸네일" class="lnb-title"></w2:span>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group></xf:group>
+    </body>
+</html>

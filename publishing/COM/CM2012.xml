@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="공지사항(팝업)">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map"/>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="popup-content" id="" style="">
+    		<xf:group adaptiveThreshold="" class="right-tabless" id="" meta_snippetCategory="06_그리드" meta_snippetKeyComponent="true"
+    			meta_snippetName="6_02 그리드_순번_상태" style="">
+    			<xf:group class="w2tb gray-table" id="" style="width:100%;" tagname="table">
+    				<w2:attributes>
+    					<w2:summary></w2:summary>
+    				</w2:attributes>
+    				<xf:group tagname="caption"></xf:group>
+    				<xf:group tagname="colgroup">
+    					<xf:group style="width:160px;" tagname="col"></xf:group>
+    					<xf:group style="" tagname="col"></xf:group>
+    					<xf:group style="width:160px;" tagname="col"></xf:group>
+    					<xf:group tagname="col"></xf:group><xf:group style="width: 220px;" tagname="col"></xf:group>
+    				</xf:group>
+    				<xf:group class="f-tr" style="" tagname="tr">
+    					<xf:group class="w2tb_th" style="padding: 20px 0 8px 20px;height: 60px;border-top-left-radius:16px;" tagname="th">제목<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes></xf:group>
+    					<xf:group class="w2tb_td" style="padding: 20px 0 8px 0;height: 60px;" tagname="td">
+    						<w2:attributes><w2:colspan>4</w2:colspan><w2:rowspan>1</w2:rowspan></w2:attributes><w2:textbox class=" tal" id="" label="공지사항 제목~~~" style=""></w2:textbox>
+    					</xf:group></xf:group>
+    				<xf:group tagname="tr" style=""><xf:group tagname="th" class="w2tb_th">내용<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group>
+    					<xf:group tagname="td" class="w2tb_td">
+    						<w2:attributes><w2:colspan>4</w2:colspan><w2:rowspan>1</w2:rowspan></w2:attributes>
+    						<w2:textbox class=" tal" id="" label="공지사항 내용이 들어갑니다.&lt;br/&gt;공지사항 내용이 들어갑니다.&lt;br/&gt;공지사항 내용이 들어갑니다.&lt;br/&gt;공지사항 내용이 들어갑니다.&lt;br/&gt;공지사항 내용이 들어갑니다.&lt;br/&gt;공지사항 내용이 들어갑니다." style="margin-bottom:20px;" escape="false"></w2:textbox>
+    					</xf:group></xf:group><xf:group tagname="tr" style=""><xf:group tagname="th" class="w2tb_th">첨부파일<w2:attributes><w2:scope>row</w2:scope></w2:attributes></xf:group>
+	<xf:group tagname="td" class="w2tb_td">
+		<w2:attributes>
+			<w2:colspan>4</w2:colspan>
+			<w2:rowspan>1</w2:rowspan>
+		</w2:attributes>
+		<xf:group class="popup-file-wrap" id="" style="">
+			<xf:group class="file-wrap" id="">
+				<xf:group class="popup-file" id="" style="">
+					<w2:span class="txt" id="" label="보고서_진행현황_관련자료1_hwp" style=""></w2:span>
+				</xf:group>
+				<xf:group class="popup-file" id="" style="">
+					<w2:span class="txt" id="" label="보고서_진행현황_관련자료2_hwp" style=""></w2:span>
+				</xf:group>
+				<xf:group class="popup-file" id="" style="">
+					<w2:span class="txt" id="" label="보고서_진행현황_hwp" style=""></w2:span>
+				</xf:group>
+				<xf:group class="popup-file" id="" style="">
+					<w2:span class="txt" id="" label="보고서_진행현황_관련자료1_hwp" style=""></w2:span>
+				</xf:group>
+			</xf:group>
+		</xf:group>
+	</xf:group></xf:group><xf:group style="" tagname="tr">
+    					<xf:group class="w2tb_th" style="padding: 8px 0 20px 20px;height: 60px;" tagname="th">등록자<w2:attributes>
+    							<w2:scope>row</w2:scope>
+    						</w2:attributes></xf:group>
+    					<xf:group class="w2tb_td" style="padding: 8px 0 20px 0;height: 60px;" tagname="td">
+    						<w2:attributes>
+    							<w2:colspan>1</w2:colspan>
+    							<w2:rowspan>1</w2:rowspan>
+    						</w2:attributes>
+    						<w2:textbox class=" tal" id="" label="TB_TESTER" style=""></w2:textbox>
+    					</xf:group>
+    					<xf:group class="w2tb_th" style="padding: 8px 0 20px 20px;height: 60px;" tagname="th">등록일자<w2:attributes></w2:attributes></xf:group>
+    					<xf:group class="w2tb_td" style="padding: 8px 20px 20px 0;height: 60px;" tagname="td">
+    						<w2:attributes></w2:attributes>
+    						<w2:textbox class="tal" id="" label="2025-09-15" style=""></w2:textbox></xf:group>
+    					<xf:group tagname="td" class="w2tb_td tar" style="padding: 8px 20px 20px 0;">
+    						<w2:attributes></w2:attributes>
+    						<xf:select appearance="full" class="check-icon" cols="" disabled="" id="" ref="" renderType="checkboxgroup"
+    							rows="" selectedindex="1" style="height: 30px;">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[오늘하루 더이상 띄우지 않기]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select>
+    					</xf:group></xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

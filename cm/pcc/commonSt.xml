@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ev="http://www.w3.org/2001/xml-events"
+xmlns:w2="http://www.inswave.com/websquare"
+xmlns:xf="http://www.w3.org/2002/xforms">
+	<head>
+		<w2:type>COMMON</w2:type>
+		<w2:buildDate/>
+		<w2:MSA/>
+		<xf:model>
+			<w2:dataCollection baseNode="map">
+			</w2:dataCollection>
+			<w2:workflowCollection>
+			</w2:workflowCollection>
+		</xf:model>
+		<w2:layoutInfo>
+		</w2:layoutInfo>
+		<w2:publicInfo method=""/>
+		<script type="text/javascript" lazy="false"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+
+scwin.DATA_PREFIX = "dlt_commonCodeST";
+scwin.commonCodeList = [];
+
+/**
+ * [
+ *  {
+ *      compId: 'sbx_aaa',
+ *      list: [
+ *          { cd: '1', val: '사용' },
+ *          { cd: '2', val: '미사용' }
+ *      ]
+ *  },
+ *  {
+ *      compId: 'sbx_bbb1,sbx_bbb2'
+ *      list: [ {...}, {...} ]
+ *  }
+ * ]
+ */
+scwin.setCommonCombo = function(codeOpts) {
+    const codeOptsLen = codeOpts ? codeOpts.length : 0;
+    if (codeOptsLen < 1) {
+        return;
+    }
+
+    const fieldArr = ["cd", "val"];
+    let codeObj, dltId, dltIdArr = [], compArr, tmpId;
+    let paramCode = [];
+    const dataListOption = scwin._getCodeDataListOpts(fieldArr);
+
+    if (! $c.util.getComponent(scwin.DATA_PREFIX)) {
+        dataListOption.id = scwin.DATA_PREFIX;
+        //$p.data.create(dataListOption);
+    }
+
+    $p.data.create(dataListOption);
+
+    for(codeObj of codeOpts) {
+        dltId = scwin.DATA_PREFIX + codeObj.compId;
+
+        if (typeof scwin.commonCodeList[dltId] === "undefined") {
+            dltIdArr.push(dltId);
+
+            paramCode.push(codeObj.compId);
+            dataListOption.id = dltId;
+            $p.data.create(dataListOption);
+
+            const dlt = $c.util.getComponent(dltId);
+            dlt.setJSON(codeObj.list);
+        } else {
+            dataListOption.id = dltId;
+            $p.data.create(dataListOption);
+            let dataListObj = $p.getComponentById(dltId);
+            dataListObj.setJSON(scwin.commonCodeList[dltId]);
+        }
+
+        compArr = (codeObj.compId).replaceAll(" ", "").split(",");
+        for(tmpId of compArr) {
+            const comp = $c.util.getComponent(tmpId);
+            if (! $c.util.isEmpty(comp)) {
+                // component 있을 경우
+                if (comp.getPluginName() === "selectbox") {
+                    comp.setNodeSet("data:" + dltId, "val", "cd");
+                } else {
+                    comp.setNodeSet("data:" + dltId, "val", "cd");
+                }
+            }
+        }
+    }
+};
+
+scwin._getCodeDataListOpts = function(infoArr) {
+    const option = {
+        "type": "dataList",
+        "option": {
+            "baseNode": "list",
+            "repeatNode": "map"
+        },
+        "columnInfo": []
+    };
+
+    for (let ky of infoArr) {
+        option.columnInfo.push({
+            "id": ky
+        });
+    }
+    return option;
+};
+
+/**
+ * @description GRID MULIT 포커스 설정(컬럼데이터와 매칭되는 로우에 포커스)
+ * @param {Object} girdObj 그리드 객체
+ * @param {Object} dltObj DataList 객체
+ * @param {String} matchedCol
+ * @param {string} matchedData
+ */
+scwin.setMultiFocusRow = function(gridObj, dltObj, matchedCol, matchedData) {
+    const rsRowArr = dltObj.getMatchedIndex(matchedCol, matchedData);
+    if(rsRowArr.length > 0) {
+        let cellsPosition = [];
+        for (let i = 0; i < rsRowArr.length; i++){
+            let obj = {
+                row: rsRowArr[i],
+                col: 0
+            }
+            cellsPosition.push(obj)
+        }
+        gridObj.setMultiFocus(cellsPosition);            
+    }
+}
+
+/**
+ * @description 날짜기간 유효성 체크
+ * @param {String} 시작일자 id
+ * @param {String} 종료일자 id
+ * @param {String} strStMsg
+ * @param {String} strEdMsg
+ */
+scwin.chkPrdDate = function(stId, edId, strStMsg, strEdMsg) {
+    var stObj = $p.getComponentById(stId);
+    var edObj = $p.getComponentById(edId);
+
+    let stMsg = "시작일자";
+    if(!$c.util.isEmpty(strStMsg)) { stMsg = strStMsg; }
+    let edMsg = "종료일자";
+    if(!$c.util.isEmpty(strEdMsg)) { edMsg = strEdMsg; }
+
+    // 날짜기간 유효성 체크
+    if(!$c.util.isEmpty(stObj.getValue()) && !$c.util.isEmpty(edObj.getValue())) {
+        if(stObj.getValue() > edObj.getValue()) {
+            $c.win.alert(stMsg + "가 "+ edMsg + "보다 클 수 없습니다.");
+                stObj.setValueCancel();   // 변경되기 전 값으로
+                edObj.setValueCancel();   // 변경되기 전 값으로
+        }
+    }
+}]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload">
+	</body>
+</html>

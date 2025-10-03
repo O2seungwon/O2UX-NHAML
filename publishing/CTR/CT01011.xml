@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/popup.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="팝업-보고서점검">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" class="">
+    	<xf:group style="" id="" class="popup-content report-box">
+    		<xf:group class="inquiry-wrap office-wrap" id="" style="">
+    			<xf:group class="office-inquiry" id="">
+    				<xf:group class="inquiry-box" id="" style="width: auto;">
+    					<w2:textbox class="inquiry-title" id="" label="거래일자" style=""></w2:textbox>
+    					<xf:input id="" style="" placeholder="2025-08-08"></xf:input>
+    				</xf:group>
+    				<xf:group class="inquiry-box empty" id="" style="">
+    					<w2:textbox class="inquiry-title" id="" label="표시구분" style=""></w2:textbox>
+    				</xf:group><xf:group class="inquiry-box auto" id="" style="">
+    					<w2:textbox class="inquiry-title" id="" label="보고제외자 포함여부" style=""></w2:textbox>
+    					<xf:select appearance="full" class="check-icon" cols="" disabled="" id="" ref="" renderType="checkboxgroup" rows=""
+    						selectedindex="1" style="width: 28px;height: 30px;">
+    						<xf:choices>
+    							<xf:item>
+    								<xf:label></xf:label>
+    								<xf:value></xf:value>
+    							</xf:item>
+    						</xf:choices>
+    					</xf:select>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="box-button mg-top" id="" style="width: auto;">
+    				<xf:group class="button-wrap" id="" style="">
+    					<xf:trigger class="btn-refresh" id="" style="" type="button">
+    						<xf:label></xf:label>
+    					</xf:trigger>
+    					<xf:trigger class="btn-inq" id="" style="" type="button">
+    						<xf:label><![CDATA[조회]]></xf:label>
+    					</xf:trigger>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group adaptiveThreshold="" class="gvwbox fcfcfc" id="" meta_snippetCategory="06_그리드" meta_snippetKeyComponent="true"
+    			meta_snippetName="6_02 그리드_순번_상태" style="">
+    			<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    				meta_snippetName="2_02 서브타이틀(h3)" style="">
+    				<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    					<w2:textbox class="num" id="" label="20" style="" tagname="span"></w2:textbox>
+    					<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    				</xf:group>
+    				<xf:group class="rt" id="" style="">
+    					<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    						<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    					</xf:trigger>
+    				</xf:group>
+    			</xf:group>
+    			<w2:gridView autoFit="allColumn" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row" id=""
+    				keepDefaultColumnWidth="true" rowNumHeaderValue="순번" rowNumVisible="false" rowNumWidth="50" rowStatusHeaderValue="status"
+    				rowStatusVisible="false" rowStatusWidth="50" scrollByColumn="false" scrollByColumnAdaptive="false" style="" visibleRowNum="10">
+    				<w2:caption id="caption4" style="" value="this is a grid caption."></w2:caption>
+    				<w2:header id="header1" style="">
+    					<w2:row id="row1" style="">
+    						<w2:column displayMode="label" id="column6" inputType="text" style="" value="name1" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column5" inputType="text" style="" value="name2" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column4" inputType="text" style="" value="name3" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column3" inputType="text" style="" value="name4" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column2" inputType="text" style="" value="name5" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column1" inputType="text" style="" value="name6" width="70"></w2:column>
+    					</w2:row>
+    				</w2:header>
+    				<w2:gBody id="gBody1" style="">
+    					<w2:row id="row2" style="">
+    						<w2:column displayMode="label" id="col1" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="col2" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="col3" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="col4" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="col5" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="col6" inputType="text" style="" value="" width="70"></w2:column>
+    					</w2:row>
+    				</w2:gBody>
+    				<w2:footer id="footer1" style="">
+    					<w2:row id="row3" style="">
+    						<w2:column displayMode="label" id="column18" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column17" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column16" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column15" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column14" inputType="text" style="" value="" width="70"></w2:column>
+    						<w2:column displayMode="label" id="column13" inputType="text" style="" value="" width="70"></w2:column>
+    					</w2:row>
+    				</w2:footer>
+    			</w2:gridView>
+    		</xf:group>
+    		<xf:group style="" id="" class="footer-box">
+    			<xf:trigger style="" id="" type="button">
+    				<xf:label><![CDATA[확인]]></xf:label>
+    			</xf:trigger>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

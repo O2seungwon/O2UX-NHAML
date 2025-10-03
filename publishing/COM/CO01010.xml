@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="담당자관리">
+    	<w2:type>COMPONENT</w2:type>
+    	<w2:buildDate />
+    	<w2:MSA />
+    	<xf:model>
+    		<w2:dataCollection baseNode="map" />
+    		<w2:workflowCollection />
+    	</xf:model>
+    	<w2:layoutInfo />
+    	<w2:publicInfo method="" />
+    	<script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    	<w2:require as="udc_brCombo" type="page" variableClone="" src="/cm/udc/brCombo.xml"></w2:require>
+    </head>
+    <body ev:onpageload="scwin.onpageload">
+    	<xf:group class="nhbank" id="" style="">
+    		<w2:pageFrame id="" src="/cm/main/contentHeader.xml" style=""></w2:pageFrame>
+    		<xf:group class="content" id="">
+    			<xf:group class="acco-wrap" id="" style="">
+    				<xf:group class="box-div" id="">
+    					<xf:group class="inquiry-wrap" id="">
+    						<xf:group class="inquiry-box auto" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="사무소" style=""></w2:textbox>
+    							<w2:udc_brCombo autoSet="true" style=""></w2:udc_brCombo>
+    						</xf:group>
+    						<xf:group class="inquiry-box auto last" id="" style="">
+    							<w2:textbox class="inquiry-title" id="" label="과거내역포함" style=""></w2:textbox>
+    							<xf:select appearance="full" class="check-icon" cols="" disabled="" id="" ref="" renderType="checkboxgroup"
+    								rows="" selectedindex="1" style="width: 28px;height: 30px;">
+    								<xf:choices>
+    									<xf:item>
+    										<xf:label></xf:label>
+    										<xf:value></xf:value>
+    									</xf:item>
+    								</xf:choices>
+    							</xf:select>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<xf:group class="box-button" id="">
+    					<xf:group class="button-wrap" id="" style="di">
+    						<xf:trigger class="btn-refresh" id="" style="" type="button">
+    							<xf:label></xf:label>
+    						</xf:trigger>
+    						<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    							<xf:label><![CDATA[조회]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="tx-wrap" id="" style="">
+    				<xf:group id="">
+    					<w2:textbox id="" label="* 자금세탁방지시스템 사무소장 및 영업점 자금세탁방지책임자를 선택하여 등록 하세요." style=""></w2:textbox>
+    					<w2:textbox id="" label="* 사무소장 및 영업점 자금세탁방지책임자 각 1인씩 등록 가능합니다." style=""></w2:textbox>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="gvwbox white" id="">
+    				<xf:group class="titbox" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    					meta_snippetName="2_02 서브타이틀(h3)" style="">
+    					<w2:textbox class="" id="" label="담당자관리" style="" tagname="h3"></w2:textbox>
+    					<xf:group class="count" id="" meta_snippetCategory="02_타이틀" meta_snippetKeyComponent="true"
+    						meta_snippetName="2_02 서브타이틀(h3)" style="">
+    						<w2:textbox id="" label="총" style="" tagname="span"></w2:textbox>
+    						<w2:textbox class="num" id="" label="147" style="" tagname="span"></w2:textbox>
+    						<w2:textbox id="" label="건" style="" tagname="span"></w2:textbox>
+    					</xf:group>
+    					<xf:group class="rt" id="" style="">
+    						<xf:trigger class="btn_cm btn-download" id="" style="" type="button">
+    							<xf:label><![CDATA[엑셀다운로드]]></xf:label>
+    						</xf:trigger>
+    					</xf:group>
+    				</xf:group>
+    				<w2:gridView autoFit="none" checkReadOnlyOnPasteEnable="" class="gvw" dataList="data:dataList1" focusMode="row" id=""
+    					scrollByColumn="false" scrollByColumnAdaptive="false" style="height: 150px;" visibleRowNum="10">
+    					<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    					<w2:header id="header2" style="">
+    						<w2:row id="row3" style="">
+    							<w2:column blockSelect="false" displayMode="label" id="column12" imageSrc="/cm/images/icons/file-icon20.svg"
+    								inputType="image" removeBorderStyle="false" value="" viewType="icon" width="70" rowSpan="2" fixColumnWidth="true">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column11" inputType="text" removeBorderStyle="false"
+    								value="순번" width="70" rowSpan="2" fixColumnWidth="true">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column10" inputType="text" removeBorderStyle="false"
+    								value="사무소명" width="140" colSpan="2">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column8" inputType="text" removeBorderStyle="false"
+    								value="담당구분" width="200" rowSpan="2">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column7" inputType="text" removeBorderStyle="false"
+    								value="직급" width="120" rowSpan="2">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column6" inputType="text" removeBorderStyle="false"
+    								value="개인번호" width="120" rowSpan="2">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column5" inputType="text" removeBorderStyle="false"
+    								value="성명" width="120" rowSpan="2">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column4" inputType="text" removeBorderStyle="false"
+    								value="처리구분" width="120" rowSpan="2">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="column3" inputType="text" removeBorderStyle="false"
+    								value="대직상태" width="120" rowSpan="2">
+    							</w2:column>
+    							<w2:column width="140" inputType="text" id="column47" value="대직기간" displayMode="label" colSpan="2">
+    							</w2:column>
+    							<w2:column width="210" inputType="text" id="column50" value="대직자" displayMode="label" colSpan="3">
+    							</w2:column>
+    							<w2:column width="120" inputType="text" id="column41" value="휴대전화" displayMode="label" rowSpan="2">
+    							</w2:column>
+    							<w2:column width="120" inputType="text" id="column38" value="지정년월일" displayMode="label" rowSpan="2">
+    							</w2:column>
+    							<w2:column width="120" inputType="text" id="column35" value="현근무처전입일" displayMode="label" rowSpan="2">
+    							</w2:column>
+    							<w2:column width="200" inputType="text" id="column32" value="등록일시" displayMode="label" rowSpan="2">
+    							</w2:column>
+    						</w2:row>
+    						<w2:row style="" id="row5">
+    							<w2:column width="120" inputType="text" id="column20" value="코드" displayMode="label"></w2:column>
+    							<w2:column width="200" inputType="text" id="column19" value="명" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column48" value="시작일자" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column45" value="종료일자" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column51" value="직급" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column54" value="성명" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column57" value="개인번호" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody id="gBody2" style="">
+    						<w2:row id="row4" style="">
+    							<w2:column blockSelect="false" displayMode="label" id="col1" imageSrc="/cm/images/icons/file-icon20.svg"
+    								inputType="image" removeBorderStyle="false" viewType="icon" width="70">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col2" inputType="text" removeBorderStyle="false"
+    								width="70">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col3" inputType="text" removeBorderStyle="false"
+    								width="120">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col4" inputType="text" removeBorderStyle="false"
+    								width="200" textAlign="left">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col5" inputType="text" removeBorderStyle="false"
+    								width="200" textAlign="left">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col6" inputType="text" removeBorderStyle="false"
+    								width="120">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col7" inputType="text" removeBorderStyle="false"
+    								width="120">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col8" inputType="text" removeBorderStyle="false"
+    								width="120">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col9" inputType="text" removeBorderStyle="false"
+    								width="120">
+    							</w2:column>
+    							<w2:column blockSelect="false" displayMode="label" id="col10" inputType="text" removeBorderStyle="false"
+    								width="120">
+    							</w2:column>
+    							<w2:column width="120" inputType="text" id="column49" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column46" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column52" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column55" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column58" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column43" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column40" displayMode="label"></w2:column>
+    							<w2:column width="120" inputType="text" id="column37" displayMode="label"></w2:column>
+    							<w2:column width="200" inputType="text" id="column34" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+    			</xf:group>
+    		</xf:group>
+    		<xf:group class="footer-box" id="" style="">
+    			<xf:group class="left-button" id="" style="">
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="등록" style=""></w2:span>
+    				</xf:group>
+    				<xf:group class="edit btn-a" id="" style="" tagname="a">
+    					<w2:span id="" label="수정" style=""></w2:span>
+    				</xf:group>
+    			</xf:group>
+    			<xf:group class="right-button" id="" style="">
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="환코드담당자등록" style=""></w2:span>
+    				</xf:group>
+    				<xf:group id="" style="" tagname="a">
+    					<w2:span id="" label="대직등록" style=""></w2:span>
+    				</xf:group>
+    			</xf:group>
+    		</xf:group>
+    	</xf:group>
+    </body>
+</html>

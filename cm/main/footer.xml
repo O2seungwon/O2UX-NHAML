@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:w2="http://www.inswave.com/websquare"
+	xmlns:xf="http://www.w3.org/2002/xforms">
+	<head meta_screenId="footer" meta_screenName="레이아웃 Footer 프레임">
+		<w2:type>COMPONENT</w2:type>
+		<w2:buildDate />
+		<xf:model>
+			<xf:instance>
+				<data xmlns="" />
+			</xf:instance>
+			<w2:dataCollection baseNode="map">
+				<w2:dataMap baseNode="map" id="dma_loginCheck">
+					<w2:keyInfo>
+						<w2:key id="login_cd" name="사번" dataType="text"></w2:key>
+						<w2:key id="login_pwd" name="비밀번호" dataType="text"></w2:key>
+					</w2:keyInfo>
+				</w2:dataMap>
+				<w2:dataMap baseNode="map" id="dma_dataMap1">
+					<w2:keyInfo>
+						<w2:key id="lENO" name="name1" dataType="text"></w2:key>
+					</w2:keyInfo>
+				</w2:dataMap>
+			</w2:dataCollection>
+			<w2:workflowCollection>
+			</w2:workflowCollection>
+		</xf:model>
+		<script type="text/javascript" lazy="false"><![CDATA[scwin.onpageload = function () {
+
+};
+
+/**
+ * @event
+ * @name btn_pbLogin_onclick
+ * @description 실행 버튼 클릭시 실행 - 로그인 처리 트랜잭션 발생
+ */
+scwin.btn_pbLogin_onclick = function (e) {
+    if ($c.util.isEmpty(ibx_eno.getValue())) {
+        $c.win.alert("개인번호를 입력하세요");
+        return;
+    }
+
+    dma_loginCheck.set("login_cd", ibx_eno.getValue());
+    dma_loginCheck.set("login_pwd", "password");
+
+    const searchCodeGrpOption = {
+        id: "sbm_loginCheck",
+        action: "/login.ml",
+        ref: "dma_loginCheck",
+        submitDoneHandler: scwin.sbm_Login_submitdone,
+        submitErrorHandler : scwin.sbm_Login_errorHandler
+    };
+
+    $c.sbm.executeSubmit(searchCodeGrpOption);
+};
+
+/**
+ * @method
+ * @name sbm_Login_submitdone
+ * @description 로그인 submitdone 스크립트 - 로그인 성공여부 판단, 성공시 메인페이지 이동, 실패시 메세지 처리
+ * @param {string} e submission 결과를 담은 객체
+ * @hidden N
+ * @exception 
+ */
+scwin.sbm_Login_submitdone = function (res) {
+    const resultData = res.responseJSON;
+    const result = resultData?.rsMsg;
+    // const menuCd = $c.util.getParameter('menuCd');
+
+    if (res.responseStatusCode === 200) {
+        $c.win.goHome();
+        return;
+    }
+};
+
+/**
+ * @method
+ * @name sbm_Login_errorHandler
+ * @description 로그인 submitdone 스크립트 - 로그인 성공여부 판단, 성공시 메인페이지 이동, 실패시 메세지 처리
+ * @param {string} e submission 결과를 담은 객체
+ * @hidden N
+ * @exception 
+ */
+scwin.sbm_Login_errorHandler = function(res) {
+    $c.win.alert("로그인 실패");
+};
+
+/**
+ * @event
+ * @name ibx_eno_oneditenter
+ * @description 개인번호 enter Event
+ */
+scwin.ibx_eno_oneditenter = function () {
+    ibx_userNm.setValue("");
+    if ($c.util.isEmpty(ibx_eno.getValue()))  return;
+    
+    dma_dataMap1.set("lENO", ibx_eno.getValue());
+    const searchenoSearch = {
+        id: "sbm_enoSearch",
+        action: "/CM01002/searchEno.ml",
+        ref: "dma_dataMap1",
+        submitDoneHandler: scwin.sbm_enoSearch_submitDonHandler,
+        submitErrorHandler : scwin.sbm_Login_errorHandler
+    };   
+
+    // const refJson = {
+    //     lENO : ibx_eno.getValue(),
+
+    // };
+    $c.sbm.executeSubmit(searchenoSearch);
+};
+
+
+scwin.sbm_enoSearch_submitDonHandler = function(res) {
+    debugger;
+    if (res.responseJSON.length == 1) {
+        ibx_userNm.setValue(res.responseJSON[0].USRNM);
+    
+    } else { 
+
+        //팝업 옵션 설정
+        const options = {
+            id: "CM1002",
+            popupName: "직원 찾기",
+            popSize : "M"
+        };
+
+        //팝업에 전달할 dataObject
+        const data = {
+            usernm : ibx_eno.getValue()
+        };
+
+        const popupUrl = "/ui/CM/CM1002.xml";
+        $c.win.openPopup(popupUrl, options, data).then (rtn => {
+            debugger;
+            if (rtn.length > 0) {
+                ibx_userNm.setValue(rtn.USRNM);
+            }
+        });
+    }
+    
+    
+};]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload">
+		<xf:group id="grp_noticeArea" class="" style="">
+			<w2:textbox id="" label="다른 사용자" style="width:80px;" class="fl"></w2:textbox>
+			<xf:input id="ibx_eno" style="width:100px;" class="fl" ref="data:dma_dataMap1.lENO" ev:oneditenter="scwin.ibx_eno_oneditenter"></xf:input>
+			<xf:input id="ibx_userNm" style="width:120px;" class="fl" readOnly="true"></xf:input>
+			<xf:trigger type="button" id="btn_pbLogin" style="width:60px;height:29px;" class="fl btn-inq" ev:onclick="scwin.btn_pbLogin_onclick">
+				<xf:label><![CDATA[실행]]></xf:label>
+			</xf:trigger>
+			<w2:textbox class="fl" id="" label="Copyrightⓒ 2015 NHBank All Rights Reserved" style=""></w2:textbox>
+		</xf:group>
+		
+		
+		
+		
+	</body>
+</html>

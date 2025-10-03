@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ev="http://www.w3.org/2001/xml-events"
+xmlns:w2="http://www.inswave.com/websquare"
+xmlns:xf="http://www.w3.org/2002/xforms">
+	<head meta_screenId="$c.date" meta_screenName="날짜 관련 함수" meta_screenDesc="날짜 관련 함수를 작성한다.">
+		<w2:type>COMMON</w2:type>
+		<w2:buildDate/>
+		<w2:MSA/>
+		<xf:model>
+			<w2:dataCollection baseNode="map">
+			</w2:dataCollection>
+			<w2:workflowCollection>
+			</w2:workflowCollection>
+		</xf:model>
+		<w2:layoutInfo>
+		</w2:layoutInfo>
+		<w2:publicInfo method="scwin.addMinute,scwin.addHour,scwin.addDate,scwin.addMonth,scwin.getServerDateTime,scwin.formatDate,scwin.formatTime,scwin.formatDateTime,scwin.isDate,scwin.diffDate,scwin.diffMonth,scwin.isLeafYear,scwin.getDay,scwin.getLunar,scwin.getLastDate,scwin.getDateToSeason,scwin.getDateToBungi"/>
+		<script lazy="false" type="text/javascript"><![CDATA[/**
+ * @component
+ * @componentName udc_date
+ * @pluginName
+ * @company
+ * @developer
+ * @category /cm/gcc
+ * @notSupportBrowser
+ * @version
+ * @htmlRender
+ * @icon
+ * @disableIcon
+ * @description
+ * @width
+ * @height
+ * @license
+ * @imagePath
+ * @homepage
+ */
+
+scwin.onpageload = function() {
+	
+};
+
+/**
+ * @method
+ * @name addMinute
+ * @description 입력된 날짜에 지정된 만큼의 분을 더한다.
+ * @param {String} pYmd 날짜 형식의 문자열 (yyyyMMdd or yyyyMMddHHmmss)
+ * @param {Number} offset 더할 분 수
+ * @returns {String} 지정된 offset만큼의 날짜가 더해진 날짜
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.date.addMinute("201708191210", 10); // "201708191220"
+ * $c.date.addMinute("201708191210", -10); // "201708191200"
+ */ 
+scwin.addMinute = function(pYmd, offset) {
+	return WebSquare.date.dateTimeAdd(pYmd, offset, "minute");
+};
+
+
+/**
+ * @method
+ * @name addHour
+ * @description 입력된 날짜에 지정된 만큼의 시간을 더한다.
+ * @param {String} pYmd 날짜 형식의 문자열 (yyyyMMdd or yyyyMMddHHmmss)
+ * @param {Number} offset 더할 시간 수.
+ * @returns {String} 지정된 offset만큼의 날짜가 더해진 입력 날짜
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.date.addHour("2017081912", 10); // "2017081922"
+ * $c.date.addHour("2017081912", -10); // "2017081902"
+ */ 
+scwin.addHour = function(pYmd, offset) {
+	return WebSquare.date.dateTimeAdd(pYmd, offset, "hour");
+};
+
+/**
+ * @method
+ * @name addDate
+ * @description 입력된 날짜에 지정된 만큼의 날을 더한다.
+ * @param {String} pYmd 날짜 형식의 문자열 (yyyyMMdd or yyyyMMddHHmmss)
+ * @param {Number} offset 더할 날짜 수.
+ * @returns {String} 지정된 offset만큼의 날짜가 더해진 입력 날짜
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.date.addDate("20170819", 2); // "20170821"
+ * $c.date.addDate("20170819", -10); // "20170809"
+ */ 
+scwin.addDate = function(pYmd, offset) {
+	return WebSquare.date.dateAdd(pYmd, offset);
+};
+
+/**
+ * @method
+ * @name addMonth
+ * @description 입력된 날짜에 지정된 만큼의 달을 더한다.
+ * @param {String} pYmd 날짜 형식의 문자열 (yyyyMMdd or yyyyMMddHHmmss)
+ * @param {Number} offset 더할 개월 수.
+ * @returns {String} 지정된 offset만큼의 개월이 더해진 입력 날짜
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.date.addMonth("20170819", 2); // "20171019"
+ * $c.date.addMonth("20170819", -10); // "20161019"
+ */ 
+scwin.addMonth = function(pYmd, offset) {
+	try {
+		let date = "";
+		const isDate = $c.date.isDate(pYmd);
+
+		if (!isDate) {
+			return;
+		}
+		if (typeof offset == "undefined" || isNaN(offset)) {
+			offset = 0;
+		}
+
+		let dY = (pYmd + "").substring(0, 4);
+		let dM = (pYmd + "").substring(4, 6);
+		let dD = (pYmd + "").substring(6, 8);
+		let dTime = (pYmd + "").substring(8);
+		dM = (dM * 1) + (offset * 1);
+		
+		if (dM > 0) {
+			dY = (dY * 1) + Math.floor(dM / 12);
+			dM = dM % 12;
+		} else {
+			dY = (dY * 1) - Math.floor((dM * -1 + 12) / 12);
+			dM = dM % 12 + 12;
+		}
+		
+		if (Number(dD) >= 30) {
+			const chkMonth1 = [ 2 ];
+			const chkMonth2 = [ 4, 6, 9, 11 ];
+
+			if (chkMonth1.indexOf(dM) > -1) {
+				if (scwin.isLeafYear(dY + "01" + "01")) {
+					dD = "29";
+				} else {
+					dD = "28";
+				}
+			} else if (chkMonth2.indexOf(dM) > -1) {
+				if (Number(dD) > 30) {
+					dD = "30";
+				}
+			}
+		}
+		const cDate = new Date(dY, dM - 1, dD);
+		const cYear = cDate.getFullYear();
+		let cMonth = cDate.getMonth() + 1;
+		if ((cMonth + "").length < 2) {
+			cMonth = "0" + cMonth;
+		}
+		const cDay = cDate.getDate();
+		if ((cDay + "").length < 2) {
+			cDay = "0" + cDay;
+		}
+		date = cYear + "" + cMonth + "" + cDay + "" + dTime;
+		return date;
+	} catch (ex) {
+		console.error(ex);
+	}
+};
+
+/**
+ * @method
+ * @name getServerDateTime
+ * @description 서버 날짜 반환한다. (default format: yyyyMMdd)
+ * @param {String:N} sDateFormat 날짜 포맷
+ * y Year 1996; 96
+ * M Month in year 07
+ * d Day in month 10
+ * H Hour in day (0-23) 0
+ * m Minute in hour 30
+ * s Second in minute 55
+ * S Millisecond 978
+ * @returns {String} 현재날짜
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.date.getServerDateTime("yyyy-MM-dd HH:mm:ss SSS");
+ * $c.date.getServerDateTime("yyyy-MM-dd");
+ * $c.date.getServerDateTime();
+ */ 
+scwin.getServerDateTime = function(sDateFormat) {
+	if ($c.util.isEmpty(sDateFormat)) {
+		sDateFormat = "yyyyMMdd";
+	}
+
+	return WebSquare.date.getCurrentServerDate(sDateFormat);
+};
+
+/**
+ * @method
+ * @name formatDate
+ * @description 문자열에 날짜 Formatter를 적용하여 반환한다.
+ * @param {String} str 포멧터를 적용할 파라메터 (String 또는 Number 타입 지원)
+ * @param {String} type 적용할 포멧터 형식 Default:null,slash,date
+ * @returns {String} 포멧터가 적용된 문자열
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.date.formatDate("20250801", "-");   // return  "2025-08-01"
+ * $c.date.formatDate("20250801");        // return  "2025-08-01"
+ * $c.date.formatDate("20250801", "/");   // return  "2025/08/01"
+ */ 
+scwin.formatDate = function(str, delim) {
+	if(typeof($p) == 'string') {
+		delim = str;
+		str = $p;
+    }
+
+    if (str.length < 4) return str;
+    if (!scwin.isDate(str)) return str;
+    if ($c.util.isEmpty(delim)) delim = "-";
+
+	let date = new String(str);
+    let year = date.substring(0, 4);
+    let output = "";
+
+    if (date.length == 8) {
+        output = year + delim + date.substring(4, 6) + delim + date.substring(6, 8);
+    } else if (date.length == 6) {
+        output = year + delim + date.substring(4, 6);
+    } else if (date.length == 4) {
+        output = year;
+    }
+	
+	return output;
+};
+
+
+/**
+ * @method
+ * @name formatTime
+ * @description 시간 - 입력된 String 또는 Number에 포메터를 적용하여 반환한다.
+ * @param {String} value 시간 Formatter를 적용한 값 (String 또는 Number 타입 지원)
+ * @returns {String} 포멧터가 적용된 문자열
+ * @hidden N
+ * @exception 
+ * @example $c.date.formatTime("123402");   // return 예시) "12:34:02"
+ */ 
+scwin.formatTime = function(value, delim) {
+	if(typeof($p) == 'string') {
+		delim = value;
+		value = $p;
+    }
+    if (value.length !== 4 && value.length !== 6) return value;
+    if ($c.util.isEmpty(delim)) delim = ":";
+
+	const hour = String(value).substring(0, 2);
+	const minute = String(value).substring(2, 4);
+	const second = String(value).substring(4, 6);
+
+	const output = hour + delim + minute + (second ? delim + second : "");
+	return output;
+};
+
+
+/**
+ * @method
+ * @name formatDateTime
+ * @description 날짜 객체에 포매팅을 적용한다. (default format: yyyyMMdd)
+ * @param {Date} 날짜 포맷팅을 적용할 날짜 객체
+ * @param {String:N} sDateFormat 날짜 포맷
+ * @returns {String} 현재날짜
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.date.formatDateTime(new Date());  // return "20250814"
+ * $c.date.formatDateTime(new Date(), "yyyy-MM-dd HH:mm:ss SSS");  // return "2025-08-14 10:04:37 731"
+ * $c.date.formatDateTime("20250801");  // return "2025-08-01";
+ * $c.date.formatDateTime("202508011301", "yyyy-MM-dd HH:mm");  // return "2025-08-01 13:01";
+ */ 
+scwin.formatDateTime = function(value, sDateFormat) {
+	if ($c.util.isEmpty(sDateFormat)) {
+		sDateFormat = "yyyyMMdd";
+	}
+
+	return WebSquare.date.getFormattedDate(value, sDateFormat);
+};
+
+/**
+ * @method
+ * @name isDate
+ * @description 입력된 값이 Date 형식의 값인지 확인한다.
+ * @param {String|number} sDate 날짜 문자열 (yyyyMMdd or yyyyMMddHHmmss)
+ * @param {Boolean} timeChk 시간체크. (true/false)
+ * @returns {Boolean} Date 형식에 일치하면 true, 아니면 false
+ * @hidden N
+ * @exception 
+ * @example
+ * $c.date.isDate("20250821"); // return true;
+ * $c.date.isDate("202501");   // return true;
+ * $c.date.isDate("20250133"); // return false;
+ */ 
+scwin.isDate = function(sDate, timeChk) {
+	let flag = true;
+	try {
+		if (sDate.length == 8) {
+			sDate = `${sDate}000000`;
+		} else if (sDate.length == 6) {
+            sDate = `${scwin.getLastDate(sDate)}000000`;
+        }
+		
+		const y1 = parseInt(sDate.substring(0, 4), 10);
+		const m1 = parseInt(sDate.substring(4, 6), 10);
+		const d1 = parseInt(sDate.substring(6, 8), 10);
+		const h1 = parseInt(sDate.substring(8, 10), 10);
+		const t1 = parseInt(sDate.substring(10, 12), 10);
+		const s1 = parseInt(sDate.substring(12), 10);
+		if (isNaN(y1) || isNaN(m1) || isNaN(d1) || isNaN(h1) || isNaN(t1) || isNaN(s1))
+			flag = false;
+
+		if (m1 < 1 || m1 > 12)
+			flag = false;
+
+		let maxDay = 31;
+		if (m1 == 2) {
+			maxDay = ((y1 % 400 == 0) || ((y1 % 4 == 0) && (y1 % 100 != 0))) ? 29
+					: 28;
+		} else if (m1 == 4 || m1 == 6 || m1 == 9 || m1 == 11) {
+			maxDay = 30;
+		}
+		
+		if (d1 < 1 || d1 > maxDay) {
+			flag = false;
+		}
+		
+		if (h1 + t1 + s1 != "") {
+			if (h1 < 0 || h1 > 24) {
+				flag = false;
+			} else if (h1 == 24) {
+				if(typeof timeChk == "boolean" && !timeChk)
+					flag = false;
+				if (t1 > 0)
+					flag = false;
+				if (s1 > 0)
+					flag = false;
+			}
+			if (t1 < 0 || t1 > 59)
+				flag = false;
+			if (s1 < 0 || s1 > 59)
+				flag = false;
+		}
+	} catch (ex) {
+		console.error(ex);
+		flag = false;
+	}
+	return flag;
+};
+
+/**
+ * @method
+ * @name diffDate
+ * @description fromDate, toDate 를 입력받아 두 날짜의 차이를 반환한다.
+ * @param {String} fromDate 시작일자 (date형식은 yyyyMMdd or yyyyMMddHHmmss)
+ * @param {String} toDate 종료일자 (date형식은 yyyyMMdd or yyyyMMddHHmmss)
+ * @returns {Number} 종료일자에서 시작일자의 날짜 차이 수(절대값).
+ * @hidden N
+ * @exception 
+ * @example $c.date.diffDate("20170821", "20180621"); // 304
+ */ 
+scwin.diffDate = function(fromDate, toDate) {
+	try {
+		if (!scwin.isDate(fromDate) || !scwin.isDate(toDate)) {
+			return;
+		}
+		const diffDate = WebSquare.date.dateDiff(fromDate, toDate);
+		return Math.abs(diffDate);
+	} catch (ex) {
+		console.error(ex);
+	}
+};
+
+/**
+ * @method
+ * @name diffMonth
+ * @description fromDate, toDate 를 입력받아 두 날짜의 개월수를 반환한다.
+ * @param {String} fromDate 시작일자 (date형식은 yyyyMMdd)
+ * @param {String} toDate 종료일자 (date형식은 yyyyMMdd)
+ * @returns {Number} 종료일자에서 시작일자의 개월 차이 수(절대값).
+ * @hidden N
+ * @exception 
+ * @example $c.date.diffMonth("20250615", "20250930"); // 3
+ */ 
+scwin.diffMonth = function(fromDate, toDate) {
+	try {
+		if (!scwin.isDate(fromDate) || !scwin.isDate(toDate)) {
+			return;
+		}
+        const fromD = new Date(scwin.formatDate(fromDate, "-"));
+        const toD = new Date(scwin.formatDate(toDate, "-"));
+
+        return (toD.getFullYear() - fromD.getFullYear()) * 12 + (toD.getMonth() - fromD.getMonth());
+	} catch (ex) {
+		console.error(ex);
+	}
+};
+
+/**
+ * @method
+ * @name isLeafYear
+ * @description 입력된 양력의 날짜가 윤년인지 검사한다.
+ * @param {String} pYmd :: I :: Y ::  :: 윤달 확인 날짜.
+ * @returns {Boolean} 윤달 유무( true : 윤달 )
+ * @hidden N
+ * @exception 
+ * @example $c.date.isLeafYear("20201212");  // return true
+ */ 
+scwin.isLeafYear = function(pYmd) {
+	try{
+		let isLeafYear = false;
+		if (!scwin.isDate(pYmd)) {
+			return;
+		} else {
+			pYmd = pYmd.substr(0, 8);
+			const y1 = parseInt( pYmd.substr(0, 4), 10);
+			isLeafYear = ((y1 % 400 == 0 ) || ((y1 % 4 == 0) && (y1 % 100 != 0))) ? true : false;
+		}
+		return isLeafYear;
+	} catch (ex) {
+		console.error(ex);
+	}
+};
+
+/**
+ * @method
+ * @name getDay
+ * @description 특정 날짜의 요일을 반환한다.
+ * @param {String} value "yyyyMMdd" 포맷 형태의 날짜를 나타내는 문자열 ("20190801")
+ * @param {String} type 반환형식 기본값은 날짜를 한글로 반환 , num 인경우 숫자로 반환 일요일 :  1 ~ 토요일 : 7
+ * @returns {String} 요일
+ * @hidden N
+ * @exception 
+ * @example 
+ * $c.date.getDay("20190822");  // "목요일"
+ * $c.date.getDay("20190824");  // "토요일"
+ */ 
+scwin.getDay = function(value,type) {
+	let dayVal;
+	if (type == "num") {
+		dayVal = WebSquare.date._getDay(value);
+		if (dayVal == 0 ) {
+			return "7";
+		}else{
+			return String(dayVal);
+		}
+	} else {
+		return WebSquare.date.getDay(value);
+	}
+};
+
+/**
+ * @method
+ * @name getLunar
+ * @description 특정 날짜의 음력 날짜를 반환한다.
+ * @param {String} value "yyyyMMdd" 포맷 형태의 날짜를 나타내는 문자열
+ * @returns {String} 음력 날짜
+ * @hidden N
+ * @exception 
+ * @example $c.date.getLunar("20190824");  // "20190724"
+ */ 
+scwin.getLunar = function(value) {
+	return  WebSquare.date.toLunar(value);
+};
+
+/**
+ * @method
+ * @name getLastDate
+ * @description 해당 월의 마지막 날짜를 반환한다.
+ * @param {String} pYmd 날짜 형식의 문자열 (yyyyMMdd or yyyMM)
+ * @returns 마지막 날짜
+ * @hidden N
+ * @exception 
+ * @example $c.date.getLastDate("202510");  // return "20251031";
+ */ 
+scwin.getLastDate = function(pYmd) {
+	try {
+		const year = pYmd.substring(0, 4);
+		const month = pYmd.substring(4, 6);
+
+		return year + month + (new Date(year, month, 0)).getDate();
+	} catch(ex) {
+		console.error(ex);
+		return null;
+	}
+};
+
+/**
+ * @method
+ * @name getDateToSeason
+ * @description 해당 월의 계절코드를 반환한다.
+ * @param {String} pYmd 년월 문자열 (yyyyMM)
+ * @returns 계절코드
+ * @hidden N
+ * @exception 
+ * @example
+ * //3월~5월 : 1
+ * //6월~8월 : 2
+ * //9월~11월 : 3
+ * //12월~2월 : 4
+ * $c.date.getDateToSeason("201510");  // return 3
+ */ 
+scwin.getDateToSeason = function(pYmd) {
+    if (!scwin.isDate(pYmd)) return 0;
+
+	const month = pYmd.slice(4,6);
+    
+    if( ['03', '04', '05'].includes(month) ) return 1;
+	if( ['06', '07', '08'].includes(month) ) return 2;
+	if( ['09', '10', '11'].includes(month) ) return 3;
+    if( ['12', '01', '02'].includes(month) ) return 4;
+    return 0;
+};
+
+/**
+ * @method
+ * @name getDateToBungi
+ * @description 해당 월의 분기코드를 반환한다.
+ * @param {String} pYmd 년월 문자열 (yyyyMM)
+ * @returns 분기코드
+ * @hidden N
+ * @exception 
+ * @example
+ * // 1월~3월 : 1
+ * // 4월~6월 : 2
+ * // 7월~9월 : 3
+ * // 10월~12월 : 4
+ * $c.date.getDateToBungi("201510");  // return 4
+ */ 
+scwin.getDateToBungi = function(pYmd) {
+    if (!scwin.isDate(pYmd)) return 0;
+	const month = pYmd.slice(4,6);
+
+	if( ['01', '02', '03'].includes(month) ) return 1;
+	if( ['04', '05', '06'].includes(month) ) return 2;
+	if( ['07', '08', '09'].includes(month) ) return 3;
+	if( ['10', '11', '12'].includes(month) ) return 4;
+	return 0;
+};
+]]></script>
+	</head>
+	<body ev:onpageload="scwin.onpageload"/>
+</html>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/publishing/css/popup.css" type="text/css"?>
+<?xml-stylesheet href="/cm/css/popup.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="팝업-직원찾기">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            			<w2:column id="col7" name="name7" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList2" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            			<w2:column id="col5" name="name5" dataType="text"></w2:column>
+            			<w2:column id="col6" name="name6" dataType="text"></w2:column>
+            			<w2:column id="col7" name="name7" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" class=""><xf:group style="" id="" class="popup-content member-box">
+    				<xf:group style="" id="" class="inquiry-wrap office-wrap">
+    					<xf:group id="" class="office-inquiry"><xf:group style="width: auto;" id="" class="inquiry-box">
+    						<w2:textbox style="" id="" label="사무소 구분" class="inquiry-title"></w2:textbox>
+    						<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled"
+    							chooseOption="true" disabled="false" style="width: 148px;margin-right: 4px;" allOption="true" id="" renderType="" class="sel-box"
+    							direction="auto" chooseOptionLabel="[4]영업점">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[텍스트]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[텍스트]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+    						<xf:input style="width: 148px;margin-right: 4px;" id="" placeholder="001425" class=""></xf:input>
+    						<xf:input style="width: 280px;" disabled="true" id="" placeholder="구미강동지점" class=""></xf:input>
+    					</xf:group><xf:group style="" id="" class="inquiry-box">
+    						<w2:textbox style="" id="" label="출장소 포함" class="inquiry-title"></w2:textbox>
+    						<xf:select ref="" appearance="full" disabled="" style="width: 28px;height: 30px;" id="" renderType="checkboxgroup" rows="" selectedindex="1" class="check-icon" cols="">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label></xf:label>
+    									<xf:value></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select>
+    					</xf:group><xf:group style="width: auto" id="" class="inquiry-box mg-top">
+    						<w2:textbox style="" id="" label="성명(개인번호)" class="inquiry-title"></w2:textbox>
+    						<xf:input style="width: 282px;" id="" placeholder="" class=""></xf:input>
+    					</xf:group><xf:group style="width: auto;" id="" class="inquiry-box mg-top">
+    						<w2:textbox style="" id="" label="주민번호" class="inquiry-title"></w2:textbox>
+    						<xf:input style="width: 138px;margin-right: 4px;" id="" placeholder="" class=""></xf:input>
+    						<xf:input style="width: 138px;" disabled="true" id="" placeholder="*******" class=""></xf:input>
+    					</xf:group><xf:group style="" id="" class="inquiry-box mg-top last">
+    						<w2:textbox style="" id="" label="재직여부" class="inquiry-title"></w2:textbox>
+    						<xf:select1 ref="" submenuSize="auto" appearance="minimal" disabledClass="w2selectbox_disabled"
+    							chooseOption="true" disabled="false" style="width: 282px;" allOption="true" id="" renderType="" class="sel-box" direction="auto"
+    							chooseOptionLabel="재직">
+    							<xf:choices>
+    								<xf:item>
+    									<xf:label><![CDATA[텍스트]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    								<xf:item>
+    									<xf:label><![CDATA[텍스트]]></xf:label>
+    									<xf:value><![CDATA[]]></xf:value>
+    								</xf:item>
+    							</xf:choices>
+    						</xf:select1>
+</xf:group></xf:group><xf:group style="width: auto;" id="" class="box-button mg-top">
+    						<xf:group style="" id="" class="button-wrap">
+    							<xf:trigger style="" id="" type="button" class="btn-refresh">
+    								<xf:label></xf:label>
+    							</xf:trigger>
+    							<xf:trigger style="" id="" type="button" class="btn-inq">
+    								<xf:label><![CDATA[조회]]></xf:label>
+    							</xf:trigger>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    				<w2:tabControl id="" alwaysDraw="false" style="" class="tab-box">
+    					<w2:tabs disabled="false" style="" id="tabs1" label="직원 찾기"></w2:tabs>
+    					<w2:tabs disabled="false" style="height:40px" id="tabs2" label="최근조회목록"></w2:tabs>
+    					<w2:content alwaysDraw="false" style="" id="content1">
+    						<xf:group style="" id="">
+    							<w2:gridView checkAllType="false" defaultCellHeight="20" id="" style=""
+    								dataList="data:dataList2" rowNumVisible="true" class="staff-grid" rowNumHeaderValue="순번">
+    								<w2:caption style="" id="caption1" value="this is a grid caption."></w2:caption>
+    								<w2:header style="" id="header1">
+    									<w2:row style="" id="row1">
+    										<w2:column width="122" inputType="text" style="" id="column7" value="개인번호"
+    											displayMode="label">
+    										</w2:column>
+    										<w2:column width="128" inputType="text" style="" id="column6" value="성명"
+    											displayMode="label">
+    										</w2:column>
+    										<w2:column width="200" inputType="text" style="" id="column5" value="주민번호"
+    											displayMode="label">
+    										</w2:column>
+    										<w2:column width="127" inputType="text" style="" id="column4" value="직급명"
+    											displayMode="label">
+    										</w2:column>
+    										<w2:column width="286" inputType="text" style="" id="column3" value="사무소명"
+    											displayMode="label">
+    										</w2:column>
+    										<w2:column width="119" inputType="text" style="" id="column2" value="퇴직여부"
+    											displayMode="label">
+    										</w2:column>
+    									</w2:row>
+    								</w2:header>
+    								<w2:gBody style="" id="gBody1">
+    									<w2:row style="" id="row2">
+    										<w2:column width="122" inputType="text" style="" id="col1" value="" displayMode="label"></w2:column>
+    										<w2:column width="128" inputType="text" style="" id="col2" value="" displayMode="label"></w2:column>
+    										<w2:column width="200" inputType="text" style="" id="col3" value="" displayMode="label"></w2:column>
+    										<w2:column width="127" inputType="text" style="" id="col4" value="" displayMode="label"></w2:column>
+    										<w2:column width="286" inputType="text" style="" id="col5" value="" displayMode="label"></w2:column>
+    										<w2:column width="119" inputType="text" style="" id="col6" value="" displayMode="label"></w2:column>
+    									</w2:row>
+    								</w2:gBody>
+    							</w2:gridView>
+    							
+    						</xf:group>
+    					</w2:content>
+    					<w2:content alwaysDraw="false" style="" id="content2">
+    						<xf:group id="" style="">
+    							<w2:gridView checkAllType="false" class="staff-grid" dataList="data:dataList2" defaultCellHeight="20" id=""
+    								rowNumHeaderValue="순번" rowNumVisible="true" style="">
+    								<w2:caption id="caption2" style="" value="this is a grid caption."></w2:caption>
+    								<w2:header id="header1" style="">
+    									<w2:row id="row1" style="">
+    										<w2:column displayMode="label" id="column7" inputType="text" style="" value="개인번호" width="70"></w2:column>
+    										<w2:column displayMode="label" id="column6" inputType="text" style="" value="성명" width="70"></w2:column>
+    										<w2:column displayMode="label" id="column5" inputType="text" style="" value="주민번호" width="70"></w2:column>
+    										<w2:column displayMode="label" id="column4" inputType="text" style="" value="직급명" width="70"></w2:column>
+    										<w2:column displayMode="label" id="column3" inputType="text" style="" value="사무소명" width="70"></w2:column>
+    										<w2:column displayMode="label" id="column2" inputType="text" style="" value="퇴직여부" width="70"></w2:column>
+    									</w2:row>
+    								</w2:header>
+    								<w2:gBody id="gBody1" style="">
+    									<w2:row id="row2" style="">
+    										<w2:column displayMode="label" id="col1" inputType="text" style="" value="" width="70"></w2:column>
+    										<w2:column displayMode="label" id="col2" inputType="text" style="" value="" width="70"></w2:column>
+    										<w2:column displayMode="label" id="col3" inputType="text" style="" value="" width="70"></w2:column>
+    										<w2:column displayMode="label" id="col4" inputType="text" style="" value="" width="70"></w2:column>
+    										<w2:column displayMode="label" id="col5" inputType="text" style="" value="" width="70"></w2:column>
+    										<w2:column displayMode="label" id="col6" inputType="text" style="" value="" width="70"></w2:column>
+    									</w2:row>
+    								</w2:gBody>
+    							</w2:gridView>
+    						</xf:group>
+    					</w2:content>
+    				</w2:tabControl>
+    				<xf:group style="" id="" class="bottom-wrap">
+    					<xf:trigger type="button" id="" style="">
+    						<xf:label><![CDATA[확인]]></xf:label>
+    					</xf:trigger>
+    				</xf:group>
+    			</xf:group></body>
+</html>

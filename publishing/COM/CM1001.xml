@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/cm/css/popup.css" type="text/css"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:w2="http://www.inswave.com/websquare" xmlns:xf="http://www.w3.org/2002/xforms">
+    <head meta_screenName="팝업-사무소찾기">
+        <w2:type>COMPONENT</w2:type>
+        <w2:buildDate/>
+        <w2:MSA/>
+        <xf:model>
+            <w2:dataCollection baseNode="map">
+            	<w2:dataList baseNode="list" repeatNode="map" id="dataList1" saveRemovedData="true">
+            		<w2:columnInfo>
+            			<w2:column id="col1" name="name1" dataType="text"></w2:column>
+            			<w2:column id="col2" name="name2" dataType="text"></w2:column>
+            			<w2:column id="col3" name="name3" dataType="text"></w2:column>
+            			<w2:column id="col4" name="name4" dataType="text"></w2:column>
+            		</w2:columnInfo>
+            		<w2:data use="true">
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            			<w2:row></w2:row>
+            		</w2:data>
+            	</w2:dataList>
+            </w2:dataCollection>
+            <w2:workflowCollection/>
+        </xf:model>
+        <w2:layoutInfo/>
+        <w2:publicInfo method=""/>
+        <script lazy="false" type="text/javascript"><![CDATA[
+scwin.onpageload = function() {
+	
+};
+]]></script>
+    </head>
+    <body ev:onpageload="scwin.onpageload" class=""><xf:group style="" id="" class="popup-content office-search">
+    	<xf:group style="" id="">
+    				<xf:group class="acco-wrap" id="" style="">
+    					<xf:group class="box-div" id="">
+    						<xf:group class="inquiry-wrap" id="">
+    							<xf:group class="inquiry-box" id="" style="width: auto;">
+    								<w2:textbox class="inquiry-title" id="" label="지역" style=""></w2:textbox>
+    								<xf:select1 allOption="true" appearance="minimal" chooseOption="true" class="sel-box" direction="auto"
+    									disabled="false" disabledClass="w2selectbox_disabled" id="" ref="" renderType="" style="width: 282px;" submenuSize="auto"
+    									chooseOptionLabel="[*]전체">
+    									<xf:choices>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value><![CDATA[]]></xf:value>
+    										</xf:item>
+    										<xf:item>
+    											<xf:label><![CDATA[텍스트]]></xf:label>
+    											<xf:value><![CDATA[]]></xf:value>
+    										</xf:item>
+    									</xf:choices>
+    								</xf:select1>
+    							</xf:group>
+    							<xf:group class="inquiry-box " id="" style="width: auto;">
+    								<w2:textbox class="inquiry-title" id="" label="사무소(코드)명" style=""></w2:textbox>
+    								<xf:input id="" placeholder="구미강동지점" style=""></xf:input>
+    							</xf:group>
+    						</xf:group>
+    					</xf:group>
+    					<xf:group class="box-button" id="">
+    						<xf:group class="button-wrap" id="" style="di">
+    							<xf:trigger class="btn-refresh" id="" style="" type="button">
+    								<xf:label></xf:label>
+    							</xf:trigger>
+    							<xf:trigger class="btn-inq right-none" id="" style="" type="button">
+    								<xf:label><![CDATA[조회]]></xf:label>
+    							</xf:trigger>
+    						</xf:group>
+    					</xf:group>
+    				</xf:group>
+    			</xf:group><w2:tabControl alwaysDraw="false" style="" id="" class="tab-box">
+    		<w2:tabs disabled="false" style="" id="tabs1" label="사무소 찾기"></w2:tabs>
+    		<w2:tabs disabled="false" style="height:40px" id="tabs2" label="최근조회목록"></w2:tabs>
+    		<w2:content alwaysDraw="false" style="" id="content1">
+    			
+    			<xf:group style="" id="">
+    				<xf:group style="margin: 4px auto 16px 28px;" id="">
+    					<w2:span style="font-size:16px;font-weight:700;line-height:150%;" id="" label="사무소 총"></w2:span>
+    					<w2:span style="margin-left: 2px;color:#0A90F0;font-size:16px;font-weight:700;line-height:150%;" id="" label="147">
+    					</w2:span>
+    					<w2:span style="font-size:16px;font-weight:700;line-height:150%;" id="" label="건"></w2:span>
+    				</xf:group>
+    				<w2:gridView checkAllType="false" defaultCellHeight="20" id="" style="" dataList="data:dataList1" autoFit="allColumn" class="tab-box-grid office-search">
+    					<w2:caption style="" id="caption2" value="this is a grid caption."></w2:caption>
+    					<w2:header style="" id="header2">
+    						<w2:row style="" id="row3">
+    							<w2:column width="70" inputType="text" style="" id="column6" value="사무소코드" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column5" value="사무소명" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column4" value="name3" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="column3" value="name4" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody style="" id="gBody2">
+    						<w2:row style="" id="row4">
+    							<w2:column width="70" inputType="text" style="" id="col1" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col2" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col3" value="" displayMode="label"></w2:column>
+    							<w2:column width="70" inputType="text" style="" id="col4" value="" displayMode="label"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+    			</xf:group>
+    			
+    		</w2:content>
+    		<w2:content alwaysDraw="false" style="" id="content2">
+    			<xf:group id="" style="">
+    				<xf:group id="" style="margin: 4px auto 16px 28px;">
+    					<w2:span id="" label="사무소 총" style="font-size:16px;font-weight:700;line-height:150%;"></w2:span>
+    					<w2:span id="" label="147"
+    						style="margin-left: 2px;color:#0A90F0;font-size:16px;font-weight:700;line-height:150%;">
+    					</w2:span>
+    					<w2:span id="" label="건" style="font-size:16px;font-weight:700;line-height:150%;"></w2:span>
+    				</xf:group>
+    				<w2:gridView autoFit="allColumn" checkAllType="false" class="tab-box-grid office-search" dataList="data:dataList1"
+    					defaultCellHeight="20" id="" style="">
+    					<w2:caption id="caption3" style="" value="this is a grid caption."></w2:caption>
+    					<w2:header id="header2" style="">
+    						<w2:row id="row3" style="">
+    							<w2:column displayMode="label" id="column6" inputType="text" style="" value="사무소코드" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column5" inputType="text" style="" value="사무소명" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column4" inputType="text" style="" value="name3" width="70"></w2:column>
+    							<w2:column displayMode="label" id="column3" inputType="text" style="" value="name4" width="70"></w2:column>
+    						</w2:row>
+    					</w2:header>
+    					<w2:gBody id="gBody2" style="">
+    						<w2:row id="row4" style="">
+    							<w2:column displayMode="label" id="col1" inputType="text" style="" value="" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col2" inputType="text" style="" value="" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col3" inputType="text" style="" value="" width="70"></w2:column>
+    							<w2:column displayMode="label" id="col4" inputType="text" style="" value="" width="70"></w2:column>
+    						</w2:row>
+    					</w2:gBody>
+    				</w2:gridView>
+    			</xf:group>
+    		</w2:content>
+</w2:tabControl>
+    	<xf:group style="" id="" class="bottom-wrap">
+    		<xf:trigger style="" id="" type="button">
+    			<xf:label><![CDATA[선택]]></xf:label>
+    		</xf:trigger>
+    	</xf:group>
+    </xf:group></body>
+</html>
