@@ -125,7 +125,7 @@ scwin.onpageload = function() {
     								<xf:group class="txt" id="" style="">
 
     								</xf:group>
-    								<xf:trigger type="button" id="" style="width: 80px;height: 23px;" class="toggle-btn">
+    								<xf:trigger type="button" id="" style="" class="toggle-btn">
     									<xf:label><![CDATA[토글버튼]]></xf:label>
     								</xf:trigger>
     							</xf:group>

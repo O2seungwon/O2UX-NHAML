@@ -497,6 +497,9 @@ input:not[type="button"]:focus{
 	text-align: left;
 	cursor: pointer;
 }
+.lnb-side.search .side-down .side-list .title-txt{
+	font-size: 16px;
+}
 .lnb-side .side-down .side-list .title-txt:after{
 	display: inline-block;
 	width: 12px;
@@ -589,8 +592,6 @@ input:not[type="button"]:focus{
 .w2selectbox,
 .w2input,
 .w2selectbox.w2selectbox_open,
-.w2input_focus,
-.w2input:focus,
 .w2selectbox_body_focus,
 .w2selectbox:focus,
 .w2inputCalendar_divInput:focus,
@@ -2155,11 +2156,11 @@ input:not[type="button"]:focus{
 	margin-right: 32px;
 	position: relative;
 }
-.inquiry-wrap .inquiry-box.last{
+.inquiry-box.last{
 	width: auto;
 	margin-right: 0;
 }
-.inquiry-wrap .inquiry-box.auto{
+.inquiry-box.auto{
 	width: auto;
 }
 .inquiry-box.mg-4{
@@ -2214,11 +2215,11 @@ input:not[type="button"]:focus{
 .input-cal-wrap:hover .input-cal.right{
 	border-left: none;
 }
-.inquiry-wrap .input-cal .w2inputCalendar_div_input{
+.input-cal .w2inputCalendar_div_input{
 	height: 30px!important;
 	bottom: -1px;
 }
-.inquiry-wrap .input-cal input::placeholder{
+.input-cal input::placeholder{
 	text-align: left;
 }
 .inquiry-wrap .input-cal.left .w2inputCalendar_div_input input,
